@@ -1,22 +1,24 @@
 <div class="container">
-  <div id="form-wrapper">
-    <div id="create-book-box">
-      <div id="header-create-form">
-        <h2>Add a new book to your profile</h2>
-      </div>
-      <div class="nested-create-form">
-      <%= simple_form_for(@book) do |f| %>
-        <%= f.input :title, placeholder: 'Harry Potter' %>
-        <%= f.input :author, placeholder: 'J. K. Rowling' %>
-        <%= f.input :description, placeholder: 'please take a moment to describe your art book in a few sentences' %>
-        <%= f.input :genre, placeholder: 'Fantasy' %>
-        <%= f.input :year, placeholder: '1997' %>
-        <%= f.input :pages, placeholder: '500' %>
-        <!-- <div class="container d-flex justify-content-center">
-          <%#= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book' %>
-        </div> -->
-        <%= f.submit class: "btn btn-danger mt-3" %>
-      <% end %>
+  <div class="background-create-wrapper">
+    <div id="form-wrapper">
+      <div id="create-book-box">
+        <div id="header-create-form">
+          <h2>Add a new book to your profile</h2>
+        </div>
+        <div class="nested-create-form">
+        <%= simple_form_for(@book) do |f| %>
+          <%= f.input :title, placeholder: 'Harry Potter' %>
+          <%= f.input :author, placeholder: 'J. K. Rowling' %>
+          <%= f.input :description, placeholder: 'please take a moment to describe your art book in a few sentences' %>
+          <%= f.input :genre, placeholder: 'Fantasy' %>
+          <%= f.input :year, placeholder: '1997' %>
+          <%= f.input :pages, placeholder: '500' %>
+          <!-- <div class="container d-flex justify-content-center">
+            <%#= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book' %>
+          </div> -->
+          <%= f.submit class: "btn btn-danger mt-3" %>
+        <% end %>
+        </div>
       </div>
     </div>
   </div>
