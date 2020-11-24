@@ -2,7 +2,12 @@
   <a class="navbar-brand" href="/home">
     <img src="https://i.ibb.co/4jKbGGs/logo.png" width="130" height="40" alt="logo">
   </a>
-  <a class="navbar-brand" href="/show">
-    <i class="fas fa-cog"></i> My profile
-  </a>
+  <% if user_signed_in? %>
+    <a class="navbar-brand" href="/show">
+      <i class="fas fa-cog"></i> My profile
+    </a>
+  <% else %>
+    <a class="button-red" href="/users/sign_up">Sign Up</a>
+  <% end %>
 </nav>
+
