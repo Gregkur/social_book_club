@@ -1,1 +1,18 @@
-create.html.erb
+<div class="container">
+  <div class="background-create-wrapper">
+    <div id="form-wrapper">
+      <div id="create-book-box m-8">
+        <div class="nested-create-form m-8">
+          <div id="header-create-form">
+            <h2>Create a booking for this book</h2>
+          </div>
+          <%= simple_form_for [@book, @booking] do |f| %>
+            <%= f.input :from %>
+            <%= f.input :until %>
+            <%= f.submit, class: "btn btn-danger mt-3" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
