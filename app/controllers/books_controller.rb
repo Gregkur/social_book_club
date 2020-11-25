@@ -4,9 +4,9 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def show
-    # @booking = Booking.new
-    # @booking_created = false
-    # @booking_created = true if params[:booking_created]
+    @book = Book.find(params[:id])
+    authorize @book
+    @review = Review.new
   end
 
   def index
@@ -44,7 +44,7 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_path
   end
-  
+
   private
 
   def book_params
