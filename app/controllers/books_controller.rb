@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :update]
   def show
     @book = Book.find(params[:id])
     authorize @book
@@ -18,9 +18,21 @@ class BooksController < ApplicationController
     authorize @book
   end
 
+  def edit
+  end
+
   def create
     @book = current_user.books.new(book_params)
     authorize @book
+    if @book.save
+      redirect_to book_path(@book)
+    else
+      render :new
+    end
+  end
+
+  def update
+    @book.update(book_params)
     if @book.save
       redirect_to book_path(@book)
     else
