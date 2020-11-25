@@ -4,21 +4,24 @@ class BookPolicy < ApplicationPolicy
       scope.where(user: user)
     end
   end
-  
+
   def index?
     return true
   end
-  
+
   def create?
     true
   end
-  
+
   def show?
     true
   end
-  
+
   def new?
     create?
   end
-  
+
+  def destroy?
+    record.user == user
+  end
 end
