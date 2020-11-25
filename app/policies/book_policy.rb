@@ -8,4 +8,12 @@ class BookPolicy < ApplicationPolicy
       return true
     end
   end
+      scope.all
+    end
+  end
+
+  def create?
+    true
+  end
+
 end

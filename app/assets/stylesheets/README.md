@@ -54,7 +54,7 @@ And the viewport in the layout
 
 ## Bootstrap JS
 
-Make sure you change the webpack config with the following code to include jQuery & Popper in webpack:
+Make sur e you change the webpack config with the following code to include jQuery & Popper in webpack:
 
 ```js
 // config/webpack/environment.js
