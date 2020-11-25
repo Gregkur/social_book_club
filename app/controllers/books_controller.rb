@@ -1,4 +1,8 @@
 class BooksController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:index]
+  
+  def index
+    @books = policy_scope(Book).all
 
   def new
     @book = current_user.books.new

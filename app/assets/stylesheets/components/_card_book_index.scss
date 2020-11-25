@@ -1,0 +1,57 @@
+.card-book-index {
+    overflow: hidden;
+    height: 192px;
+    width: 352px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-book-index > img {
+    height: 100%;
+    width: 35%;
+    object-fit: cover;
+  }
+  
+  .card-book-index h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-book-index p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 1px 0 1px 0;
+  }
+  
+  .card-book-index .card-book-index-infos {
+    padding: 16px;
+  }
+
+  .card-book-index .card-book-user {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+  }
+
+  .card-book-index .user-info {
+    padding-left: 12px;
+  }
+
+  .stars {
+    color: $purple;
+  }
+
+  .genre {
+    margin: 4px 0 8px 0;
+  }
+
+  .card-book-index span {
+    background-color: $yellow;
+    padding: 4px;
+    border-radius: 2px;
+  }
