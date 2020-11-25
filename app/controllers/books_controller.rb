@@ -4,12 +4,15 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     authorize @book
+    @review = Review.new
     # @booking = Booking.new
     # @booking_created = false
     # @booking_created = true if params[:booking_created]
-  
+  end
+
   def index
     @books = policy_scope(Book).all
+  end
 
   def new
     @book = current_user.books.new
