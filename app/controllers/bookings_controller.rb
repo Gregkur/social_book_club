@@ -11,13 +11,13 @@ class BookingsController < ApplicationController
       flash[:alert] = "You cannot create a booking for your own book."
       render "books/show"
     else
-      @start_date = Date.parse(booking_params[:from])
-      @end_date = Date.parse(booking_params[:until])
-      @days = (end_date - start_date).to_i + 1
-
+      @start_date = Date.new(params['booking']['from(1i)'].to_i, params['booking']['from(2i)'].to_i, params['booking']['from(3i)'].to_i)
+      @end_date = Date.new(params['booking']['until(1i)'].to_i, params['booking']['until(2i)'].to_i, params['booking']['until(3i)'].to_i)
+      # @days = (end_date - start_date).to_i + 1
       @booking = Booking.new(booking_params)
       @booking.book = @book
-      @booking.total = @days
+      # @booking.total = @days
+      @booking.user = current_user
       if @booking.save
         flash[:notice] = "Booked successfully!"
         redirect_to page_path(current_user)
