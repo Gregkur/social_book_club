@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   
   def index
     @books = policy_scope(Book).all
+  end
 
   def new
     @book = current_user.books.new

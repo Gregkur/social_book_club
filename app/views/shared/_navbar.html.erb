@@ -1,11 +1,20 @@
 <nav class="navbar">
-  <a class="navbar-brand" href="/home">
+  <a class="navbar-brand" href="/">
     <img src="https://i.ibb.co/4jKbGGs/logo.png" width="130" height="40" alt="logo">
   </a>
   <% if user_signed_in? %>
-    <a class="navbar-brand" href="/show">
-      <i class="fas fa-cog"></i> My profile
-    </a>
+    <div class="btn-group dropleft">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    My profile
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Profile page</a>
+    <a class="dropdown-item" href="/books">Show all books</a>
+    <a class="dropdown-item" href="/books/new">Add a book</a>
+    <div class="dropdown-divider"></div>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  </div>
+</div>
   <% else %>
     <a class="button-red" href="/users/sign_up">Sign Up</a>
   <% end %>
