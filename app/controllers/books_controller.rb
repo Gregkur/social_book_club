@@ -32,10 +32,9 @@ class BooksController < ApplicationController
   end
 
   def update
-
     @book.update(book_params)
     if @book.save
-      redirect_to @book
+      redirect_to book_path(@book)
     else
       render :new
     end
@@ -45,7 +44,7 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_path
   end
-
+  
   private
 
   def book_params
