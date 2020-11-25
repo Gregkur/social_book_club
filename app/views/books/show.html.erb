@@ -1,0 +1,29 @@
+<div class="container d-flex flex-column my-5" style="align-items: center">
+  <div class="row">
+    <div class="book-card">
+      <div class="book-pic">
+        <%# if @book.photo.attached? %>
+          <%#= cl_image_tag @book.photos.key, crop: :fill, class:"img-book" %>
+        <%# else %>
+          <%= image_tag "https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", class: "avatar-book", alt: "avatar-book" %>
+        <%# end %>
+      </div>
+      <div class="book-details">
+        <h2> <strong> <%= @book.title %> </strong> </h2>
+        <h3> <strong> <%= @book.author %> </strong> </h3>
+        <h4> <%= @book.year %> | <%= @book.pages %> pages </h4>
+        <h3> <strong> <%= @book.user.address %> </strong> </h3>
+        <h4> <%= @book.description %> </h4>
+        <div class="user-avatar">
+          <%# if @book.photo.attached? %>
+            <%#= cl_image_tag @book.photos.key, crop: :fill, class:"img-book" %>
+          <%# else %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "avatar", alt: "avatar-square" %>
+          <%# end %>
+          <%= @book.user.nickname %>
+        </div>
+        <button class="btn-booking">Make a booking request</button>
+      </div>
+    </div>
+  </div>
+</div>
