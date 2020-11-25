@@ -1,0 +1,33 @@
+.book-card {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  width: 600px;
+  background-color: $yellow;
+  position: relative;
+  padding-left: 250px;
+}
+
+.book-details {
+  width: 100%;
+}
+
+.avatar-book {
+  height: 250px;
+  width: 150px;
+  position: absolute;
+  top: -80px;
+  left: -200px;
+}
+
+.btn-booking {
+  color: $red;
+  padding: 24px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+
+  & :hover {
+    opacity: 0.8;
+  }
+}
