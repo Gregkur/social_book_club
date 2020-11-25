@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   def create
     if current_user == @book.user
       flash[:alert] = "You cannot create a booking for your own book."
+      @review = Review.new
       render "books/show"
     else
       @start_date = Date.parse(params[:from])
@@ -25,6 +26,7 @@ class BookingsController < ApplicationController
         redirect_to page_path(current_user)
       else
         flash[:notice] = "Booking failed."
+        @review = Review.new
         render "books/show"
       end
     end
