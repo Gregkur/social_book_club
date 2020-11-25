@@ -8,10 +8,10 @@
 						<div class="card-book-index-infos">
 							<div>
 								<div class="genre">
-									<p><strong><span>GENRE</span></strong></p>
+									<p><strong><span><%= book.genre %></span></strong></p>
 								</div>
-								<h2>Book name</h2>
-								<p><strong>Author</strong></p>
+								<h2><%= book.title %></h2>
+								<p><strong><%= book.author %></strong></p>
 								<p>2020 | 250pp</p>
 								<div class="stars">
 									<% 5.times do %>
