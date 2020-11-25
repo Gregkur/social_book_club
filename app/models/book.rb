@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :user
   has_many_attached :photos, dependent: :destroy
+  has_many :bookings
 
   validates :title, presence: true, length: { minimum: 2, too_short: "minimum is %{count} characters" }
   validates :author, presence: true, length: { minimum: 2, too_short: "minimum is %{count} characters" }
