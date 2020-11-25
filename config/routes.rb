@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :books, only: [:new, :create, :index] do
   end
-
 end
