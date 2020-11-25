@@ -8,8 +8,12 @@ class BookPolicy < ApplicationPolicy
   def index?
     return true
   end
-  
+
   def create?
+    true
+  end
+
+  def show?
     true
   end
 
@@ -17,11 +21,12 @@ class BookPolicy < ApplicationPolicy
     create?
   end
 
-  def show?
-    true
-  end
-
   def update?
     record.user == user
   end
+
+  def destroy?
+    record.user == user
+  end
+
 end
