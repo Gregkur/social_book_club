@@ -7,6 +7,7 @@ class BooksController < ApplicationController
     # @booking = Booking.new
     # @booking_created = false
     # @booking_created = true if params[:booking_created]
+  end
   
   def index
     @books = policy_scope(Book).all
