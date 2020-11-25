@@ -1,6 +1,14 @@
 class BooksController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :update]
 
+  skip_before_action :authenticate_user!, only: [:index, :show, :update]
+  def show
+    @book = Book.find(params[:id])
+    authorize @book
+    # @booking = Booking.new
+    # @booking_created = false
+    # @booking_created = true if params[:booking_created]
+  end
+  
   def index
     @books = policy_scope(Book).all
   end

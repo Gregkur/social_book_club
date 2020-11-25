@@ -8,8 +8,16 @@ class BookPolicy < ApplicationPolicy
   def index?
     return true
   end
-
+  
   def create?
+    true
+  end
+
+  def new?
+    create?
+  end
+
+  def show?
     true
   end
 
