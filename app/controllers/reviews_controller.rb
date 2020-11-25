@@ -2,6 +2,8 @@ class ReviewsController < ApplicationController
   def create
     @book = Book.find(params[:book_id])
     @review = Review.new(review_params)
+    @review.user = current_user
+    authorize @review
     @review.book = @book
     if @review.save
       redirect_to book_path(@book)

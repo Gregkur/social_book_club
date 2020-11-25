@@ -1,31 +1,39 @@
 <div class="container">
   <div class="row">
 		<div class="col-12 col-lg-8">
-			<div class="card-book-index">
-				<img src="https://images.unsplash.com/photo-1545239351-cefa43af60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80" />
-				<div class="card-book-index-infos">
-					<div>
-						<div class="genre">
-							<p><strong><span>GENRE</span></strong></p>
+		  <div class="card-grid-index">
+				<% @books.each do |book| %>
+					<div class="card-book-index">
+						<img src="https://images.unsplash.com/photo-1545239351-cefa43af60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80"/>
+						<div class="card-book-index-infos">
+							<div>
+								<div class="genre">
+									<p><strong><span><%= book.genre %></span></strong></p>
+								</div>
+								<h2><%= book.title %></h2>
+								<p><strong><%= book.author %></strong></p>
+								<p>2020 | 250pp</p>
+								<div class="stars">
+									<% 5.times do %>
+										<i class="fas fa-star"></i>
+									<% end %>
+								</div>
+							</div>
+							<div class="card-book-user">
+								<img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered"/>
+								<div class="user-info">
+									<p><strong>User Name</strong></p>
+									<p>Location</p>
+								</div>
+							</div>
 						</div>
-						<h2>Book name</h2>
-						<p><strong>Author</strong></p>
-						<p>2020 | 250pp</p>
-						<div class="stars">
-							<% 5.times do %>
-								<i class="fas fa-star"></i>
-							<% end %>
-						</div>
+						<%= link_to "", book_path(book), class: "card-link" %>
 					</div>
-					<div class="card-book-user">
-						<img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered"/>
-						<div class="user-info">
-							<p><strong>User Name</strong></p>
-							<p>Location</p>
-						</div>
-					</div>
-				</div>
+				<% end %>
 			</div>
 	  </div>
+		<div class="col-12 col-lg-4">
+			<img src="https://images.unsplash.com/photo-1516546453174-5e1098a4b4af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80" id="map-index"/>
+    </div>
 	</div>
 </div>

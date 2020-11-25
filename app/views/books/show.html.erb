@@ -23,6 +23,16 @@
           <%= @book.user.nickname %>
         </div>
         <button class="btn-booking">Make a booking request</button>
+        <% if policy(@book).update? %>
+          <%= link_to edit_book_path(@book) do %>
+          <i class="fas fa-edit"></i>
+          <% end %>
+        <% end %>
+        <% if policy(@book).destroy? %>
+          <%= link_to @book, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fas fa-trash mr-2 mt-2"></i>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
