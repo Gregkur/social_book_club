@@ -16,8 +16,9 @@ class BookPolicy < ApplicationPolicy
   def new?
     create?
   end
-  
+
   def show?
     true
   end
+
 end
