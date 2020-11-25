@@ -4,7 +4,7 @@
       <div id="create-book-box m-8">
         <div class="nested-create-form m-8">
           <div id="header-create-form">
-            <h2>Add a new book to your profile</h2>
+            <h2>Update the information of your book</h2>
           </div>
           <%= simple_form_for(@book) do |f| %>
             <%= f.input :title, placeholder: 'Harry Potter' %>
@@ -14,9 +14,9 @@
             <%= f.input :year, placeholder: '1997' %>
             <%= f.input :pages, placeholder: '500' %>
             <!-- <div class="container d-flex justify-content-center"> -->
-              <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book' %>
-            <!-- </div> -->
-            <%= f.submit class: "btn btn-danger mt-3" %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book' %>
+            <!-- </div> --> -->
+            <%= f.submit class: "btn btn-create mt-3" %>
           <% end %>
         </div>
       </div>
