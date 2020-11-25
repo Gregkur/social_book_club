@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "loads books..."
+10.times do
+  Book.create(title: "Milk and Honey", author: "Rupi Kaur", pages: 225, year: 2015, genre: "Poetry", description: "Milk and Honey is a collection of poetry and prose by Rupi Kaur. The collection is about survival. It is divided into sections, with each section serving a different purpose and relevance to Kaur’s experience. The sections explore the themes of violence, abuse, love, loss, and femininity.", availability: true, user: User.first)
+end
+puts "loaded books"
 
-puts "loading users"
-  user1 = User.create!(first_name: 'Alan', last_name: 'Johnson', nickname: 'Prince Alan', email: 'alanj@gmail.com', address: 'Hamburg', password: '123456')
-puts "created users"
-
-puts "loading books"
-  Book.create!(title: 'Pippi Goes on Board', author: 'Astrid Lindgren', genre: 'Childrens Book', description: "Outrageous Pippi Longstocking has no parents around and no rules to follow, so she lives according to her own daredevilish ways. She's been treating her friends Tommy and Annika to wild adventures, too--like buying and eating seventy-two pounds of candy, or sailing off to an island in the middle of a lake to see what it's like to be shipwrecked. But then Pippi's long lost father returns, and she might have to leave Villa Villekulla!", pages: 160, year: "2020", user_id: 1)
-puts "created books"
+puts "creates user..."
+User.create(email: "marie@gmail.com", password: "123456", first_name: "Marie", last_name: "Wiedekamp", nickname: "marwie", address: "Berlin")
+puts "user created"

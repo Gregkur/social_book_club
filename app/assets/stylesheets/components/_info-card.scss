@@ -1,0 +1,44 @@
+.info-card-background{
+    width: 790px;
+    height: 420px;
+    margin-top: 170px;
+    border-radius: 4px;
+    
+    .info-card-text{
+        background-color: white;
+        border-radius: 4px;
+        position: relative;
+        bottom: 40px;
+        left: 65%;
+        width: 207px;
+        height: 240px;
+    }
+}
+.info-card-background-reversed{
+    width: 790px;
+    height: 420px;
+    margin-top: 170px;
+    border-radius: 4px;
+    
+    .info-card-text-reversed{
+        background-color: white;
+        border-radius: 4px;
+        position: relative;
+        bottom: 40px;
+        left: 9%;
+        width: 207px;
+        height: 240px;
+    }
+}
+
+.green{
+    background-color: $green
+}
+
+.pink{
+    background-color: $pink
+}
+
+.yellow{
+    background-color: $yellow
+}
