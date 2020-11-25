@@ -3,17 +3,17 @@ class BookPolicy < ApplicationPolicy
     def resolve
       scope.where(user: user)
     end
-
-    def index?
-      return true
-    end
   end
-      scope.all
-    end
+
+  def index?
+    return true
   end
 
   def create?
     true
   end
 
+  def update?
+    record.user == user
+  end
 end
