@@ -8,38 +8,42 @@
       <%= image_tag "figures/2.png", id:"figure-reading" %>
     </div>
   </div>
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+</div>
+
+<div class="container mt-5">
+  <%= simple_form_for :search, url: books_path, method: :get do |f| %>
     <div class="search-form-control form-group">
       <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-flat">
+      <button name="button" type="submit" class="btn btn-purple">
         <i class="fas fa-search"></i> Search
       </button>
     </div>
   <% end %>
 </div>
 
-<div class="container d-flex flex-column my-5" style="align-items: center">
-  <div class="info-card-background pink">
+<div class="container d-flex flex-column mb-5" style="align-items: center">
+  <div class="info-card-background pink d-flex">
+    <%= image_tag "figures/7.png", id:"figure-hurray" %>
     <div class="info-card-text">
       <p id="tagline-pink">EASY PEASY</p>
       <h3>Borrow your next read</h3>
       <p class="description">You love to read but even more so for free? Your next book is probably sitting on somebody's shelf already.</p>
-      <%# <p class="btn btn-white">EXPLORE BOOKS <i class="fas fa-caret-right"></i></p> %>
       <%= link_to "EXPLORE BOOKS", books_path, class: "btn btn-white" %>
     </div>
-    <%= image_tag "figures/7.png", id:"figure-hurray" %>
   </div>
 
-  <div class="info-card-background-reversed yellow">
+  <div class="info-card-background-reversed yellow d-flex">
     <div class="info-card-text-reversed">
       <p id="tagline-yellow">EASY PEASY</p>
       <h3>Borrow your next read</h3>
       <p class="description">You love to read but even more so for free? Your next book is probably sitting on somebody's shelf already.</p>
       <p class="btn btn-white">EXPLORE BOOKS <i class="fas fa-caret-right"></i></p>
     </div>
+    <%= image_tag "figures/3.png", id:"figure-pointing" %>
   </div>
 
-  <div class="info-card-background green mb-5">
+  <div class="info-card-background green mb-5 d-flex">
+    <%= image_tag "figures/6.png", id:"figure-love" %>
     <div class="info-card-text">
       <p id="tagline-green">EASY PEASY</p>
       <h3>Borrow your next read</h3>
@@ -52,8 +56,7 @@
 <div class="about-us">
   <div class="about-us-text">
     <h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus mauris ut diam interdum, vitae pellentesque libero venenatis. Cras dapibus metus mauris, nec pharetra arcu auctor eu. Curabitur at efficitur enim. Aenean quis ex non lacus scelerisque fermentum a in mauris. In commodo gravida nisi, ornare sodales libero tincidunt quis. Nullam mollis sapien at viverra vehicula. Suspendisse vulputate purus mauris, at tincidunt ligula vestibulum eu. Sed nec pellentesque ante, et iaculis ipsum. Integer a dapibus massa. Suspendisse potenti. Nunc nec ullamcorper purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla mi diam, aliquet sed fringilla non, gravida eu augue.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam cursus mauris ut diam interdum, vitae pellentesque libero venenatis. Cras dapibus metus mauris, nec pharetra arcu auctor eu. Curabitur at efficitur enim. Aenean quis ex non lacus scelerisque fermentum a in mauris. In commodo gravida nisi, ornare sodales libero tincidunt quis. Nullam mollis sapien at viverra vehicula. Suspendisse vulputate purus mauris, at tincidunt ligula vestibulum eu. Sed nec pellentesque ante, et iaculis ipsum. Integer a dapibus massa. Suspendisse potenti. Nunc nec ullamcorper purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla mi diam, aliquet sed fringilla non, gravida eu augue.
-        xoxo
+      Read more books ♥
     </h3>
   </div>
 </div>
