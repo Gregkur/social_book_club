@@ -94,4 +94,37 @@ Booking.create(book: book5, from: "2020-11-30", until: "2021-05-01", user: user2
 
 puts "Bookings created!"
 
-## rails db:drop db:create db:migrate db:seed
+puts "Creating Bookclubs..."
+
+# # Bookclubs
+# bookclub1 = Bookclub.create!(name: "Startups Berlin", description: "This bookclub is about the startups of Berlin.", user: user3)
+# bookclub2 = Bookclub.create!(name: "Harry Potter Stories", description: "This bookclub is made of big Harry Potter fans.", user: user4)
+# bookclub3 = Bookclub.create!(name: "Web Development and Ruby on Rails", description: "This bookclub summarizes all available documentations useful for Ruby on Rails based applications.", user: user5)
+
+# puts "Bookclubs created!"
+
+# puts "Creating Bookclub with different members..."
+
+# # Bookclub 1 with different members
+# # BookclubUser.create!(bookclub: bookclub1, user: user2)
+# # BookclubUser.create!(bookclub: bookclub1, user: user4)
+# # BookclubUser.create!(bookclub: bookclub1, user: user5)
+# # BookclubUser.create!(bookclub: bookclub1, user: user1)
+
+# # # Bookclub 2 with different members
+# # BookclubUser.create!(bookclub: bookclub2, user: user1)
+# # BookclubUser.create!(bookclub: bookclub2, user: user2)
+# # BookclubUser.create!(bookclub: bookclub2, user: user3)
+# # BookclubUser.create!(bookclub: bookclub2, user: user5)
+
+# # # Bookclub 3 with different members
+# # BookclubUser.create!(bookclub: bookclub3, user: user1)
+# # BookclubUser.create!(bookclub: bookclub3, user: user2)
+# # BookclubUser.create!(bookclub: bookclub3, user: user3)
+# # BookclubUser.create!(bookclub: bookclub3, user: user4)
+
+# # puts "Created Bookclubs with different members!"
+
+
+
+# ## rails db:drop db:create db:migrate db:seed
