@@ -1,0 +1,10 @@
+<div class="container">
+
+  <h2>Update your review</h2>
+  <%= simple_form_for [@review], url: book_review_path(@review) do |f| %>
+    <%= f.input :book_rating %>
+    <%= f.input :book_comment %>
+    <%= f.submit class: "btn btn-create mt-3" %>
+  <% end %>
+
+</div>
