@@ -112,7 +112,7 @@ puts "Bookings created!"
 
 puts "Creating Bookclubs..."
 
-# Bookclubs
+# B ookclubs
 bookclub1 = Bookclub.create!(name: "Startups Berlin", description: "This bookclub is about the startups of Berlin.", user: user3)
 bookclub2 = Bookclub.create!(name: "Harry Potter Stories", description: "This bookclub is made of big Harry Potter fans.", user: user4)
 bookclub3 = Bookclub.create!(name: "Web Development and Ruby on Rails", description: "This bookclub summarizes all available documentations useful for Ruby on Rails based applications.", user: user5)
@@ -144,3 +144,4 @@ puts "Created Bookclubs with different members!"
 
 
 ## rails db:drop db:create db:migrate db:seed
+## bundle && yarn install && rails db:drop db:create db:schema:dump db:migrate db:seed
