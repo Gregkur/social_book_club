@@ -46,16 +46,20 @@
       </div>
 
       <div class="books-wrapper">
-        <% @user.books.each do |book| %>
+        <% @user.books.take(3).each do |book| %>
           <%= link_to book_path(book) do %>
             <% book.photos.each do |photo| %>
               <%= image_tag photo %>
             <% end %>
           <% end %>
         <% end %>
-        
-        <% if @user.books.length < 3 %>
-          <p>time to add some books, <%= @user.first_name%>!</p>
+
+        <% if @user.books.length == 3 %>
+          <p>no more books</p>
+        <% elsif @user.books.length == 4 %>
+          <p>one more book</p>
+        <% elsif @user.books.length < 3 %>
+          <p>time to add some books, <%= @user.first_name if @user.first_name.present?%>!</p>
         <% else %>
           <p>+<%=@user.books.length - 3%> more books</p>
         <% end %>
