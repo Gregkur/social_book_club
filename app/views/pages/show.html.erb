@@ -2,8 +2,10 @@
 
   <div class="profile-wrapper pink">
 
+    <%= cl_image_tag @user.photo.key, crop: :limit, class:"user-img" %>
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <p><%= @user.address %></p>
+
 
     <% @user.books.each do |book| %>
         <ul>
