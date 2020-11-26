@@ -3,7 +3,7 @@
   <div class="profile-wrapper purple">
 
     <% if @bookclub.photos.attached? %>
-      <%= cl_image_tag @bookclub.photos[0], crop: :limit, class:"user-img" %>
+        <%= image_tag @bookclub.photos[0], crop: :limit, class:"user-img"%>
     <% end %>
 
     <div class="profile-user-info">
