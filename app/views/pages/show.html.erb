@@ -11,29 +11,39 @@
     
     <div class="profile-user-info">
     
-    <% if @user.first_name.present? %>
-      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-      <p><i class="fas fa-map-pin"></i><%= @user.address %></p>
-    <% else %>
-      <h1>Hello Stranger!</h1>
-      <p><i class="fas fa-map-pin"></i>???</p>
-    <% end %>
-
-    <div class="profile-about-me">
-      <% if @user.about.present? %>
-        <p><%= @user.about %></p>
+      <% if @user.first_name.present? %>
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <p><i class="fas fa-map-pin"></i><%= @user.address %></p>
       <% else %>
-        <p>Tell us about yourself, beautiful stranger!<p>
+        <h1>Hello Stranger!</h1>
+        <p><i class="fas fa-map-pin"></i>???</p>
       <% end %>
-    </div>
+
+      <div class="profile-about-me">
+        <% if @user.about.present? %>
+          <p><%= @user.about %></p>
+        <% else %>
+          <p>Tell us about yourself, beautiful stranger!<p>
+        <% end %>
+      </div>
     
     </div>
 
-    <% @user.books.each do |book| %>
-        <ul>
-          <li><%= link_to book.title, book_path(book) %></li>
-        </ul>
-    <% end %>
+    <div class="bookclubs-books-wrapper">
+
+      <div class="bookclubs-wrapper">
+      </div>
+
+      <div class="books-wrapper">
+        <% @user.books.each do |book| %>
+            <ul>
+              <li><%= link_to book.title, book_path(book) %></li>
+            </ul>
+        <% end %>
+      </div>
+
+    </div>
+
   </div>
 
   <div class="booking-wrapper yellow my-5">

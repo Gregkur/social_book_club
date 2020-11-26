@@ -8,6 +8,26 @@
         color: $dark-purple;
     }
 }
+
+.bookclubs-books-wrapper{
+    margin-left: 50px;
+    position: relative;
+    top: 10%;
+    .bookclubs-wrapper{
+        background-color: white;
+        width: 667px;
+        height: 137px;
+        border-radius: 20px;
+        margin-bottom: 25px;
+    }
+    .books-wrapper{
+        background-color: white;
+        width: 667px;
+        height: 150px;
+        border-radius: 20px;
+    }
+}
+
 .booking-wrapper{
     width: 70%;
     padding: 35px;
@@ -18,6 +38,7 @@
         color: $dark-purple;
     }
 }
+
 .profile-user-info{
     display: flex;
     padding: 50px;
@@ -33,6 +54,7 @@
         }
     }
 }
+
 .profile-about-me{
     position: absolute;
     top: 20%;
