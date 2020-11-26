@@ -2,16 +2,55 @@
 
   <div class="profile-wrapper pink">
 
-    <%= cl_image_tag @user.photo.key, crop: :limit, class:"user-img" %>
-    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-    <p><%= @user.address %></p>
-
-
-    <% @user.books.each do |book| %>
-        <ul>
-          <li><%= link_to book.title, book_path(book) %></li>
-        </ul>
+    
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, crop: :limit, class:"user-img" %>      
+    <% else %>
+      <img href="https://images.unsplash.com/photo-1576078044571-8ea98b0b0963?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
     <% end %>
+    
+    <div class="profile-user-info">
+    
+      <% if @user.first_name.present? %>
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <p><i class="fas fa-map-pin"></i><%= @user.address %></p>
+      <% else %>
+        <h1>Hello Stranger!</h1>
+        <p><i class="fas fa-map-pin"></i>???</p>
+      <% end %>
+
+      <div class="profile-about-me">
+        <% if @user.about.present? %>
+          <p><%= @user.about %></p>
+        <% else %>
+          <p>Tell us about yourself, beautiful stranger!<p>
+        <% end %>
+      </div>
+    
+    </div>
+
+    <div class="bookclubs-books-wrapper">
+
+      <div class="bookclubs-wrapper">
+        <%#= TODO: ADD BOOKCLUBS  %>
+        <%= image_tag "prince.jpg" %>
+        <%= image_tag "harry.jpg" %>
+        <%= image_tag "testaments.jpg" %>
+        <p>+2 more bookclubs</p>
+      </div>
+
+      <div class="books-wrapper">
+        <%#=TODO add links and math  %>
+        <% @user.books.each do |book| %>
+          <% book.photos.each do |photo| %>
+            <%= image_tag photo %>
+            <% end %>
+        <% end %>
+        <p>+<%#=@user.books.length - 3%>5 more books</p>
+      </div>
+
+    </div>
+
   </div>
 
   <div class="booking-wrapper yellow my-5">

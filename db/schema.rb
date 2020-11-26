@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_11_26_122001) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -113,6 +114,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_122001) do
     t.string "nickname"
     t.string "address"
     t.boolean "admin"
+    t.text "about"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
