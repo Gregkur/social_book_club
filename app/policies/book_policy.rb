@@ -1,7 +1,7 @@
 class BookPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.a ll
+      scope.all
     end
   end
 
