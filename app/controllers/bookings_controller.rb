@@ -12,11 +12,11 @@ class BookingsController < ApplicationController
       @review = Review.new
       render "books/show"
     else
-      @start_date = Date.parse(params[:from])
-      @end_date = Date.parse(params[:until])
+      @start_date = Date.parse(params[:booking][:from])
+      @end_date = Date.parse(params[:booking][:until])
       # @start_date = Date.new(params['booking']['from(1i)'].to_i, params['booking']['from(2i)'].to_i, params['booking']['from(3i)'].to_i)
       # @end_date = Date.new(params['booking']['until(1i)'].to_i, params['booking']['until(2i)'].to_i, params['booking']['until(3i)'].to_i)
-      @days = (end_date - start_date).to_i + 1
+      # @days = (end_date - start_date).to_i + 1
       @booking = Booking.new(booking_params)
       @booking.book = @book
       # @booking.total = @days
