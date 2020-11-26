@@ -1,4 +1,5 @@
 .profile-wrapper{
+    position: relative;
     width: 70%;
     height: 606px;
     margin-top: 170px;
@@ -15,5 +16,20 @@
     h1{
         font-weight: 600;
         color: $dark-purple;
+    }
+}
+.profile-user-info{
+    display: flex;
+    padding: 50px;
+    align-items: flex-end;
+    h1{
+        font-size: 44px;
+        font-weight: bold;
+        margin-right: 26px;
+    }
+    p{
+        i{
+            margin-right: 6px;
+        }
     }
 }
