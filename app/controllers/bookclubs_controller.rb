@@ -8,12 +8,14 @@ class BookclubsController < ApplicationController
   end
 
   def create
-    @bookclub = Bookclub.new
+    @bookclub = Bookclub.new(bookclub_params)
     authorize @bookclub
-    current_user = @bookclub.user
+    @bookclub.user = current_user
     if @bookclub.save
+      flash[:notice] = "Created successfully!"
       redirect_to page_path(current_user)
     else
+      flash[:notice] = "Creating book club failed"
       render :new
     end
   end

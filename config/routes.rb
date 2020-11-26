@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
   resources :pages, only: [:show]
   resources :bookings, only: [:show, :update, :destroy]
-  resources :bookclubs, only: [:new, :create]
+  resources :bookclubs, only: [:new, :create, :show]
 end
