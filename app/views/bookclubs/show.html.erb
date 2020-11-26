@@ -9,14 +9,13 @@
     <div class="profile-user-info">
 
       <% if @bookclub.name.present? %>
-        <h1><%= @bookclub.name %></h1>
-        <p><i class="fas fa-map-pin"></i><%= @bookclub.user.address %></p>
+        <h1 style="width: 520px"><%= @bookclub.name %></h1>
       <% else %>
         <h1>Hello Stranger!</h1>
         <p><i class="fas fa-map-pin"></i>???</p>
       <% end %>
 
-      <div class="profile-about-me">
+      <div class="profile-description">
         <% if @bookclub.description.present? %>
           <p><%= @bookclub.description %></p>
         <% else %>
@@ -56,7 +55,7 @@
   <div class="container text-center my-5">
     <div class="mb-5">
       <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile"  %>
-      <%= link_to "Create a new bookclub", new_bookclub_path, :method => :get, class:"button-red-profile"  %>
+      <%= link_to "Go back to your profile", page_path(current_user), :method => :get, class:"button-red-profile"  %>
     </div>
   </div>
 
