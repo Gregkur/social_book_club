@@ -4,6 +4,15 @@ class BookclubsController < ApplicationController
 
   def show
     @bookclub = Bookclub.find(params[:id])
+    ## Limiting the amount of shown users
+    @bookclub_users = @bookclub.bookclub_users
+    ## Math to calculate the amount of books
+    @bookclub_books = []
+    @bookclub_users.each do |user|
+      user.user.books.each do |book|
+        @bookclub_books << book
+      end
+    end
     authorize @bookclub
   end
   

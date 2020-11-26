@@ -29,19 +29,24 @@
     <div class="bookclubs-books-wrapper">
 
       <div class="bookclubs-wrapper">
-        
-        <% @bookclub.bookclub_users.each do |user| %>
+        <% @bookclub_users.take(3).each do |user|%>
           <%= image_tag user.user.photo %>
-            
         <% end %>
         
-        <%= image_tag "harry.jpg" %>
-        <%= image_tag "testaments.jpg" %>
-        <p>+2 more users</p>
+        <% if @bookclub_users.length == 3 %>
+        <% else %>
+            <p>+<%= @bookclub_users.length - 3 %> more users</p>   
+        <% end %>
+        
       </div>
 
       <div class="books-wrapper">
-       
+        <% @bookclub_users.each do |user| %>
+          <% user.user.books.take(1).each do |book| %>
+                <%= image_tag book.photos[0] %>
+          <% end %>
+        <% end %>
+            <p>+<%= @bookclub_books.length - 3 %> more books</p>
       </div>
 
     </div>
