@@ -18,22 +18,27 @@
 
     <div class="container">
       <div class="row">
-      
-      <% @user.bookings.each do |booking| %>
-        <div class="col-md-5 booking-card">
-          <img src="https://images.unsplash.com/photo-1545239351-cefa43af60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80"/>
-            <div class="booking-card-info">
-              <h2><%= booking.book.title %></h2>
-              <div class="booking-card-dates"> 
-                <h3>Location: <%= booking.user.address %></h3>
-                <h3>Booking dates:</h3>
-                <p>from <%= booking.from %> until <%= booking.until %></p>
+		    <div class="col-6 col-6">
+          <div class="bookings-grid">
+            <% @user.bookings.each do |booking| %>
+              <div class=" booking-card">
+                <img src="https://images.unsplash.com/photo-1587425988139-ea99195d095e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
+                  <div class="booking-card-info">
+                    <h2><%= booking.book.title %></h2>
+                    <div class="booking-card-dates"> 
+                      <h3>Location: <%= booking.user.address %></h3>
+                      <h3>Booking dates:</h3>
+                      <p>from <%= booking.from %> until <%= booking.until %></p>
+                    </div>
+                  </div>
               </div>
-            </div>
+            <% end %>
+          </div>
         </div>
-      <% end %>
-     </div>
+      </div>
     </div>
+
+
   </div>
 
   <div class="container text-center my-5">
