@@ -5,7 +5,7 @@
         <h1>Sharing is caring</h1>
         <p>let's do it with <strong>books!</strong></p>
       </div>
-      <img src="app/assets/images/Figures/2.png" alt="figure">
+      <%= image_tag "figures/2.png", id:"figure-reading" %>
     </div>
   </div>
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
@@ -24,7 +24,8 @@
       <p id="tagline-pink">EASY PEASY</p>
       <h3>Borrow your next read</h3>
       <p class="description">You love to read but even more so for free? Your next book is probably sitting on somebody's shelf already.</p>
-      <p class="btn btn-white">EXPLORE BOOKS <i class="fas fa-caret-right"></i></p>
+      <%# <p class="btn btn-white">EXPLORE BOOKS <i class="fas fa-caret-right"></i></p> %>
+      <%= link_to "EXPLORE BOOKS", books_path, class: "btn btn-white" %>
     </div>
     <%= image_tag "figures/7.png", id:"figure-hurray" %>
   </div>

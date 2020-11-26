@@ -48,25 +48,42 @@
   <div class="book-reviews">
     <h3>Reviews</h3>
     <% if @book.reviews.empty? %>
-      <p>be the first to leave a review</p>
-      <%= render "reviews/new", book: @book, review: @review %>
+      <p>Be the first to leave a review</p>
     <% else %>
       <ul class="list-group">
         <% @book.reviews.each do |review| %>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <span class="badge badge-primary badge-pill">
-              <% counter = 0 %>
-              <% 5.times do %>
-                <i class="fa <%= review.book_rating = counter ? 'fa-star' : 'fa-star-o' %>"></i>
-                <% counter += 1 %>
+          <% if review.book_rating %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="badge badge-primary badge-pill">
+
+                  <% counter = 0 %>
+                  <% 5.times do %>
+                    <i class="fa <%= review.book_rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                    <% counter += 1 %>
+                  <% end %>
+
+              </span>
+              <%= review.book_comment %>
               <% end %>
-            </span>
-            <%= review.book_comment %>
-          </li>
+
+                <%= link_to edit_book_review_path(@book, review) do %>
+
+                  <i class="fas fa-edit"></i>
+                <% end %>
+
+
+
+                <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fas fa-trash mr-2 mt-2"></i>
+                <% end %>
+              <%# end %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
       <br>
       <%= render "reviews/new", book: @book, review: @review %>
-    <% end %>
   </div>
+  <%= link_to "Back to all books", books_path, method: :get, id: "books-link", class: "hidden" %>
+
 </div>
