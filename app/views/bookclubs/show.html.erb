@@ -1,0 +1,58 @@
+<div class="d-flex flex-column" style="align-items: center">
+
+  <div class="profile-wrapper purple">
+
+    <% if @bookclub.photos.attached? %>
+      <%= cl_image_tag @bookclub.photos[0], crop: :limit, class:"user-img" %>
+    <% end %>
+
+    <div class="profile-user-info">
+
+      <% if @bookclub.name.present? %>
+        <h1><%= @bookclub.name %></h1>
+        <p><i class="fas fa-map-pin"></i><%= @bookclub.user.address %></p>
+      <% else %>
+        <h1>Hello Stranger!</h1>
+        <p><i class="fas fa-map-pin"></i>???</p>
+      <% end %>
+
+      <div class="profile-about-me">
+        <% if @bookclub.description.present? %>
+          <p><%= @bookclub.description %></p>
+        <% else %>
+          <p>Tell us about yourself, beautiful stranger!<p>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="bookclubs-books-wrapper">
+
+      <div class="bookclubs-wrapper">
+        
+        <% @bookclub.bookclub_users.each do |user| %>
+          <%= image_tag user.user.photo %>
+            
+        <% end %>
+        
+        <%= image_tag "harry.jpg" %>
+        <%= image_tag "testaments.jpg" %>
+        <p>+2 more users</p>
+      </div>
+
+      <div class="books-wrapper">
+       
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container text-center my-5">
+    <div class="mb-5">
+      <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile"  %>
+      <%= link_to "Create a new bookclub", new_bookclub_path, :method => :get, class:"button-red-profile"  %>
+    </div>
+  </div>
+
+</div>
