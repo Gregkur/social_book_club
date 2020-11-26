@@ -32,14 +32,21 @@
     <div class="bookclubs-books-wrapper">
 
       <div class="bookclubs-wrapper">
+        <%#= TODO: ADD BOOKCLUBS  %>
+        <%= image_tag "prince.jpg" %>
+        <%= image_tag "harry.jpg" %>
+        <%= image_tag "testaments.jpg" %>
+        <p>+2 more bookclubs</p>
       </div>
 
       <div class="books-wrapper">
+        <%#=TODO add links and math  %>
         <% @user.books.each do |book| %>
-            <ul>
-              <li><%= link_to book.title, book_path(book) %></li>
-            </ul>
+          <% book.photos.each do |photo| %>
+            <%= image_tag photo %>
+            <% end %>
         <% end %>
+        <p>+<%#=@user.books.length - 3%>5 more books</p>
       </div>
 
     </div>
