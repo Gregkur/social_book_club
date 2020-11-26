@@ -66,7 +66,7 @@
                 <img src="https://images.unsplash.com/photo-1587425988139-ea99195d095e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
                   <div class="booking-card-info">
                     <h2><%= booking.book.title %></h2>
-                    <div class="booking-card-dates"> 
+                    <div class="booking-card-dates">
                       <h3>Location: <%= booking.user.address %></h3>
                       <h3>Booking dates:</h3>
                       <p>from <%= booking.from %> until <%= booking.until %></p>
@@ -85,7 +85,7 @@
   <div class="container text-center my-5">
     <div class="mb-5">
       <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile"  %>
-      <%= link_to "Create a new bookclub", new_book_path, :method => :get, class:"button-red-profile"  %>
+      <%= link_to "Create a new bookclub", new_bookclub_path, :method => :get, class:"button-red-profile"  %>
     </div>
   </div>
 

@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_143002) do
+ActiveRecord::Schema.define(version: 2020_11_26_122001) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,8 +45,10 @@ ActiveRecord::Schema.define(version: 2020_11_26_143002) do
   end
 
   create_table "bookclub_users", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "bookclub_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["bookclub_id"], name: "index_bookclub_users_on_bookclub_id"
     t.index ["user_id"], name: "index_bookclub_users_on_user_id"
   end
@@ -55,10 +58,8 @@ ActiveRecord::Schema.define(version: 2020_11_26_143002) do
     t.text "description"
     t.boolean "visibility", default: true
     t.bigint "user_id", null: false
-    t.bigint "thread_bookclub_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["thread_bookclub_id"], name: "index_bookclubs_on_thread_bookclub_id"
     t.index ["user_id"], name: "index_bookclubs_on_user_id"
   end
 
@@ -87,14 +88,6 @@ ActiveRecord::Schema.define(version: 2020_11_26_143002) do
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.float "book_rating"
     t.text "book_comment"
@@ -106,16 +99,6 @@ ActiveRecord::Schema.define(version: 2020_11_26_143002) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
-  end
-
-  create_table "thread_bookclubs", force: :cascade do |t|
-    t.string "title"
-    t.bigint "user_id", null: false
-    t.bigint "comment_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["comment_id"], name: "index_thread_bookclubs_on_comment_id"
-    t.index ["user_id"], name: "index_thread_bookclubs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -141,14 +124,10 @@ ActiveRecord::Schema.define(version: 2020_11_26_143002) do
   add_foreign_key "bookclub_books", "books"
   add_foreign_key "bookclub_users", "bookclubs"
   add_foreign_key "bookclub_users", "users"
-  add_foreign_key "bookclubs", "thread_bookclubs"
   add_foreign_key "bookclubs", "users"
   add_foreign_key "bookings", "books"
   add_foreign_key "bookings", "users"
   add_foreign_key "books", "users"
-  add_foreign_key "comments", "users"
   add_foreign_key "reviews", "books"
   add_foreign_key "reviews", "users"
-  add_foreign_key "thread_bookclubs", "comments"
-  add_foreign_key "thread_bookclubs", "users"
 end
