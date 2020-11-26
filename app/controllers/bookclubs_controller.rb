@@ -10,8 +10,9 @@ class BookclubsController < ApplicationController
   def create
     @bookclub = Bookclub.new
     authorize @bookclub
+    current_user = @bookclub.user
     if @bookclub.save
-      redirect_to bookclub_path(@bookclub)
+      redirect_to page_path(current_user)
     else
       render :new
     end
