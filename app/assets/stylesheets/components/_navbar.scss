@@ -1,6 +1,20 @@
 .navbar {
   background-color: $dark-purple;
 
+  button{
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    transition: 0.3s;
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      text-shadow: 0 0 3px #ffffff4b, 0 0 5px #ffffff4b;
+    }
+
+  }
   a {
     font-weight: 300;
     text-decoration: none;
