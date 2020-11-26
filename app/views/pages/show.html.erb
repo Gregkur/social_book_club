@@ -63,7 +63,7 @@
           <div class="bookings-grid">
             <% @user.bookings.each do |booking| %>
               <%= link_to book_path(booking.book) do %>
-                <div class=" booking-card">
+                <div class="booking-card">
                   <%= cl_image_tag booking.book.photos[0].key, crop: :fill%>
                     <div class="booking-card-info">
                       <h2><%= booking.book.title %></h2>

@@ -6,6 +6,11 @@
     width: 406px;
     display: flex;
     align-items: center;
+    &:hover {
+        background-color: white;
+        opacity: 0.8;
+        transition: ease-in 0.2s;
+      }
 }
 .booking-card > img {
     border-top-left-radius: 20px ;
