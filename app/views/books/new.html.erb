@@ -10,7 +10,7 @@
             <%= f.input :title, placeholder: 'Harry Potter' %>
             <%= f.input :author, placeholder: 'J. K. Rowling' %>
             <%= f.input :description, placeholder: 'please take a moment to describe your book in a few sentences' %>
-            <%= f.input :genre, placeholder: 'Fantasy' %>
+            <%= f.input :genre, collection: ['Action and Adventures', 'Classics', 'Comic Book/ Graphic Novel', 'Detective/ Mystery', 'Fantasy', 'Historical Fiction', 'Horror', 'Literary Fiction', 'Romance', 'Science-Fiction', 'Short Stories', 'Thrillers', 'Womens Fiction', 'Biographies/ Autographies', 'Cookbooks', 'Essays', 'History', 'Poetry', 'True Crime'], prompt: "Select the genre that fits best" %>
             <%= f.input :year, placeholder: '1997' %>
             <%= f.input :pages, placeholder: '500' %>
             <!-- <div class="container d-flex justify-content-center"> -->
