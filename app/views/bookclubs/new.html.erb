@@ -13,10 +13,9 @@
             <!-- <div class="container d-flex justify-content-center"> -->
             <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
             <!-- </div> -->
-            <%= f.submit class: "btn-create mt-3" %>
             <div class="form-link-buttons">
-              <%= f.submit class: "btn btn-danger mt-3" %>
-              <%= link_to "Back", page_path(current_user), method: :get,  class: "btn btn-danger mt-3" %>
+              <%= f.submit class: "btn-create mt-3" %>
+              <%= link_to "Back", page_path(current_user), method: :get,  class: "btn-create mt-3" %>
             </div>
           <% end %>
         </div>
