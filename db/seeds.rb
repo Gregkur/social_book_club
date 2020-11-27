@@ -16,28 +16,36 @@ lord = URI.open("https://images-na.ssl-images-amazon.com/images/I/51EstVXM1UL._S
 bird = URI.open("https://upload.wikimedia.org/wikipedia/commons/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg")
 patti = URI.open("https://images-na.ssl-images-amazon.com/images/I/51OQ3fuFNcL.jpg")
 harry = URI.open("https://images-na.ssl-images-amazon.com/images/I/81YOuOGFCJL.jpg")
+leaves = URI.open("https://images-na.ssl-images-amazon.com/images/I/71ZUAQQ-9IL.jpg")
+start = URI.open("https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg")
+girl = URI.open("https://images-na.ssl-images-amazon.com/images/I/8183Y1myPvL.jpg")
 
+about = "Book lover, art collector, a friend of Britney Spears."
 puts "Creating users..."
 
-user1 = User.create(email: "marie@gmail.com", password: "123456", first_name: "Marie", last_name: "Wiedekamp", nickname: "marwie", address: "Berlin")
+user1 = User.create(email: "marie@gmail.com", password: "123456", first_name: "Marie", last_name: "Wiedekamp", nickname: "marwie", address: "Berlin", about: about)
 
 user1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "marie.jpg", content_type:"image/png" )
 
-user2 = User.create(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "annnie2", address: "Los Angeles")
+user2 = User.create(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "annnie2", address: "Los Angeles", about: about)
 
 user2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1542596594-b47fea509622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "anna.jpg", content_type:"image/png" )
 
-user3 = User.create(email: "george@gmail.com", password: "123456", first_name: "George", last_name: "Lukas", nickname: "lukkie55", address: "Tokyo")
+user3 = User.create(email: "george@gmail.com", password: "123456", first_name: "George", last_name: "Lukas", nickname: "lukkie55", address: "Tokyo", about: about)
 
 user3.photo.attach(io: URI.open("https://images.unsplash.com/photo-1562124638-724e13052daf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"), filename: "george.jpg", content_type:"image/png" )
 
-user4 = User.create(email: "cory@gmail.com", password: "123456", first_name: "Cory", last_name: "Thomson", nickname: "coryS", address: "Melbourne")
+user4 = User.create(email: "cory@gmail.com", password: "123456", first_name: "Cory", last_name: "Thomson", nickname: "coryS", address: "Melbourne", about: about)
 
 user4.photo.attach(io: URI.open("https://images.unsplash.com/flagged/photo-1597694042000-f0150210da38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"), filename: "cory.jpg", content_type:"image/png" )
 
-user5 = User.create(email: "thomas@gmail.com", password: "123456", first_name: "Thomas", last_name: "Maddock", nickname: "Tommyboi", address: "Bogota")
+user5 = User.create(email: "thomas@gmail.com", password: "123456", first_name: "Thomas", last_name: "Maddock", nickname: "Tommyboi", address: "Bogota", about: about)
 
 user5.photo.attach(io: URI.open("https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "thomas.jpg", content_type:"image/png" )
+
+user6 = User.create(email: "claudia@gmail.com", password: "123456", first_name: "Claudia", last_name: "Hoffmann", nickname: "ClaUdii", address: "Perth, Australia")
+
+user6.photo.attach(io: URI.open("https://images.unsplash.com/photo-1477420226391-9ff4fb9085fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "claudia.jpg", content_type:"image/png" )
 
 users = [user1,user2,user3,user4,user5]
 
@@ -69,6 +77,15 @@ book7.photos.attach(io: patti, filename: 'kids.jpg', content_type: 'image/jpg')
 book8 = Book.create(title: "Harry Potter and the Sorcerer's Stone", author:"J.K. Rowling", pages: 309, year: 2003, genre: "Fiction", description:"Harry Potter's life is miserable. His parents are dead and he's stuck with his heartless relatives, who force him to live in a tiny closet under the stairs. But his fortune changes when he receives a letter that tells him the truth about himself: he's a wizard.", availability: true, user: user2)
 book8.photos.attach(io: harry, filename: 'harry.jpg', content_type: 'image/jpg')
 
+book9 = Book.create(title: "Leaves of Grass", author:"Walt Whitman", pages: 230, year: 1855, genre: "Poetry", description:"Leaves of Grass (1855) is a poetry collection by the American poet Walt Whitman. Among the poems in the collection are 'Song of Myself', 'I Sing the Body Electric'.", availability: true, user: user6)
+book8.photos.attach(io: leaves, filename: 'leaves.jpg', content_type: 'image/jpg')
+
+book10 = Book.create(title: "The Lean Startup", author:"Eric Ries", pages: 309, year: 2011, genre: "Guide", description:"Most startups fail. But many of those failures are preventable. The Lean Startup is a new approach being adopted across the globe, changing the way companies are built and new products are launched.", availability: true, user: user6)
+book10.photos.attach(io: start, filename: 'start.jpg', content_type: 'image/jpg')
+
+book11 = Book.create(title: "The Girl on the Train", author:"Paula Hawkins", pages: 222, year: 2015, genre: "Thriller", description:"YOU DON'T KNOW HER. BUT SHE KNOWS YOU. Rear Window meets Gone Girl, in this exceptional and startling psychological thriller", availability: true, user: user6)
+book11.photos.attach(io: girl, filename: 'girl.jpg', content_type: 'image/jpg')
+
 puts "Loaded books!"
 
 books = []
@@ -93,4 +110,45 @@ Booking.create(book: book5, from: "2020-11-30", until: "2021-05-01", user: user2
 
 puts "Bookings created!"
 
+puts "Creating Bookclubs..."
+
+# B ookclubs
+bookclub1 = Bookclub.create!(name: "Startups Berlin", description: "This bookclub is about the startups of Berlin.", user: user3)
+bookclub2 = Bookclub.create!(name: "Harry Potter Stories", description: "This bookclub is made of big Harry Potter fans.", user: user4)
+bookclub3 = Bookclub.create!(name: "Web Development and Ruby on Rails", description: "This bookclub summarizes all available documentations useful for Ruby on Rails based applications.", user: user5)
+
+puts "Bookclubs created!"
+
+puts "Attaching photos..."
+bookclub1.photos.attach(io: URI.open("https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), filename: 'startup.jpg', content_type: 'image/jpg')
+bookclub2.photos.attach(io: URI.open("https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), filename: 'potter.jpg', content_type: 'image/jpg')
+bookclub3.photos.attach(io: URI.open("https://images.unsplash.com/photo-1601229749354-b817e9929e65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), filename: 'ruby.jpg', content_type: 'image/jpg')
+
+puts "Attached!"
+
+puts "Creating Bookclub with different members..."
+
+# Bookclub 1 with different members
+BookclubUser.create!(bookclub: bookclub1, user: user2)
+BookclubUser.create!(bookclub: bookclub1, user: user4)
+BookclubUser.create!(bookclub: bookclub1, user: user5)
+# BookclubUser.create!(bookclub: bookclub1, user: user1)
+
+# Bookclub 2 with different members
+# BookclubUser.create!(bookclub: bookclub2, user: user1)
+BookclubUser.create!(bookclub: bookclub2, user: user2)
+BookclubUser.create!(bookclub: bookclub2, user: user3)
+BookclubUser.create!(bookclub: bookclub2, user: user5)
+
+# Bookclub 3 with different members
+# BookclubUser.create!(bookclub: bookclub3, user: user1)
+BookclubUser.create!(bookclub: bookclub3, user: user2)
+BookclubUser.create!(bookclub: bookclub3, user: user3)
+BookclubUser.create!(bookclub: bookclub3, user: user4)
+
+puts "Created Bookclubs with different members!"
+
+
+
 ## rails db:drop db:create db:migrate db:seed
+## bundle && yarn install && rails db:drop db:create db:schema:dump db:migrate db:seed

@@ -1,5 +1,6 @@
 .profile-wrapper{
-    width: 70%;
+    position: relative;
+    width: 50%;
     height: 606px;
     margin-top: 170px;
     border-radius: 4px;
@@ -7,8 +8,50 @@
         color: $dark-purple;
     }
 }
+
+.bookclubs-books-wrapper{
+    margin-left: 50px;
+    position: relative;
+    top: 10%;
+
+    .bookclubs-wrapper{
+        background-color: white;
+        width: 500px;
+        height: 127px;
+        border-radius: 20px;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        img{
+            background: 50% 50% no-repeat;
+            width: 83px;
+            height: 83px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    .books-wrapper{
+        background-color: white;
+        width: 500px;
+        height: 130px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        img{
+            background: 50% 50% no-repeat;
+            width: 93px;
+            height: 93px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+    }
+}
+
 .booking-wrapper{
-    width: 70%;
+    width: 50%;
     padding: 35px;
     border-radius: 4px;
 
@@ -16,4 +59,34 @@
         font-weight: 600;
         color: $dark-purple;
     }
+}
+
+.profile-user-info{
+    display: flex;
+    padding: 50px;
+    align-items: flex-end;
+    float: left;
+    overflow-wrap: break-word;
+    h1{
+        font-size: 44px;
+        font-weight: bold;
+        margin-right: 26px;
+    }
+    p{
+        i{
+            margin-right: 6px;
+        }
+    }
+}
+
+.profile-about-me{
+    position: absolute;
+    top: 20%;
+}
+
+.profile-description{
+    position: absolute;
+    top: 27%;
+    width: 457px;
+
 }

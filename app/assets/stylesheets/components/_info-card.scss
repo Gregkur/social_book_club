@@ -10,9 +10,8 @@
     border-radius: 4px;
     position: relative;
     bottom: 60px;
-    left: 55%;
+    left: 10%;
     width: 300px;
-    height: 350px;
     padding: 30px;
     h3 {
         font-size: 18px;
@@ -62,9 +61,8 @@
     border-radius: 4px;
     position: relative;
     bottom: 60px;
-    left: 9%;
+    left: 10%;
     width: 300px;
-    height: 350px;
     padding: 30px;
     h3 {
         font-size: 18px;
@@ -83,4 +81,7 @@
 
 .yellow{
     background-color: $yellow
+}
+.purple{
+    background-color: $purple;
 }

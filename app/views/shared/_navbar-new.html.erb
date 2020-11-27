@@ -1,0 +1,39 @@
+<nav class="navbar">
+   
+    <nav class="header__nav overflow" aria-label="Mail navigation">
+        <a href="/" class="header__logo" aria-label="HEY homepage">
+        <%= image_tag "https://i.ibb.co/4jKbGGs/logo.png", width:"130", height:"39" %>
+        </a>
+        <input
+        type="checkbox"
+        role="button"
+        id="hamburger2"
+        class="header__checkbox hide-screens"
+        >
+        <label class="header__toggle " for="hamburger">
+            <span class="header__toggle-icon" aria-hidden="true"></span>
+            <button class="hamburger hamburger--spin " type="button">
+                <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </label>
+
+        <div class="header__links" role="menu">
+            <% if current_user.present? %>
+                <%= link_to "Profile page", page_path(current_user), :method => :get, class:"dropdown-item header__link", role:"menuitem" %>
+            <% else %>
+                <%= link_to "Create account", new_user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
+            <% end %>
+            <%= link_to "See all books", books_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
+            <%= link_to "Add a book", new_book_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
+            <%= link_to "Log In", user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"dropdown-item header__link", role:"menuitem"  %>
+        </div>
+    </nav>
+    </header>
+
+</div>
+
+</nav>
+

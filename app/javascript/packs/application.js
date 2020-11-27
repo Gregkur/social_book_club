@@ -16,6 +16,10 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+// hamburger
+const nav = document.querySelector(".header__nav");
+const hamburger = document.querySelector(".hamburger");
+const burger = document.getElementById('hamburger2')
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -24,14 +28,31 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  flatpickr(".datepicker", {
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
+  });
+  
+// Menu slide
+  hamburger.addEventListener("click", function() {
+    hamburger.classList.toggle("is-active");
+    if (burger.checked == false){
+      burger.checked = true
+    }else{
+      burger.checked = false
+    }
+    nav.classList.toggle("overflow");
+  });
+
   // Call your functions here, e.g:
   // initSelect2();
 });
 
 // Flat picker
-import "../plugins/flatpickr"
