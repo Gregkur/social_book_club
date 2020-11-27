@@ -29,18 +29,33 @@
 
 .booking-card-info{
     h2{
-        margin-top: 55px;
+        margin-top: -50px;
+        margin-left: 15px;
         font-size: 24px;
     }
 }
 
 .booking-card-dates{
+    margin-left: 15px;
     h3{
         margin-top: 10px;
         font-size: 16px;
     }
     p{
-        margin-top: 10px;
+        display: table-footer-group;
+
         font-size: 12px;
+    }
+}
+.card-booking-user{
+    img{
+        background: 50% 50% no-repeat;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: relative;
+        top: 50px;
+        left: 95%;
     }
 }

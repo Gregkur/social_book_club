@@ -24,9 +24,10 @@
           <p> <%= @book.user.nickname %> </p>
         </div>
 
-
-        <%= link_to new_book_booking_path(@book) do %>
-        <button class="btn-booking">Make a booking request</button>
+        <% if current_user != @book.user %>
+          <%= link_to new_book_booking_path(@book) do %>
+          <button class="btn-booking">Make a booking request</button>
+          <% end %>
         <% end %>
 
 
@@ -84,6 +85,9 @@
     </div>
   </div>
 
-  <%= link_to "Back to all books", books_path, method: :get, id: "books-link", class: "hidden" %>
+  <div>
+    <%= link_to "Back to all books", books_path, method: :get, class: "btn btn-danger mt-3" %>
+  </div>
 
+    <!-- id: "books-link", class: "hidden" -->
 </div>
