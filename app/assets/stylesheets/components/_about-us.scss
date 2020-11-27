@@ -1,14 +1,25 @@
 .about-us {
     background-color: $dark-purple;
-    height: 375px;
+    height: 200px;
     text-align: center;
 }
 .about-us-text{
     h3{
+        margin-bottom: -60px;
         text-align: left;
         color: white;
         font-weight: lighter;
         font-size: 20px;
+        padding: 50px;
+      }
+      h1{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        text-align: left;
+        color: white;
+        font-weight: normal;
+        font-size: 26px;
         padding: 50px;
       }
 }
