@@ -64,5 +64,9 @@
       font-weight: bolder;
       font-size: 12px;
       text-align: center;
-  }    
+  }
+    img {
+      background: 50% 50% no-repeat;
+      object-fit: cover;
+    }
 }
