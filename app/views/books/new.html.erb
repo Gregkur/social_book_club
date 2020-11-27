@@ -8,19 +8,18 @@
           </div>
           <%= simple_form_for(@book) do |f| %>
             <%= f.input :title, placeholder: 'Harry Potter', class: "form-control" %>
-            <%= f.input :author, placeholder: 'J. K. Rowling' %>
+            <%= f.input :author, placeholder: 'J. K. Rowling', class: "form-control" %>
             <%= f.input :year, placeholder: '1997', class: "form-control" %>
             <%= f.input :pages, placeholder: '500', class: "form-control" %>
-            <%= f.input :description, placeholder: 'please take a moment to describe your book in a few sentences' %>
+            <%= f.input :description, placeholder: 'please take a moment to describe your book in a few sentences', class: "form-control" %>
             <%= f.input :genre, collection: ['Action and Adventures', 'Classics', 'Comic Book/ Graphic Novel', 'Detective/ Mystery', 'Fantasy', 'Historical Fiction', 'Horror', 'Literary Fiction', 'Romance', 'Science-Fiction', 'Short Stories', 'Thrillers', 'Womens Fiction', 'Biographies/ Autographies', 'Cookbooks', 'Essays', 'History', 'Poetry', 'True Crime'], prompt: "Select the genre that fits best", class: "form-control" %>
 
             <!-- <div class="container d-flex justify-content-center"> -->
             <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
             <!-- </div> -->
-            <%= f.submit class: "btn-create" %>
             <div class="form-link-buttons">
-              <%= f.submit class: "btn btn-danger mt-3" %>
-              <%= link_to "Back", books_path(@book), method: :get,  class: "btn btn-danger mt-3" %>
+              <%= f.submit class: "btn-create" %>
+              <%= link_to "Back", books_path(@book), method: :get,  class: "btn-create" %>
             </div>
           <% end %>
         </div>
