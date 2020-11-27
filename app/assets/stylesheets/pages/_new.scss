@@ -3,13 +3,33 @@ body {
 }
 
 
-.background-create-wrapper {
+.background-create-wrapper-1 {
   margin-top: 80px;
   margin-bottom: 80px;
   // margin: -20px;
   padding: 80px;
   background-color: $yellow;
 }
+
+.background-create-wrapper-2 {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  // margin: -20px;
+  padding: 80px;
+  background-color: $green;
+}
+
+
+.background-create-wrapper-3 {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  // margin: -20px;
+  padding: 80px;
+  background-color: $purple;
+}
+
+
+
 .nested-create-form {
   padding-top: 60px;
   padding-left: 70px;
