@@ -23,27 +23,27 @@ girl = URI.open("https://images-na.ssl-images-amazon.com/images/I/8183Y1myPvL.jp
 about = "Book lover, art collector, a friend of Britney Spears."
 puts "Creating users..."
 
-user1 = User.create(email: "marie@gmail.com", password: "123456", first_name: "Marie", last_name: "Wiedekamp", nickname: "marwie", address: "Berlin", about: about)
+user1 = User.create(email: "marie@gmail.com", password: "123456", first_name: "Marie", last_name: "Wiedekamp", nickname: "marwie", address: "Berlin, Pankow", about: about)
 
 user1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "marie.jpg", content_type:"image/png" )
 
-user2 = User.create(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "annnie2", address: "Los Angeles", about: about)
+user2 = User.create(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "annnie2", address: "Berlin, Charlottenburg", about: about)
 
 user2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1542596594-b47fea509622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "anna.jpg", content_type:"image/png" )
 
-user3 = User.create(email: "george@gmail.com", password: "123456", first_name: "George", last_name: "Lukas", nickname: "lukkie55", address: "Tokyo", about: about)
+user3 = User.create(email: "george@gmail.com", password: "123456", first_name: "George", last_name: "Lukas", nickname: "lukkie55", address: "Berlin, Steglitz", about: about)
 
 user3.photo.attach(io: URI.open("https://images.unsplash.com/photo-1562124638-724e13052daf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"), filename: "george.jpg", content_type:"image/png" )
 
-user4 = User.create(email: "cory@gmail.com", password: "123456", first_name: "Cory", last_name: "Thomson", nickname: "coryS", address: "Melbourne", about: about)
+user4 = User.create(email: "cory@gmail.com", password: "123456", first_name: "Cory", last_name: "Thomson", nickname: "coryS", address: "Berlin, Kreuzberg", about: about)
 
 user4.photo.attach(io: URI.open("https://images.unsplash.com/flagged/photo-1597694042000-f0150210da38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"), filename: "cory.jpg", content_type:"image/png" )
 
-user5 = User.create(email: "thomas@gmail.com", password: "123456", first_name: "Thomas", last_name: "Maddock", nickname: "Tommyboi", address: "Bogota", about: about)
+user5 = User.create(email: "thomas@gmail.com", password: "123456", first_name: "Thomas", last_name: "Maddock", nickname: "Tommyboi", address: "Berlin, Mitte", about: about)
 
 user5.photo.attach(io: URI.open("https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "thomas.jpg", content_type:"image/png" )
 
-user6 = User.create(email: "claudia@gmail.com", password: "123456", first_name: "Claudia", last_name: "Hoffmann", nickname: "ClaUdii", address: "Perth, Australia")
+user6 = User.create(email: "claudia@gmail.com", password: "123456", first_name: "Claudia", last_name: "Hoffmann", nickname: "ClaUdii", address: "Berlin, Friedrischain")
 
 user6.photo.attach(io: URI.open("https://images.unsplash.com/photo-1477420226391-9ff4fb9085fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "claudia.jpg", content_type:"image/png" )
 
