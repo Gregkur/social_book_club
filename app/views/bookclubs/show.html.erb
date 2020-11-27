@@ -3,7 +3,9 @@
   <div class="profile-wrapper purple">
 
     <% if @bookclub.photos.attached? %>
-        <%= image_tag @bookclub.photos[0], crop: :limit, class:"user-img"%>
+      <%= image_tag @bookclub.photos[0], crop: :limit, class:"user-img"%>
+    <% else %>
+      <%= image_tag "https://images.unsplash.com/photo-1546284663-fed719f6612e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80", crop: :limit, class:"user-img"%>
     <% end %>
 
     <div class="profile-user-info">
@@ -55,7 +57,7 @@
   <div class="container text-center my-5">
     <div class="mb-5">
       <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile"  %>
-      <%= link_to "Go back to your profile", page_path(current_user), :method => :get, class:"button-red-profile"  %>
+      <%= link_to "Go back to your profile", page_path(current_user), :method => :get, class:"button-red-profile" if user_signed_in?  %>
     </div>
   </div>
 
