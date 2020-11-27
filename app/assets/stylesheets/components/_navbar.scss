@@ -31,11 +31,17 @@
 .overflow{
   overflow: hidden;
 }
+.overflow-x{
+  overflow-x: hidden;
+}
 #hamburger2{
   display: none;
 }
 
 // New navbar CSS
+#logo-header{
+  height: 60px ;
+}
 
 .header {
   position: fixed;

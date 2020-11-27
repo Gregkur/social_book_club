@@ -1,3 +1,7 @@
+<div class="container ml-5 mt-3 d-flex align-items-center go-back">
+  <i class="fas fa-caret-left"></i>
+  <%= link_to "Go back", books_path, method: :get, id: "books-link", class: "ml-2" %>
+</div>
 <div class="container d-flex flex-column my-5" style="align-items: center">
   <div class="row">
     <div class="book-card">
@@ -5,85 +9,74 @@
         <% if @book.photos.attached? %>
           <%= cl_image_tag @book.photos[0].key, crop: :fill, class:"avatar-book" %>
         <% else %>
-          <%= image_tag "https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", class: "avatar-book", alt: "avatar-book" %>
+          <%= image_tag "https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", class: "avatar-book" %>
         <% end %>
       </div>
       <div class="book-details">
         <h2> <strong> <%= @book.title %> </strong> </h2>
         <h3> <strong> <%= @book.author %> </strong> </h3>
-        <h4> <%= @book.year %> | <%= @book.pages %> pages </h4>
+        <p> <%= @book.year %> | <%= @book.pages %> pages </p>
         <h3> <i class="fas fa-map-marker-alt"></i>  <strong> <%= @book.user.address %> </strong> </h3>
-        <br>
-        <h4> <%= @book.description %> </h4>
-        <div class="user-avatar">
-          <% if @book.user.photo.attached? %>
-            <%= cl_image_tag @book.user.photo.key, class: "avatar", crop: :fill %>
-          <% else %>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "avatar", alt: "avatar-square" %>
-          <% end %>
-          <p> <%= @book.user.nickname %> </p>
-        </div>
-
-
+        <p> <%= @book.description %></p>
         <%= link_to new_book_booking_path(@book) do %>
-        <button class="btn-booking">Make a booking request</button>
+          <button class="btn button-red">Booking Request</button>
         <% end %>
-
-
-        <% if policy(@book).update? %>
-          <%= link_to edit_book_path(@book) do %>
-          <i class="fas fa-edit"></i>
-          <% end %>
-        <% end %>
-
-        <% if policy(@book).destroy? %>
-          <%= link_to @book, method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="fas fa-trash mr-2 mt-2"></i>
-          <% end %>
-        <% end %>
-
       </div>
+      <div>
+        <% if @book.user.photo.attached? %>
+          <div class="book-user">
+            <%= cl_image_tag @book.user.photo.key, class: "avatar-large", crop: :fill %>
+            <p><%= @book.user.first_name %></p>
+          </div>
+        <% else %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "user-avatar" %>
+        <% end %>
+      </div>
+      <% if policy(@book).update? %>
+        <%= link_to edit_book_path(@book) do %>
+        <i class="fas fa-edit"></i>
+        <% end %>
+      <% end %>
+      <% if policy(@book).destroy? %>
+        <%= link_to @book, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fas fa-trash mr-2 mt-2"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
-
-  <div class="book-reviews" style="background-color: #D4A1E3">
-    <h3> <%= "What others said about #{@book.title}" %> </h3>
-    <% if @book.reviews.empty? %>
-      <h4>Be the first to leave a review</h4>
-    <% else %>
-      <div class="card-grid-review">
-        <% @book.reviews.each do |review| %>
-
-          <div class="card-book-review" style="background-color: white" >
-
-            <% if review.book_rating %>
-              <div class="stars">
-                <% counter = 0 %>
-                <% 5.times do %>
-                  <i class="fa <%= review.book_rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-                  <% counter += 1 %>
+  <div class="row">
+    <div class="card-review">
+      <h2><%= "What others say about #{@book.title}" %></h2>
+      <% if @book.reviews.empty? %>
+        <h3>Be the first to leave a review!</h3>
+      <% else %>
+          <% @book.reviews.each do |review| %>
+            <div class="card-book-review">
+              <h2><%= review.user.nickname %></h2>
+              <p><%= review.book_comment %></p>
+              <% if review.book_rating %>
+                <div class="fa-stars">
+                  <% counter = 0 %>
+                  <% 5.times do %>
+                    <i class="fa <%= review.book_rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                    <% counter += 1 %>
+                  <% end %>
+                </div>
+              <% end %>
+              <div class="review-edit">
+                <%= link_to edit_book_review_path(@book, review) do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+                <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fas fa-trash mr-2 mt-2"></i>
                 <% end %>
               </div>
-            <% end %>
-            <h2><%= review.user.nickname %></h2>
-            <p><%= review.book_comment %></p>
-            <%= link_to edit_book_review_path(@book, review) do %>
-              <i class="fas fa-edit"></i>
-            <% end %>
-            <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="fas fa-trash mr-2 mt-2"></i>
-            <% end %>
             </div>
-
-        <% end %>
+          <% end %>
+      <% end %>
+      <div class="write-review">
+        <%= render "reviews/new", book: @book, review: @review %>
       </div>
-    <% end %>
-    <br>
-    <div class="write-review">
-      <%= render "reviews/new", book: @book, review: @review %>
     </div>
   </div>
-
-  <%= link_to "Back to all books", books_path, method: :get, id: "books-link", class: "hidden" %>
-
 </div>

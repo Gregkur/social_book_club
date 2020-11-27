@@ -2,7 +2,7 @@
    
     <nav class="header__nav overflow" aria-label="Mail navigation">
         <a href="/" class="header__logo" aria-label="HEY homepage">
-        <%= image_tag "https://i.ibb.co/4jKbGGs/logo.png", width:"130", height:"39" %>
+        <%= image_tag "https://i.ibb.co/4jKbGGs/logo.png", id:"logo-header" %>
         </a>
         <input
         type="checkbox"
@@ -20,15 +20,21 @@
         </label>
 
         <div class="header__links" role="menu">
-            <% if current_user.present? %>
-                <%= link_to "Profile page", page_path(current_user), :method => :get, class:"dropdown-item header__link", role:"menuitem" %>
-            <% else %>
-                <%= link_to "Create account", new_user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
-            <% end %>
+            <%= link_to "Home", "/", :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
+                <% if current_user.present? %>
+                    <%= link_to "Profile page", page_path(current_user), :method => :get, class:"dropdown-item header__link", role:"menuitem" %>
+                <% else %>
+                    <%= link_to "Create account", new_user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
+                <% end %>
             <%= link_to "See all books", books_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
             <%= link_to "Add a book", new_book_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
-            <%= link_to "Log In", user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"dropdown-item header__link", role:"menuitem"  %>
+                <% if !user_signed_in? %>
+                    <%= link_to "Log In", user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
+                <% end %>
+                <% if user_signed_in? %>
+                    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"dropdown-item header__link", role:"menuitem"  %>
+                <% end %>
+            
         </div>
     </nav>
     </header>
