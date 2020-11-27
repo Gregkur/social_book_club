@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="background-create-wrapper">
+  <div class="background-create-wrapper-2">
     <div id="form-wrapper">
       <div id="create-book-box m-8">
         <div class="nested-create-form m-8">
@@ -7,12 +7,13 @@
             <h2>Create your first bookclub</h2>
           </div>
           <%= simple_form_for(@bookclub) do |f| %>
-            <%= f.input :name, placeholder: 'My first Bookclub' %>
-            <%= f.input :description, placeholder: 'This is a bookclub for people interested in innovation management.' %>
+            <%= f.input :name, placeholder: 'My first Bookclub', class: "form-control" %>
+            <%= f.input :description, placeholder: 'This is a bookclub for people interested in innovation management.', class: "form-control" %>
             <%#= f.input :visibility, placeholder: '500' %>
             <!-- <div class="container d-flex justify-content-center"> -->
-            <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book' %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
             <!-- </div> -->
+            <%= f.submit class: "btn-create mt-3" %>
             <div class="form-link-buttons">
               <%= f.submit class: "btn btn-danger mt-3" %>
               <%= link_to "Back", page_path(current_user), method: :get,  class: "btn btn-danger mt-3" %>

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="background-create-wrapper">
+  <div class="background-create-wrapper-1">
     <div id="form-wrapper">
       <div id="create-book-box m-8">
         <div class="nested-create-form m-8">
@@ -7,15 +7,17 @@
             <h2>Add a new book to your profile</h2>
           </div>
           <%= simple_form_for(@book) do |f| %>
-            <%= f.input :title, placeholder: 'Harry Potter' %>
+            <%= f.input :title, placeholder: 'Harry Potter', class: "form-control" %>
             <%= f.input :author, placeholder: 'J. K. Rowling' %>
+            <%= f.input :year, placeholder: '1997', class: "form-control" %>
+            <%= f.input :pages, placeholder: '500', class: "form-control" %>
             <%= f.input :description, placeholder: 'please take a moment to describe your book in a few sentences' %>
-            <%= f.input :genre, collection: ['Action and Adventures', 'Classics', 'Comic Book/ Graphic Novel', 'Detective/ Mystery', 'Fantasy', 'Historical Fiction', 'Horror', 'Literary Fiction', 'Romance', 'Science-Fiction', 'Short Stories', 'Thrillers', 'Womens Fiction', 'Biographies/ Autographies', 'Cookbooks', 'Essays', 'History', 'Poetry', 'True Crime'], prompt: "Select the genre that fits best" %>
-            <%= f.input :year, placeholder: '1997' %>
-            <%= f.input :pages, placeholder: '500' %>
+            <%= f.input :genre, collection: ['Action and Adventures', 'Classics', 'Comic Book/ Graphic Novel', 'Detective/ Mystery', 'Fantasy', 'Historical Fiction', 'Horror', 'Literary Fiction', 'Romance', 'Science-Fiction', 'Short Stories', 'Thrillers', 'Womens Fiction', 'Biographies/ Autographies', 'Cookbooks', 'Essays', 'History', 'Poetry', 'True Crime'], prompt: "Select the genre that fits best", class: "form-control" %>
+
             <!-- <div class="container d-flex justify-content-center"> -->
-            <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book' %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
             <!-- </div> -->
+            <%= f.submit class: "btn-create" %>
             <div class="form-link-buttons">
               <%= f.submit class: "btn btn-danger mt-3" %>
               <%= link_to "Back", books_path(@book), method: :get,  class: "btn btn-danger mt-3" %>
