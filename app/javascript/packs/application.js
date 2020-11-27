@@ -36,6 +36,7 @@ document.addEventListener('turbolinks:load', () => {
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
+    minDate: "today",
   });
 //vars
   const nav = document.querySelector(".header__nav");

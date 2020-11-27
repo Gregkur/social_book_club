@@ -6,6 +6,7 @@
 }
 
 .info-card-text{
+    display: grid;
     background-color: white;
     border-radius: 4px;
     position: relative;
@@ -21,9 +22,10 @@
 }
 
 .description {
-    font-size: 12px;
-    padding-right: 52px;
-    font-weight: 600;
+    font-size: 20px;
+    padding-right: 10px;
+    font-weight: 500;
+    padding-top: 11px;
 }
 
 #tagline-pink {
