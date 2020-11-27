@@ -21,7 +21,10 @@
           <%= simple_form_for [@book, @booking] do |f| %>
             <%= f.input :from, as: :string, required: false, input_html: {class: "datepicker"} %>
             <%= f.input :until, as: :string, required: false, input_html: {class: "datepicker"} %>
-            <%= f.button :submit, "Create booking request", class: "btn btn-primary" %>
+            <div class="form-link-buttons">
+              <%= f.button :submit, "Create booking request", class: "btn btn-danger" %>
+              <%= link_to "Back", book_path(@book), method: :get,  class: "btn btn-danger" %>
+            </div>
           <% end %>
         </div>
       </div>

@@ -38,8 +38,9 @@ document.addEventListener('turbolinks:load', () => {
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
+    minDate: "today",
   });
-  
+
 // Menu slide
   hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("is-active");
