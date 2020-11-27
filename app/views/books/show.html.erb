@@ -46,15 +46,16 @@
     </div>
   </div>
 
-  <div class="book-reviews">
-    <h3 class="card-title">Reviews</h3>
+  <div class="book-reviews" style="background-color: #D4A1E3">
+    <h3> <%= "What others said about #{@book.title}" %> </h3>
     <% if @book.reviews.empty? %>
-      <h4 class="card-subtitle mb-2 text-muted">Be the first to leave a review</h4>
+      <h4>Be the first to leave a review</h4>
     <% else %>
-      <ul class="list-group">
+      <div class="card-grid-review">
         <% @book.reviews.each do |review| %>
-          <li class="list-item" style="background-color: #D4A1E3">
-          <div class="card-book-review">
+
+          <div class="card-book-review" style="background-color: white" >
+
             <% if review.book_rating %>
               <div class="stars">
                 <% counter = 0 %>
@@ -73,12 +74,12 @@
               <i class="fas fa-trash mr-2 mt-2"></i>
             <% end %>
             </div>
-          </li>
+
         <% end %>
-      </ul>
+      </div>
     <% end %>
     <br>
-    <div class="form-group row">
+    <div class="write-review">
       <%= render "reviews/new", book: @book, review: @review %>
     </div>
   </div>
