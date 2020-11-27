@@ -16,8 +16,8 @@
         <br>
         <h4> <%= @book.description %> </h4>
         <div class="user-avatar">
-          <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar", crop: :fill %>
+          <% if @book.user.photo.attached? %>
+            <%= cl_image_tag @book.user.photo.key, class: "avatar", crop: :fill %>
           <% else %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "avatar", alt: "avatar-square" %>
           <% end %>
