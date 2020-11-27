@@ -20,6 +20,7 @@ require("channels")
 const nav = document.querySelector(".header__nav");
 const hamburger = document.querySelector(".hamburger");
 const burger = document.getElementById('hamburger2')
+const body = document.querySelector('body')
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -49,6 +50,7 @@ document.addEventListener('turbolinks:load', () => {
       burger.checked = false
     }
     nav.classList.toggle("overflow");
+    body.classList.toggle("overflow-x")
   });
 
   // Call your functions here, e.g:
