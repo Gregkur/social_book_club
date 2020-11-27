@@ -1,5 +1,9 @@
+// Old navbar
+
 .navbar {
   background-color: $dark-purple;
+  height: 93px;
+  flex-wrap: nowrap !important;
 
   button{
     color: white;
@@ -21,3 +25,145 @@
     color: black;
   }
 }
+
+// New navbar JS classes
+
+.overflow{
+  overflow: hidden;
+}
+#hamburger2{
+  display: none;
+}
+
+// New navbar CSS
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: $dark-purple;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 20000;
+  margin: 0;
+  padding: 0.75rem;
+}
+
+@media (min-width: 45em) {
+  .header__nav {
+    padding: 1rem;
+  }
+}
+
+.header__logo {
+  margin: 0;
+  text-align: left;
+}
+.header__links {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: medium;
+}
+
+  .header__links {
+    position:absolute;
+    top: 8rem;
+    right: -25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+    font-size: large;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header__links::after {
+    transition: opacity 0.15s ease-in-out;
+    content: '';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.096);
+  }
+
+  .header__link {
+    transition:transform 0.15s ease-in;
+    transform: translate(0, 0);
+    display: inline-block;
+    padding: 0.3em 2em;
+    margin: 0 0 1.25em 0;
+    line-height: 2;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 700;
+    color: white;
+    opacity: 0.8;
+    border-radius: 3em;
+    .dropdown-item{
+      &:active{
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  .header__link:visited,
+  .header__link:hover {
+    box-shadow: none;
+    opacity: 1;
+  }
+
+// Animation CSS
+
+  .header__link:nth-child(2) {
+    transition-delay: 0.05s;
+  }
+
+  .header__link:nth-child(3) {
+    transition-delay: 0.1s;
+  }
+
+  .header__link:nth-child(4) {
+    transition-delay: 0.15s;
+  }
+
+  .header__link:nth-child(5) {
+    transition-delay: 0.2s;
+  }
+
+  .header__link:nth-child(6) {
+    transition-delay: 0.25s;
+  }
+
+  .header__link:nth-child(7) {
+    transition-delay: 0.3s;
+  }
+
+  .header__link:nth-child(8) {
+    transition-delay: 0.35s;
+  }
+
+// Toggle the animation
+
+  .header__checkbox:checked ~ .header__links::after {
+    opacity:1;
+    pointer-events: auto;
+  }
+
+ 
+  .header__checkbox:checked ~ .header__links .header__link {
+    transition-duration: 0.35s;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translate(-27rem, 0);
+  }
