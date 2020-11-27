@@ -87,7 +87,8 @@
                       <div class="booking-card-dates">
                         <h3>Location: <%= booking.user.address %></h3>
                         <h3>Booking dates:</h3>
-                        <p>from <%= booking.from.to_formatted_s(:long) %> until <%= booking.until.to_formatted_s(:long) %></p>
+                        <p>until <%= booking.until.to_formatted_s(:long) %></p>
+                        <p>from <%= booking.from.to_formatted_s(:long) %></p>
                       </div>
                     </div>
                 </div>
