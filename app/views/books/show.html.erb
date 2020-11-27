@@ -45,45 +45,45 @@
       </div>
     </div>
   </div>
-  <div class="book-reviews">
-    <h3>Reviews</h3>
+
+  <div class="book-reviews" style="background-color: #D4A1E3">
+    <h3> <%= "What others said about #{@book.title}" %> </h3>
     <% if @book.reviews.empty? %>
-      <p>Be the first to leave a review</p>
+      <h4>Be the first to leave a review</h4>
     <% else %>
-      <ul class="list-group">
+      <div class="card-grid-review">
         <% @book.reviews.each do |review| %>
-          <% if review.book_rating %>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span class="badge badge-primary badge-pill">
 
-                  <% counter = 0 %>
-                  <% 5.times do %>
-                    <i class="fa <%= review.book_rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-                    <% counter += 1 %>
-                  <% end %>
+          <div class="card-book-review" style="background-color: white" >
 
-              </span>
-              <%= review.book_comment %>
-              <% end %>
-
-                <%= link_to edit_book_review_path(@book, review) do %>
-
-                  <i class="fas fa-edit"></i>
+            <% if review.book_rating %>
+              <div class="stars">
+                <% counter = 0 %>
+                <% 5.times do %>
+                  <i class="fa <%= review.book_rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                  <% counter += 1 %>
                 <% end %>
+              </div>
+            <% end %>
+            <h2><%= review.user.nickname %></h2>
+            <p><%= review.book_comment %></p>
+            <%= link_to edit_book_review_path(@book, review) do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+            <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fas fa-trash mr-2 mt-2"></i>
+            <% end %>
+            </div>
 
-
-
-                <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <i class="fas fa-trash mr-2 mt-2"></i>
-                <% end %>
-              <%# end %>
-            </li>
-          <% end %>
         <% end %>
-      </ul>
-      <br>
+      </div>
+    <% end %>
+    <br>
+    <div class="write-review">
       <%= render "reviews/new", book: @book, review: @review %>
+    </div>
   </div>
+
   <%= link_to "Back to all books", books_path, method: :get, id: "books-link", class: "hidden" %>
 
 </div>
