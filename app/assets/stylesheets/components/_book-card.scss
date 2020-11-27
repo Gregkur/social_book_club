@@ -23,9 +23,10 @@
     font-weight: 400;
   }
 
-  h4 {
+  p {
     font-size: 14px;
-    font-weight: lighter;
+    width: 85%;
+    text-align: justify;
   }
 }
 
@@ -58,7 +59,7 @@
 .book-user {
     position: relative;
     bottom: 128px;
-    right: 20px;
+    right: 50px;
     p {
       font-weight: bolder;
       font-size: 12px;

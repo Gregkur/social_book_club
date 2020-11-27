@@ -1,35 +1,58 @@
 .card-review {
   background-color: $purple;
   width: 800px;
+  border-radius: 4px;
+  padding: 32px;
+  h2 {
+    font-size: 24px;
+    font-weight: bolder;
+    color: $dark-purple;
+    text-align: center;
+    margin-bottom: 24px;
+  }
 }
-
 
 .card-book-review {
-  height: 250px;
-  width: 80%;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  display: flex;
-  align-items: center;
-  margin-top: 100px;
   border-radius: 4px;
-  bottom: 40px;
+  margin: 0 auto;
+  width: 80%;
+  padding: 16px;
 }
-
 
 .card-book-review h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  margin: 0 0 8px 0;
+  text-align: left;
 }
 
 .card-book-review p {
   font-size: 12px;
   line-height: 1.4;
-  margin: 1px 0 1px 0;
+  width: 90%;
+  margin-bottom: 8px;
 }
 
 .fa-stars {
-  color: $purple;
+  color: $yellow;
+}
+
+.review-edit {
+  margin-top: 4px;
+}
+
+.write-review {
+  width: 80%;
+  margin: 0 auto;
+  h3 {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 24px;
+    font-weight: bolder;
+    color: $dark-purple;
+  }
 }
