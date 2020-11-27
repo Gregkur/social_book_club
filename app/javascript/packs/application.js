@@ -36,6 +36,20 @@ document.addEventListener('turbolinks:load', () => {
     dateFormat: "Y-m-d",
   });
 
+  // hamburger
+  const nav = document.querySelector(".header__nav");
+  const hamburger = document.querySelector(".hamburger");
+  const burger = document.getElementById('hamburger2')
+  hamburger.addEventListener("click", function() {
+    hamburger.classList.toggle("is-active");
+    if (burger.checked == false){
+      burger.checked = true
+    }else{
+      burger.checked = false
+    }
+    nav.classList.toggle("overflow");
+  });
+
   // Call your functions here, e.g:
   // initSelect2();
 });
