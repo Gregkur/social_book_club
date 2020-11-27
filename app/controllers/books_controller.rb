@@ -11,7 +11,7 @@ class BooksController < ApplicationController
 
   def index
     @books = policy_scope(Book).all
-    @users = User.near(current_user.address, 10)
+    @users = User.near(current_user.address, 10).where.not(id: current_user.id)
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
