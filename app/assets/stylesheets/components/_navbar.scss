@@ -1,3 +1,4 @@
+// Old navbar
 
 .navbar {
   background-color: $dark-purple;
@@ -25,13 +26,17 @@
   }
 }
 
-// New
+// New navbar JS classes
+
 .overflow{
   overflow: hidden;
 }
 #hamburger2{
   display: none;
 }
+
+// New navbar CSS
+
 .header {
   position: fixed;
   width: 100%;
@@ -119,17 +124,16 @@
     opacity: 1;
   }
 
-  /* The animation is delayed 0.05 sec for the second header__link */
+// Animation CSS
+
   .header__link:nth-child(2) {
     transition-delay: 0.05s;
   }
 
-/* The animation is delayed 0.1 sec for the second header__link */
   .header__link:nth-child(3) {
     transition-delay: 0.1s;
   }
 
-/* And it goes on like this + 0.05 sec for the next ones */
   .header__link:nth-child(4) {
     transition-delay: 0.15s;
   }
@@ -150,7 +154,7 @@
     transition-delay: 0.35s;
   }
 
-
+// Toggle the animation
 
   .header__checkbox:checked ~ .header__links::after {
     opacity:1;
