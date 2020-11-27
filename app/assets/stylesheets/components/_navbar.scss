@@ -1,6 +1,8 @@
 
 .navbar {
   background-color: $dark-purple;
+  height: 93px;
+  flex-wrap: nowrap !important;
 
   button{
     color: white;
