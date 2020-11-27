@@ -29,17 +29,18 @@ const burger = document.getElementById('hamburger2')
 // External imports
 import "bootstrap";
 import "../plugins/flatpickr"
-
+import { initMapbox } from '../plugins/init_mapbox';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  // Flat picker
   flatpickr(".datepicker", {
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
   });
-  
+
 // Menu slide
   hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("is-active");
@@ -51,8 +52,11 @@ document.addEventListener('turbolinks:load', () => {
     nav.classList.toggle("overflow");
   });
 
-  // Call your functions here, e.g:
-  // initSelect2();
+  // Geo Map
+  initMapbox()
 });
 
-// Flat picker
+
+
+
+

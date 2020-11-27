@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :bookclub_memberships, through: :bookclub_users, source: :bookclub
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

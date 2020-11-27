@@ -11,6 +11,14 @@ class BooksController < ApplicationController
 
   def index
     @books = policy_scope(Book).all
+    @users = User.near(current_user.address, 10)
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { user: user })
+      }
+    end
   end
 
   def new

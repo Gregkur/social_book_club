@@ -15,6 +15,7 @@
 // External plugins
 @import "flatpickr/dist/flatpickr";
 @import "components/hamburgers/hamburgers";
+@import 'mapbox-gl/dist/mapbox-gl';
 
 body {
     background-color: $background-color;
