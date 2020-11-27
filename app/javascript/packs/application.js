@@ -16,6 +16,10 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+// hamburger
+const nav = document.querySelector(".header__nav");
+const hamburger = document.querySelector(".hamburger");
+const burger = document.getElementById('hamburger2')
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -35,11 +39,8 @@ document.addEventListener('turbolinks:load', () => {
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
   });
-
-  // hamburger
-  const nav = document.querySelector(".header__nav");
-  const hamburger = document.querySelector(".hamburger");
-  const burger = document.getElementById('hamburger2')
+  
+// Menu slide
   hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("is-active");
     if (burger.checked == false){
