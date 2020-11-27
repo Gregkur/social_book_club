@@ -7,14 +7,14 @@
             <h2>Add a new book to your profile</h2>
           </div>
           <%= simple_form_for(@book) do |f| %>
-            <%= f.input :title, placeholder: 'Harry Potter' %>
+            <%= f.input :title, placeholder: 'Harry Potter', class: "form-control" %>
             <%= f.input :author, placeholder: 'J. K. Rowling' %>
-            <%= f.input :description, placeholder: 'please take a moment to describe your art book in a few sentences' %>
-            <%= f.input :genre, placeholder: 'Fantasy' %>
-            <%= f.input :year, placeholder: '1997' %>
-            <%= f.input :pages, placeholder: '500' %>
+            <%= f.input :description, placeholder: 'please take a moment to describe your art book in a few sentences', class: "form-control" %>
+            <%= f.input :genre, placeholder: 'Fantasy', class: "form-control" %>
+            <%= f.input :year, placeholder: '1997', class: "form-control" %>
+            <%= f.input :pages, placeholder: '500', class: "form-control" %>
             <!-- <div class="container d-flex justify-content-center"> -->
-            <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book' %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
             <!-- </div> -->
             <%= f.submit class: "btn-create" %>
           <% end %>
