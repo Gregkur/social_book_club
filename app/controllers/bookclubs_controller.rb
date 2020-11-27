@@ -1,7 +1,21 @@
 class BookclubsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_bookclub, only: [:show, :edit, :update, :destroy]
+  before_action :set_bookclub, only: [:edit, :update, :destroy]
 
+  def show
+    @bookclub = Bookclub.find(params[:id])
+    ## Limiting the amount of shown users
+    @bookclub_users = @bookclub.bookclub_users
+    ## Math to calculate the amount of books
+    @bookclub_books = []
+    @bookclub_users.each do |user|
+      user.user.books.each do |book|
+        @bookclub_books << book
+      end
+    end
+    authorize @bookclub
+  end
+  
   def new
     @bookclub = Bookclub.new
     authorize @bookclub
@@ -9,11 +23,12 @@ class BookclubsController < ApplicationController
 
   def create
     @bookclub = Bookclub.new(bookclub_params)
+    @bookclub.photos.attach(params[:bookclub][:photos])
     authorize @bookclub
     @bookclub.user = current_user
     if @bookclub.save
       flash[:notice] = "Created successfully!"
-      redirect_to page_path(current_user)
+      redirect_to bookclub_path(@bookclub)
     else
       flash[:notice] = "Creating book club failed"
       render :new
@@ -28,6 +43,6 @@ class BookclubsController < ApplicationController
   end
 
   def bookclub_params
-    params.require(:bookclub).permit(:name, :description, :visibility)
+    params.require(:bookclub).permit(:name, :description, :visibility, photos: [])
   end
 end

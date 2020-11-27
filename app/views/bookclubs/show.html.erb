@@ -1,0 +1,64 @@
+<div class="d-flex flex-column" style="align-items: center">
+
+  <div class="profile-wrapper purple">
+
+    <% if @bookclub.photos.attached? %>
+      <%= image_tag @bookclub.photos[0], crop: :limit, class:"user-img"%>
+    <% else %>
+      <%= image_tag "https://images.unsplash.com/photo-1546284663-fed719f6612e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80", crop: :limit, class:"user-img"%>
+    <% end %>
+
+    <div class="profile-user-info">
+
+      <% if @bookclub.name.present? %>
+        <h1 style="width: 520px"><%= @bookclub.name %></h1>
+      <% else %>
+        <h1>Hello Stranger!</h1>
+        <p><i class="fas fa-map-pin"></i>???</p>
+      <% end %>
+
+      <div class="profile-description">
+        <% if @bookclub.description.present? %>
+          <p><%= @bookclub.description %></p>
+        <% else %>
+          <p>Tell us about yourself, beautiful stranger!<p>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="bookclubs-books-wrapper">
+
+      <div class="bookclubs-wrapper">
+        <% @bookclub_users.take(3).each do |user|%>
+          <%= image_tag user.user.photo %>
+        <% end %>
+        
+        <% if @bookclub_users.length == 3 %>
+        <% else %>
+            <p>+<%= @bookclub_users.length - 3 %> more users</p>   
+        <% end %>
+        
+      </div>
+
+      <div class="books-wrapper">
+        <% @bookclub_users.each do |user| %>
+          <% user.user.books.take(1).each do |book| %>
+                <%= image_tag book.photos[0] %>
+          <% end %>
+        <% end %>
+            <p>+<%= @bookclub_books.length - 3 %> more books</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container text-center my-5">
+    <div class="mb-5">
+      <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile"  %>
+      <%= link_to "Go back to your profile", page_path(current_user), :method => :get, class:"button-red-profile" if user_signed_in?  %>
+    </div>
+  </div>
+
+</div>

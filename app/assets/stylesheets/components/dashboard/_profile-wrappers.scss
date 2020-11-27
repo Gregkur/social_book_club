@@ -65,6 +65,8 @@
     display: flex;
     padding: 50px;
     align-items: flex-end;
+    float: left;
+    overflow-wrap: break-word;
     h1{
         font-size: 44px;
         font-weight: bold;
@@ -80,4 +82,11 @@
 .profile-about-me{
     position: absolute;
     top: 20%;
+}
+
+.profile-description{
+    position: absolute;
+    top: 27%;
+    width: 457px;
+
 }

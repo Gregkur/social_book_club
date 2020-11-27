@@ -119,6 +119,13 @@ bookclub3 = Bookclub.create!(name: "Web Development and Ruby on Rails", descript
 
 puts "Bookclubs created!"
 
+puts "Attaching photos..."
+bookclub1.photos.attach(io: URI.open("https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), filename: 'startup.jpg', content_type: 'image/jpg')
+bookclub2.photos.attach(io: URI.open("https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), filename: 'potter.jpg', content_type: 'image/jpg')
+bookclub3.photos.attach(io: URI.open("https://images.unsplash.com/photo-1601229749354-b817e9929e65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), filename: 'ruby.jpg', content_type: 'image/jpg')
+
+puts "Attached!"
+
 puts "Creating Bookclub with different members..."
 
 # Bookclub 1 with different members
