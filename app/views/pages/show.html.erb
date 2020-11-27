@@ -32,7 +32,13 @@
     <div class="bookclubs-books-wrapper">
 
       <div class="bookclubs-wrapper">
-        <%#= TODO: ADD BOOKCLUBS  %>
+        
+        <%# @user.bookclubs.each do |bookclub| %>
+          <%#= link_to bookclub_path(bookclub) do %>
+            <%#= cl_image_tag bookclub.photo[0].key, crop: :fill%>
+          <%# end %>
+        <%# end %>
+        
         <%= image_tag "prince.jpg" %>
         <%= image_tag "harry.jpg" %>
         <%= image_tag "testaments.jpg" %>
@@ -40,13 +46,24 @@
       </div>
 
       <div class="books-wrapper">
-        <%#=TODO add links and math  %>
-        <% @user.books.each do |book| %>
-          <% book.photos.each do |photo| %>
-            <%= image_tag photo %>
+        <% @user.books.take(3).each do |book| %>
+          <%= link_to book_path(book) do %>
+            <% book.photos.each do |photo| %>
+              <%= image_tag photo %>
             <% end %>
+          <% end %>
         <% end %>
-        <p>+<%#=@user.books.length - 3%>5 more books</p>
+
+        <% if @user.books.length == 3 %>
+          <p>no more books</p>
+        <% elsif @user.books.length == 4 %>
+          <p>one more book</p>
+        <% elsif @user.books.length < 3 %>
+          <p>time to add some books, <%= @user.first_name if @user.first_name.present?%>!</p>
+        <% else %>
+          <p>+<%=@user.books.length - 3%> more books</p>
+        <% end %>
+        
       </div>
 
     </div>
