@@ -84,11 +84,15 @@
                   <%= image_tag booking.book.photos[0],crop: :fill %>
                     <div class="booking-card-info">
                       <h2><%= booking.book.title %></h2>
+
                       <div class="booking-card-dates">
                         <h3>Location: <%= booking.user.address %></h3>
                         <h3>Booking dates:</h3>
                         <p>until <%= booking.until.to_formatted_s(:long) %></p>
                         <p>from <%= booking.from.to_formatted_s(:long) %></p>
+                        <div class="card-booking-user">
+                          <%= image_tag booking.book.user.photo, class:"avatar-bordered" %>
+                        </div>
                       </div>
                     </div>
                 </div>
