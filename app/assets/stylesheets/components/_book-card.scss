@@ -3,7 +3,7 @@
   position: relative;
   bottom: 40px;
   width: 800px;
-  height: 380px;
+  height: 422;
   margin-top: 100px;
   display: flex;
   align-items: center;
@@ -69,4 +69,8 @@
       background: 50% 50% no-repeat;
       object-fit: cover;
     }
+}
+
+#warning {
+  height: 18px;
 }

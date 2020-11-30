@@ -1,11 +1,11 @@
-class BookingPolicy < ApplicationPolicy
+class BookclubThreadPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def destroy?
+  def index?
     true
   end
 
@@ -17,4 +17,15 @@ class BookingPolicy < ApplicationPolicy
     create?
   end
 
+  def show?
+    true
+  end
+
+  def update?
+    true
+  end
+
+  def destroy?
+    true
+  end
 end

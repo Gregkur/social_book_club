@@ -7,5 +7,10 @@ class PagesController < ApplicationController
 
   def show
     @user = current_user
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    @booking = current_user.bookings
   end
 end
