@@ -1,7 +1,7 @@
+<%= render 'popup' %>
 <div class="d-flex flex-column" style="align-items: center">
 
   <div class="profile-wrapper pink">
-
 
     <% if @user.photo.attached? %>
       <%= cl_image_tag @user.photo.key, crop: :limit, class:"user-img" %>
@@ -31,7 +31,7 @@
 
     <div class="bookclubs-books-wrapper">
 
-      <div class="bookclubs-wrapper">
+      <div class="bookclubs-wrapper" style="cursor: pointer;">
         
         <%# @user.bookclubs.each do |bookclub| %>
           <%#= link_to bookclub_path(bookclub) do %>
@@ -45,7 +45,7 @@
         <p>+2 more bookclubs</p>
       </div>
 
-      <div class="books-wrapper">
+      <div class="books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
         <% @user.books.take(3).each do |book| %>
           <%= link_to book_path(book) do %>
             <% book.photos.each do |photo| %>
@@ -54,9 +54,7 @@
           <% end %>
         <% end %>
 
-        <% if @user.books.length == 3 %>
-          <p>no more books</p>
-        <% elsif @user.books.length == 4 %>
+        <% if @user.books.length == 4 %>
           <p>one more book</p>
         <% elsif @user.books.length < 3 %>
           <p>time to add some books, <%= @user.first_name if @user.first_name.present?%>!</p>
@@ -67,7 +65,7 @@
       </div>
 
     </div>
-
+    
   </div>
 
   <div class="booking-wrapper yellow my-5">
