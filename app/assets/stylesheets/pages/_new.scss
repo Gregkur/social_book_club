@@ -54,7 +54,20 @@ body {
 
 #header-create-form h2 {
   text-align: center;
-  padding-top: 35px;
+  padding-top: 15px;
+}
+
+#header-create-bookclub-form {
+  color: $red;
+  text-align: center;
+  // padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#header-create-bookclub-form h2 {
+  text-align: center;
+  padding-top: 30px;
 }
 
 #figure-reading-create {

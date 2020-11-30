@@ -3,8 +3,13 @@
     <div id="form-wrapper">
       <div id="create-book-box m-8">
         <div class="nested-create-form m-8">
-          <div id="header-create-form">
+          <div id="header-create-bookclub-form">
             <h2>Create your first bookclub</h2>
+            <div>
+              <%= image_tag "figures/2.png", id:"figure-reading-create" %>
+              <%= image_tag "figures/2.png", id:"figure-reading-create" %>
+              <%= image_tag "figures/2.png", id:"figure-reading-create" %>
+            </div>
           </div>
           <%= simple_form_for(@bookclub) do |f| %>
             <%= f.input :name, placeholder: 'My first Bookclub', class: "form-control" %>
