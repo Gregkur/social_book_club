@@ -1,6 +1,6 @@
 class BookclubThreadsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_bookclub, only: [:new]
+  before_action :set_bookclub, only: [:create]
 
   def create
     @bookclub_thread = BookclubThread.new(thread_params)
@@ -12,14 +12,13 @@ class BookclubThreadsController < ApplicationController
       flash[:notice] = "Your thread was successfully posted!"
     else
       flash[:notice] = "Creating thread failed"
-      render :new
     end
   end
 
   private
 
   def set_bookclub
-    @bookclub = Bookclub.find(params[:id])
+    @bookclub = Bookclub.find(params[:bookclub_id])
   end
 
   def thread_params
