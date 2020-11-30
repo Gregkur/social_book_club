@@ -79,7 +79,7 @@
 		    <div class="col-6 col-6">
           <div class="bookings-grid">
             <% @user.bookings.each do |booking| %>
-              <%= link_to book_path(booking.book) do %>
+              <%= link_to "javascript:void(0)", id:"booking-menu" do %>
                 <div class=" booking-card">
                   <%= image_tag booking.book.photos[0],crop: :fill %>
                     <div class="booking-card-info">
@@ -96,6 +96,8 @@
                       </div>
                     </div>
                 </div>
+              <%= link_to "", book_path(booking.book), method: :get, id: "book-link", class: "hidden" %>
+              <%= link_to "", booking, method: :delete, id: "bookings-link", class: "hidden" %>
               <% end %>
             <% end %>
           </div>
