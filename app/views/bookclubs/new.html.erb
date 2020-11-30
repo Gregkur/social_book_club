@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-3 pb-3">
   <div class="background-create-wrapper-2">
     <div id="form-wrapper">
       <div id="create-book-box m-8">
@@ -15,12 +15,14 @@
             <!-- </div> -->
             <div class="form-link-buttons">
               <%= f.submit class: "btn-create mt-3" %>
-              <%= link_to "Back", page_path(current_user), method: :get,  class: "btn-create-booking mt-3" %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
+  </div>
+  <div class="mb-3">
+    <%= link_to "Back", page_path(current_user), method: :get,  class: "btn-create-booking mt-3" %>
   </div>
 </div>
 

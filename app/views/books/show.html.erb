@@ -4,7 +4,7 @@
 </div>
 <div class="container d-flex flex-column my-5" style="align-items: center">
   <div class="row">
-    <div class="book-card">
+    <div class="book-card pb-3">
       <div class="book-pic">
         <% if @book.photos.attached? %>
           <%= cl_image_tag @book.photos[0].key, crop: :fill, class:"avatar-book" %>
@@ -13,25 +13,39 @@
         <% end %>
       </div>
       <div class="book-details">
-        <h2> <strong> <%= @book.title %> </strong> </h2>
-        <h3> <strong> <%= @book.author %> </strong> </h3>
-        <p> <%= @book.year %> | <%= @book.pages %> pages </p>
-        <h3> <i class="fas fa-map-marker-alt"></i>  <strong> <%= @book.user.address %> </strong> </h3>
-        <p> <%= @book.description %></p>
+        <h2>
+          <strong> <%= @book.title %></strong>
+        </h2>
+        <h3>
+          <strong> <%= @book.author %> </strong>
+        </h3>
+        <p>
+          <%= @book.year %> | <%= @book.pages %> pages
+        </p>
+        <h3>
+          <i class="fas fa-map-marker-alt"></i>
+          <strong><%= @book.user.address %></strong>
+        </h3>
+        <p>
+          <%= @book.description %>
+        </p>
         <% if @book.availability? %>
           <%= link_to new_book_booking_path(@book) do %>
             <button class="btn button-red">Booking Request</button>
           <% end %>
         <% else %>
           <button id="btn-disabled">Booking Request</button>
-          <p> <%= image_tag "warning.png", id:"warning"%> <%= "This book will be available from #{@book.bookings.last.until.next}." %> </p>
+          <p>
+            <%= image_tag "warning.png", id:"warning"%> <%= "This book will be available from #{@book.bookings.last.until.next}." %>
+          </p>
           <%= image_tag "figures/5.png", id:"figure-crying" %>
+        <% end %>
         <% if current_user != @book.user %>
           <%= link_to new_book_booking_path(@book) do %>
             <button class="btn button-red">Booking Request</button>
           <% end %>
         <% end %>
-          <div>
+        <div>
           <% if policy(@book).update? %>
             <%= link_to edit_book_path(@book) do %>
               <button class="btn button-red mr-3">Edit your book</button>
@@ -48,13 +62,14 @@
         <% if @book.user.photo.attached? %>
           <div class="book-user">
             <%= cl_image_tag @book.user.photo.key, class: "avatar-large", crop: :fill %>
-            <p><%= @book.user.first_name %></p>
+            <p>
+              <%= @book.user.first_name %>
+            </p>
           </div>
         <% else %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "user-avatar" %>
         <% end %>
       </div>
-      
     </div>
   </div>
   <div class="row">

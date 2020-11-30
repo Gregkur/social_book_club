@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-3 pb-3">
   <div class="background-create-wrapper-3">
     <div id="form-wrapper">
       <div id="create-book-box m-8">
@@ -10,13 +10,15 @@
           <%= simple_form_for [@book, @booking] do |f| %>
             <%= f.input :from, as: :string, required: false, input_html: {class: "datepicker"}, class: "form-control", placeholder: "click to select start date" %>
             <%= f.input :until, as: :string, required: false, input_html: {class: "datepicker"}, class: "form-control", placeholder: "click to select end date" %>
-            <div class="form-link-buttons">
-              <%= f.button :submit, "Create booking request", class: "btn-create-booking" %>
-              <%= link_to "Back", book_path(@book), method: :get,  class: "btn-create-booking" %>
+            <div class="form-link-buttons d-flex justify-content-center">
+              <%= f.button :submit, "Generate booking", class: "btn-create-booking" %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
+  </div>
+  <div class="mb-3">
+    <%= link_to "Back", book_path(@book), method: :get, class: "btn-back" %>
   </div>
 </div>
