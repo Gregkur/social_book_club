@@ -27,6 +27,7 @@
                     <%= link_to "Create account", new_user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
                 <% end %>
             <%= link_to "See all books", books_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
+            <%= link_to "See all bookclubs", "#", :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
             <%= link_to "Add a book", new_book_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
                 <% if !user_signed_in? %>
                     <%= link_to "Log In", user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
