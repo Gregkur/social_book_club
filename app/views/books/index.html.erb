@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-		<div class="col-12 col-lg-8">
+		<div class="col-ms-12 col-lg-8">
 			<%= simple_form_for :search, url: root_path, method: :get do |f| %>
 				<div class="search-form-control form-group">
 					<input class="form-control string required" type="text" name="search[query]" id="search_query" />
@@ -34,7 +34,7 @@
 									</div>
 								</div>
 								<div class="card-book-user">
-									<%= image_tag book.user.photo, class:"avatar-bordered"%>							
+									<%= image_tag book.user.photo, class:"avatar-bordered"%>
 									<div class="user-info">
 										<p><strong><%= book.user.first_name %> <%= book.user.last_name %></strong></p>
 										<p><%= book.user.address %></p>
@@ -46,12 +46,23 @@
 				<% end %>
 			</div>
 	  </div>
-		<div class="col-12 col-lg-4">
-      <div id="map"
-        style="width: 400px; height: 600px; margin-top: 135px; margin-left: 20px"
+		<div class="col-md-12 col-lg-4">
+      <div id="map" class="sticky-top" style="width: 100% !important; height: 600px !important"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
 	</div>
 </div>
+<% unless @location %>
+<script>
+  function getGeoLocation() {
+  navigator.geolocation.getCurrentPosition(setGeoCookie);
+  }
+  function setGeoCookie(position) {
+    var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
+    document.cookie = "location=" + escape(cookie_val);
+  }
+  getGeoLocation();
+</script>
+<% end %>
