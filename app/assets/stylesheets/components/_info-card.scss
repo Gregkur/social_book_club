@@ -1,7 +1,7 @@
 .info-card-background{
-    width: 790px;
-    height: 420px;
-    margin-top: 170px;
+    width: 85%;
+    height: 450px;
+    margin-top: 15%;
     border-radius: 4px;
 }
 
@@ -10,22 +10,44 @@
     background-color: white;
     border-radius: 4px;
     position: relative;
-    bottom: 60px;
-    left: 10%;
-    width: 300px;
+    bottom: 65px;
+    left: 26%;
+    width: 30%;
     padding: 30px;
     h3 {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: bold;
-        margin-bottom: 16px;
+    }
+}
+
+.info-card-background-reversed{
+    width: 85%;
+    height: 450px;
+    margin-top: 15%;
+    border-radius: 4px;
+    
+}
+
+.info-card-text-reversed{
+    display: grid;
+    background-color: white;
+    border-radius: 4px;
+    position: relative;
+    bottom: 60px;
+    left: 8%;
+    width: 30%;
+    padding: 30px;
+    h3 {
+        font-size: 20px;
+        font-weight: bold;
     }
 }
 
 .description {
-    font-size: 20px;
+    font-size: 16px;
     padding-right: 10px;
     font-weight: 500;
-    padding-top: 11px;
+    line-height: 1.8;
 }
 
 #tagline-pink {
@@ -47,30 +69,6 @@
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 12px;
-}
-
-
-.info-card-background-reversed{
-    width: 790px;
-    height: 420px;
-    margin-top: 170px;
-    border-radius: 4px;
-    
-}
-
-.info-card-text-reversed{
-    background-color: white;
-    border-radius: 4px;
-    position: relative;
-    bottom: 60px;
-    left: 10%;
-    width: 300px;
-    padding: 30px;
-    h3 {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 16px;
-    }
 }
 
 .green{
