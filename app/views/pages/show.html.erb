@@ -79,7 +79,7 @@
 		    <div class="col-6 col-6">
           <div class="bookings-grid">
             <% @user.bookings.each do |booking| %>
-              <%= link_to book_path(booking.book) do %>
+              <%= link_to "javascript:void(0)", id:"booking-menu" do %>
                 <div class=" booking-card">
                   <%= image_tag booking.book.photos[0],crop: :fill %>
                     <div class="booking-card-info">
@@ -90,11 +90,11 @@
                         <h3>Booking dates:</h3>
                         <p>until <%= booking.until.to_formatted_s(:long) %></p>
                         <p>from <%= booking.from.to_formatted_s(:long) %></p>
-                        <% if policy(@booking).destroy? %>
-                          <%= link_to booking, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                          <i class="fas fa-trash mr-2 mt-2"></i>
-                          <% end %>
-                        <% end %>
+                        <%# <% if policy(@booking).destroy? %> %>
+                          <%# <%= link_to booking, method: :delete, data: { confirm: 'Are you sure?' } do %> %>
+                          <%# <i class="fas fa-trash mr-2 mt-2"></i> %>
+                          <%# <% end %> %>
+                        <%# <% end %> %>
                         <div class="card-booking-user">
                           <%= image_tag booking.book.user.photo, class:"avatar-bordered" %>
                         </div>

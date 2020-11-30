@@ -30,6 +30,7 @@ import "../plugins/flatpickr"
 import { initMapbox } from '../plugins/init_mapbox';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initBookingMenu } from '../components/booking-menu'
 
 document.addEventListener('turbolinks:load', () => {
   // Flat picker
@@ -59,6 +60,8 @@ document.addEventListener('turbolinks:load', () => {
 
   // Geo Map
   initMapbox()
+  // Swal
+  initBookingMenu()
 });
 
 
