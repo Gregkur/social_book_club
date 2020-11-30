@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_110215) do
+ActiveRecord::Schema.define(version: 2020_11_30_100624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,17 @@ ActiveRecord::Schema.define(version: 2020_11_27_110215) do
     t.bigint "book_id", null: false
     t.index ["book_id"], name: "index_bookclub_books_on_book_id"
     t.index ["bookclub_id"], name: "index_bookclub_books_on_bookclub_id"
+  end
+
+  create_table "bookclub_threads", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "bookclub_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bookclub_id"], name: "index_bookclub_threads_on_bookclub_id"
+    t.index ["user_id"], name: "index_bookclub_threads_on_user_id"
   end
 
   create_table "bookclub_users", force: :cascade do |t|
@@ -123,6 +134,8 @@ ActiveRecord::Schema.define(version: 2020_11_27_110215) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookclub_books", "bookclubs"
   add_foreign_key "bookclub_books", "books"
+  add_foreign_key "bookclub_threads", "bookclubs"
+  add_foreign_key "bookclub_threads", "users"
   add_foreign_key "bookclub_users", "bookclubs"
   add_foreign_key "bookclub_users", "users"
   add_foreign_key "bookclubs", "users"

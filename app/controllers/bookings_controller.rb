@@ -1,9 +1,16 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_book
+  before_action :set_book, only: [:new, :create]
 
   def new
     @booking = Booking.new
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to page_path(current_user)
   end
 
   def create

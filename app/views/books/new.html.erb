@@ -5,6 +5,7 @@
         <div class="nested-create-form m-8">
           <div id="header-create-form">
             <h2>Add a new book to your profile</h2>
+            <%= image_tag "figures/2.png", id:"figure-reading-create" %>
           </div>
           <%= simple_form_for(@book) do |f| %>
             <%= f.input :title, placeholder: 'Harry Potter', class: "form-control" %>
@@ -19,7 +20,7 @@
             <!-- </div> -->
             <div class="form-link-buttons">
               <%= f.submit class: "btn-create" %>
-              <%= link_to "Back", books_path(@book), method: :get,  class: "btn-create" %>
+              <%= link_to "Back", books_path(@book), method: :get,  class: "btn-create-booking" %>
             </div>
           <% end %>
         </div>
