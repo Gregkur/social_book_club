@@ -90,6 +90,11 @@
                         <h3>Booking dates:</h3>
                         <p>until <%= booking.until.to_formatted_s(:long) %></p>
                         <p>from <%= booking.from.to_formatted_s(:long) %></p>
+                        <% if policy(@booking).destroy? %>
+                          <%= link_to booking, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                          <i class="fas fa-trash mr-2 mt-2"></i>
+                          <% end %>
+                        <% end %>
                         <div class="card-booking-user">
                           <%= image_tag booking.book.user.photo, class:"avatar-bordered" %>
                         </div>
