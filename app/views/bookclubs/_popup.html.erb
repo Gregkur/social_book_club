@@ -1,42 +1,42 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-        <h1 class="text-center"> Library 📚</h1>
-        <div class="card-grid-index">
-            <% @bookclub_books.each do |book| %>
-                    <%= link_to book_path(book) do %>
-                        <div class="card-book-index">
-                            <% if book.photos.attached? %>
-                                <%= cl_image_tag book.photos[0].key, crop: :fill%>
-                            <% else %>
-                                <img src="https://images.unsplash.com/photo-1545239351-cefa43af60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80"/>
-                            <% end %>
-                            <div class="card-book-index-infos">
-                                <div>
-                                    <div class="genre">
-                                        <p><strong><span><%= book.genre %></span></strong></p>
-                                    </div>
-                                    <h2><%= book.title %></h2>
-                                    <p><strong><%= book.author %></strong></p>
-                                    <p> <%= book.year %> | <%= book.pages %></p>
-                                    <div class="stars">
-                                        <% 5.times do %>
-                                            <i class="fas fa-star"></i>
-                                        <% end %>
-                                    </div>
-                                </div>
-                                <div class="card-book-user">
-                                    <%= image_tag book.user.photo, class:"avatar-bordered"%>							
-                                    <div class="user-info">
-                                        <p><strong><%= book.user.first_name %> <%= book.user.last_name %></strong></p>
-                                        <p><%= book.user.address %></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <% end %>
-                <% end %>
-        </div>
+        <h1 class="text-center">Your library</h1>
+		  <div class="card-grid-books">
+				<% @bookclub_books.each do |book| %>
+					<%= link_to book_path(book) do %>
+						<div class="card-book-index">
+							<% if book.photos.attached? %>
+								<%= cl_image_tag book.photos[0].key, crop: :fill%>
+							<% else %>
+								<img src="https://images.unsplash.com/photo-1545239351-cefa43af60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80"/>
+							<% end %>
+							<div class="card-book-index-infos">
+								<div>
+									<div class="genre">
+										<p><strong><span><%= book.genre %></span></strong></p>
+									</div>
+									<h2><%= book.title %></h2>
+									<p><strong><%= book.author %></strong></p>
+									<p> <%= book.year %> | <%= book.pages %> pp</p>
+									<div class="stars">
+										<% 5.times do %>
+											<i class="fas fa-star"></i>
+										<% end %>
+									</div>
+								</div>
+								<div class="card-book-user">
+									<%= image_tag book.user.photo, class:"avatar-bordered"%>							
+									<div class="user-info">
+										<p><strong><%= book.user.first_name %> <%= book.user.last_name %></strong></p>
+										<p><%= book.user.address %></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+	  </div>
     </div>
-  </div>
 </div>
