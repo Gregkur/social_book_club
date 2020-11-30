@@ -6,7 +6,7 @@ class BookclubThreadPolicy < ApplicationPolicy
   end
 
   def index?
-    return true
+    true
   end
 
   def create?
@@ -22,10 +22,10 @@ class BookclubThreadPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    true
   end
 
   def destroy?
-    record.user == user
+    true
   end
 end

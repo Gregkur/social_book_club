@@ -61,12 +61,14 @@
             <%= image_tag bookclub_thread.user.photo, class:"avatar-bordered"%>
           </div>
           <div class="functional-buttons">
-              <%#= link_to edit_book_review_path(@book, review) do %>
+            <% if current_user != @bookclub_thread.user %>
+              <%= link_to edit_bookclub_bookclub_thread_path(@bookclub, bookclub_thread) do %>
                 <i class="fas fa-edit"></i>
-              <%# end %>
-              <%#= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <% end %>
+              <%= link_to bookclub_bookclub_thread_path(bookclub_thread), method: :delete, data: { confirm: 'Are you sure?' } do %>
                 <i class="fas fa-trash mr-2"></i>
-              <%# end %>
+              <% end %>
+            <% end %>
           </div>
         <!-- </div> -->
         </div>
