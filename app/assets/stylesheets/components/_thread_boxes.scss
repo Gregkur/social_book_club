@@ -25,3 +25,26 @@
   top: 10px;
   right: 10px;
 }
+
+.header-create-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+#figure-reading-thread {
+  height: 130px;
+}
+
+.background-create-wrapper-thread {
+  border-radius: 10px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  // margin: -20px;
+  padding: 25px;
+  background-color: $green;
+
+  h2 {
+    padding-left: 50px;
+    padding-top: 40px;
+  }
+}

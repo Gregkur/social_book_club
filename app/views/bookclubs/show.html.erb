@@ -43,8 +43,11 @@
     </div>
   </div>
   <div class="container">
-    <div class="background-create-wrapper-2">
-      <h2>Bookclub Talks</h2>
+    <div class="background-create-wrapper-thread">
+      <div class="header-create-form">
+        <h2>Bookclub Talks</h2>
+        <%= image_tag "figures/2.png", id:"figure-reading-thread" %>
+      </div>
       <div class="create-thread-box">
         <div class="nested-create-thread-form">
           <%= render "bookclub_threads/new", bookclub: @bookclub, bookclub_thread: @bookclub_thread %>
