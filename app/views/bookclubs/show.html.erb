@@ -42,7 +42,7 @@
         
       </div>
 
-      <div class="books-wrapper">
+      <div class="books-wrapper"style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
         <% @bookclub_users.each do |user| %>
           <% user.user.books.take(1).each do |book| %>
                 <%= image_tag book.photos[0] %>
