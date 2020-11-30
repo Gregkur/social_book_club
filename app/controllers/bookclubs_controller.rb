@@ -14,8 +14,11 @@ class BookclubsController < ApplicationController
       end
     end
     authorize @bookclub
+    @bookclub_thread = BookclubThread.new
+    @bookclub_thread.bookclub = @bookclub
+    authorize @bookclub_thread
   end
-  
+
   def new
     @bookclub = Bookclub.new
     authorize @bookclub
