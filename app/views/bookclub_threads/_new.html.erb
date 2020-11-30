@@ -1,1 +1,6 @@
-_new.html.erb
+<h3>Start a thread</h3>
+<%= simple_form_for [@bookclub, @bookclub_thread] do |f| %>
+  <%= f.input :title, placeholder: "Startups of Berlin" %>
+  <%= f.input :content, placeholder: "This thread is about the Startup environement in Berlin." %>
+  <%= f.submit class: "btn-create-booking"%>
+<% end %>
