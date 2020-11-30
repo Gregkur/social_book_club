@@ -23,7 +23,7 @@
             <%= f.input :until, as: :string, required: false, input_html: {class: "datepicker"}, class: "form-control", placeholder: "click to select end date" %>
             <div class="form-link-buttons">
               <%= f.button :submit, "Create booking request", class: "btn-create-booking" %>
-              <%= link_to "Back", book_path(@book), method: :get,  class: "btn-create" %>
+              <%= link_to "Back", book_path(@book), method: :get,  class: "btn-create-booking" %>
             </div>
           <% end %>
         </div>
