@@ -1,0 +1,58 @@
+.card-bookclub-index {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    &:hover {
+      opacity: 0.8;
+      transition: ease-in 0.2s;
+    }
+  }
+  
+  .card-bookclub-index > img {
+    height: 100%;
+    width: 35%;
+    object-fit: cover;
+  }
+  
+  .card-bookclub-index h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 16px 0 0 0;
+  }
+  
+  .card-bookclub-index p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 1px 0 1px 0;
+  }
+  
+  .card-bookclub-index .card-bookclub-index-infos {
+    padding: 16px;
+  }
+
+  .card-bookclub-index .card-bookclub-user {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+    margin-top: 8px;
+  }
+
+  .card-bookclub-index .user-info {
+    padding-left: 12px;
+  }
+
+  .members {
+    margin: 4px 0 8px 0;
+  }
+
+  .card-bookclub-index span {
+    background-color: $yellow;
+    padding: 4px;
+    border-radius: 2px;
+  }

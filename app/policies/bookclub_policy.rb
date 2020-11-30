@@ -4,6 +4,10 @@ class BookclubPolicy < ApplicationPolicy
       scope.all
     end
   end
+  
+  def index?
+    return true
+  end
 
   def show?
     true
