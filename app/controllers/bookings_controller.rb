@@ -30,6 +30,8 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       if @booking.save
         flash[:notice] = "Booked successfully!"
+        @book.availability = false
+        @book.save
         redirect_to page_path(current_user)
       else
         flash[:notice] = "Booking failed."
