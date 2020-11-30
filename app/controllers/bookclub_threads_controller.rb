@@ -1,11 +1,11 @@
 class BookclubThreadsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_thread, only: [:new, :edit, :update, :destroy]
+  before_action :set_thread, only: [:new]
 
-  def new
-    @bookclub_thread = BookclubThread.new(thread_params)
-    authorize @bookclub_thread
-  end
+  # def new
+  #   @bookclub_thread = BookclubThread.new(thread_params)
+  #   authorize @bookclub_thread
+  # end
 
   def create
     @bookclub_thread = BookclubThread.new(thread_params)
@@ -23,7 +23,6 @@ class BookclubThreadsController < ApplicationController
 
   def set_bookclub
     @bookclub = Bookclub.find(params[:bookclub_id])
-    authorize @bookclub
   end
 
   def thread_params
