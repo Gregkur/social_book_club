@@ -43,4 +43,20 @@ body {
   color: $red;
   text-align: center;
   padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
 }
+
+
+#header-create-form h2 {
+  padding-top: 35px;
+}
+
+#figure-reading-create {
+  height: 150px;
+}
+
+
+
+
+
