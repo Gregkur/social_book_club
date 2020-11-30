@@ -1,4 +1,5 @@
 <%= render 'popup' %>
+<%= render 'members' %>
 <div class="d-flex flex-column" style="align-items: center">
   <div class="profile-wrapper purple">
     <% if @bookclub.photos.attached? %>
@@ -22,7 +23,7 @@
       </div>
     </div>
     <div class="bookclubs-books-wrapper">
-      <div class="bookclubs-wrapper">
+      <div class="bookclubs-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg2">
         <% @bookclub_users.take(3).each do |user|%>
           <%= image_tag user.user.photo %>
         <% end %>
@@ -32,7 +33,7 @@
         <% end %>
       </div>
 
-      <div class="books-wrapper"style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
+      <div class="books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
         <% @bookclub_users.each do |user| %>
           <% user.user.books.take(1).each do |book| %>
                 <%= image_tag book.photos[0] %>
