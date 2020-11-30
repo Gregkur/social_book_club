@@ -15,6 +15,7 @@ class BookclubThreadsController < ApplicationController
       redirect_to bookclub_path(@bookclub)
       flash[:notice] = "Your thread was successfully posted!"
     else
+      flash[:notice] = "Creating thread failed"
       render :new
     end
   end
