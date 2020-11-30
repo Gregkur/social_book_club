@@ -42,16 +42,31 @@
       </div>
     </div>
   </div>
-  <div class="background-create-wrapper-2">
-    <h2>Bookclub Talks</h2>
-    <div class="create-thread-box">
-      <div class="nested-create-thread-form">
-        <%= render "bookclub_threads/new", bookclub: @bookclub, bookclub_thread: @bookclub_thread %>
+  <div class="container">
+    <div class="background-create-wrapper-2">
+      <h2>Bookclub Talks</h2>
+      <div class="create-thread-box">
+        <div class="nested-create-thread-form">
+          <%= render "bookclub_threads/new", bookclub: @bookclub, bookclub_thread: @bookclub_thread %>
+        </div>
       </div>
-    </div>
-    <div class="existing-threads-box">
-      <div class="nested-existing-threads">
-        <p>all existing threads are listed here</p>
+      <div class="existing-threads-box">
+        <div class="nested-existing-threads">
+          <% @bookclub.bookclub_threads.each do |bookclub_thread| %>
+            <div class="card-thread">
+              <h3><%= bookclub_thread.title %></h3>
+              <p><%= bookclub_thread.content %></p>
+              <div class="review-edit">
+                  <%#= link_to edit_book_review_path(@book, review) do %>
+                    <i class="fas fa-edit"></i>
+                  <%# end %>
+                  <%#= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="fas fa-trash mr-2"></i>
+                  <%# end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
