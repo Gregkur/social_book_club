@@ -44,6 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   const hamburger = document.querySelector(".hamburger");
   const burger = document.getElementById('hamburger2')
   const body = document.querySelector('body')
+
 // Menu slide
   hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("is-active");
@@ -60,8 +61,3 @@ document.addEventListener('turbolinks:load', () => {
   // Geo Map
   initMapbox()
 });
-
-
-
-
-
