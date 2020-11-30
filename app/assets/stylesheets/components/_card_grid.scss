@@ -1,6 +1,13 @@
-.card-grid-index {
+.card-grid-books {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
-    margin: 16px 0 16px 0;
+    margin-bottom: 16px;
+}
+
+.card-grid-bookclubs {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+    margin-bottom: 16px;
 }

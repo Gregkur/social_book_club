@@ -11,6 +11,7 @@ class BooksController < ApplicationController
 
   def index
     @books = policy_scope(Book).all
+    @books = Book.search(params[:query]) if params[:query].present?
     @users = User.near(current_user.address, 10).where.not(id: current_user.id)
     @markers = @users.geocoded.map do |user|
       {
