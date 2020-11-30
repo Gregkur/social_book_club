@@ -2,6 +2,19 @@ class BookclubsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_bookclub, only: [:edit, :update, :destroy]
 
+  def index
+    @bookclubs = policy_scope(Bookclub).all
+    @bookclubs = Bookclub.search(params[:query]) if params[:query].present?
+    @users = User.near(current_user.address, 10).where.not(id: current_user.id)
+    # @markers = @users.geocoded.map do |user|
+    #   {
+    #     lat: user.latitude,
+    #     lng: user.longitude,
+    #     infoWindow: render_to_string(partial: "info_window", locals: { user: user })
+    #   }
+    # end
+  end
+
   def show
     @bookclub = Bookclub.find(params[:id])
     ## Limiting the amount of shown users
