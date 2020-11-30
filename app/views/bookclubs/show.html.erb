@@ -56,16 +56,19 @@
           <!-- <div class="card-thread mt-3"> -->
             <h3><%= bookclub_thread.title %></h3>
             <p><%= bookclub_thread.content %></p>
-            <div class="review-edit">
-                <%#= link_to edit_book_review_path(@book, review) do %>
-                  <i class="fas fa-edit"></i>
-                <%# end %>
-                <%#= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <i class="fas fa-trash mr-2"></i>
-                <%# end %>
-            </div>
-          <!-- </div> -->
           </div>
+          <div class="avatar-thread">
+            <%= image_tag bookclub_thread.user.photo, class:"avatar-bordered"%>
+          </div>
+          <div class="functional-buttons">
+              <%#= link_to edit_book_review_path(@book, review) do %>
+                <i class="fas fa-edit"></i>
+              <%# end %>
+              <%#= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fas fa-trash mr-2"></i>
+              <%# end %>
+          </div>
+        <!-- </div> -->
         </div>
       <% end %>
     </div>
