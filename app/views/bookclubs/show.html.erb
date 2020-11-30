@@ -43,9 +43,10 @@
     </div>
   </div>
   <div class="background-create-wrapper-2">
+    <h2>Bookclub Talks</h2>
     <div class="create-thread-box">
       <div class="nested-create-thread-form">
-        <p>Create thread form comes here</p>
+        <%= render "bookclub_threads/new", bookclub: @bookclub, bookclub_thread: @bookclub_thread %>
       </div>
     </div>
     <div class="existing-threads-box">

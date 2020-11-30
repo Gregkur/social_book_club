@@ -1,16 +1,12 @@
 class BookclubThreadsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_thread, only: [:new]
-
-  # def new
-  #   @bookclub_thread = BookclubThread.new(thread_params)
-  #   authorize @bookclub_thread
-  # end
+  before_action :set_bookclub, only: [:new]
 
   def create
     @bookclub_thread = BookclubThread.new(thread_params)
-    authorize @bookclub_thread
     @bookclub_thread.user = current_user
+    authorize @bookclub_thread
+    @bookclub_thread.bookclub = @bookclub
     if @bookclub_thread.save
       redirect_to bookclub_path(@bookclub)
       flash[:notice] = "Your thread was successfully posted!"
@@ -23,7 +19,7 @@ class BookclubThreadsController < ApplicationController
   private
 
   def set_bookclub
-    @bookclub = Bookclub.find(params[:bookclub_id])
+    @bookclub = Bookclub.find(params[:id])
   end
 
   def thread_params
