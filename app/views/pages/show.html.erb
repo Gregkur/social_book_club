@@ -1,7 +1,7 @@
+<%= render 'popup' %>
 <div class="d-flex flex-column" style="align-items: center">
 
   <div class="profile-wrapper pink">
-
 
     <% if @user.photo.attached? %>
       <%= cl_image_tag @user.photo.key, crop: :limit, class:"user-img" %>
@@ -45,7 +45,7 @@
         <p>+2 more bookclubs</p>
       </div>
 
-      <div class="books-wrapper">
+      <div class="books-wrapper" data-toggle="modal" data-target=".bd-example-modal-lg">
         <% @user.books.take(3).each do |book| %>
           <%= link_to book_path(book) do %>
             <% book.photos.each do |photo| %>
@@ -67,7 +67,7 @@
       </div>
 
     </div>
-
+    
   </div>
 
   <div class="booking-wrapper yellow my-5">
