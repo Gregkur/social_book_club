@@ -5,6 +5,7 @@
     border-radius: 10px;
     h1, p, a {
         color: $dark-purple;
+        margin: 0;
     }
     .bookclub-img{
         bottom: 10%;
@@ -34,8 +35,8 @@
         align-items: center;
         img{
             background: 50% 50% no-repeat;
-            width: 83px;
-            height: 83px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
         }
@@ -48,17 +49,16 @@
     .bookclub-books-wrapper{
         background-color: white;
         width: 500px;
-        height: 130px;
+        height: 127px;
         border-radius: 20px;
+        margin-bottom: 25px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        transition: 0.2s;
-        
         img{
             background: 50% 50% no-repeat;
-            width: 93px;
-            height: 93px;
+            width: 72px;
+            height: 96px;
             border-radius: 4px;
             object-fit: cover;
         }
@@ -73,8 +73,7 @@
     width: 50%;
     padding: 35px;
     border-radius: 4px;
-
-    h1{
+    h1 {
         font-weight: 600;
         color: $dark-purple;
     }

@@ -9,7 +9,7 @@
     <% else %>
       <%= image_tag "https://images.unsplash.com/photo-1546284663-fed719f6612e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80", crop: :limit, class:"bookclub-img"%>
     <% end %>
-    
+
     <div class="bookclub-user-info">
       <% if @bookclub.name.present? %>
         <h1 style="width: 520px"><%= @bookclub.name %></h1>
@@ -21,7 +21,7 @@
         <% if @bookclub.description.present? %>
           <p><%= @bookclub.description %></p>
         <% else %>
-          <p>Tell us about yourself, beautiful stranger!<p>
+          <p>Tell us about your bookclub!<p>
         <% end %>
       </div>
     </div>
@@ -31,10 +31,11 @@
         <% @bookclub_users.take(3).each do |user|%>
           <%= image_tag user.user.photo %>
         <% end %>
-        <% if @bookclub_users.length < 3 %>
+        <% if @bookclub_users.length == 1 %>
+          <p><strong><%= @bookclub_users.length %> member</strong></p>
         <% else %>
-            <p>+<%= @bookclub_users.length - 3 %> more members</p>
-        <% end %>
+          <p><strong><%= @bookclub_users.length %> members</strong></p>
+        <% end %>      
       </div>
 
       <div class="bookclub-books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
@@ -45,22 +46,28 @@
         <% end %>
 
          <% if @bookclub_books.length == 4 %>
-            <p>one more book</p>
-          <% elsif @bookclub_books.length< 3 %>
-            <p>Time to add some books!</p>
+            <p><strong>one more book</strong></p>
+          <% elsif @bookclub_books.length == 3 %>
+            <p><strong>3 books</strong></p>
+          <% elsif @bookclub_books.length == 2 %>
+          <p><strong>2 books</strong></p>
+          <% elsif @bookclub_books.length == 1 %>
+            <p><strong>1 book</strong></p>
+          <% elsif @bookclub_books.length == 0 %>
+            <p><strong>Time to gain some members!</strong></p>
           <% else %>
-            <p>+<%=@bookclub_books.length - 3%> more books</p>
+            <p><strong>+<%=@bookclub_books.length - 3%> more books</strong></p>
           <% end %>
       </div>
     </div>
- 
+
     <% if !current_user.in?(@bookclub.members) %>
       <%= link_to "Join now!", join_path, :method => :post, class:"button-red-profile", id:"joinbookclub", remote: true %>
     <% end %>
   </div>
-    <div class="background-create-wrapper-thread">
+    <div class="background-create-wrapper-thread mx-auto">
       <div class="header-create-form">
-        <h2>Bookclub Talks</h2> 
+        <h2>Bookclub Talks</h2>
         <%= image_tag "figures/2.png", id:"figure-reading-thread" %>
       </div>
       <div class="create-thread-box">
@@ -97,9 +104,9 @@
                 <% bookclub_thread.comments.each do |comment| %>
                   <div class="comment">
                     <p><%= comment.content %></p>
-                    <%#= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <%= link_to comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
                       <i class="fas fa-trash mr-2 mt-2"></i>
-                    <%# end %>
+                    <% end %>
                   </div>
                   <div class="commenter mt-2 ml-2">
                     <p>created by - <%= comment.user.first_name %> <%= comment.user.last_name %></p>
