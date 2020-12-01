@@ -48,7 +48,7 @@
       </div>
     </div>
     
-    <% if @bookclub.bookclub_users.index(@user) %>
+    <% if @user.in?(@bookclub.bookclub_users) %>
 
       <% else %>
 
