@@ -8,6 +8,15 @@ require "open-uri"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# delete everythin
+Review.delete_all
+Booking.delete_all
+Bookclub.delete_all
+Book.delete_all
+User.delete_all
+
+
+
 anna = URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1601352433l/15823480._SY475_.jpg")
 milk = URI.open("https://images-na.ssl-images-amazon.com/images/I/71l9WWa-rXL.jpg")
 testaments = URI.open("https://images-na.ssl-images-amazon.com/images/I/715YA-I9GcL.jpg")
@@ -27,7 +36,7 @@ user1 = User.create(email: "marie@gmail.com", password: "123456", first_name: "M
 
 user1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "marie.jpg", content_type:"image/png" )
 
-user2 = User.create(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "annnie2", address: "Berlin, Charlottenburg", about: about)
+user2 = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "annnie2", address: "Berlin, Charlottenburg", about: about)
 
 user2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1542596594-b47fea509622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "anna.jpg", content_type:"image/png" )
 
