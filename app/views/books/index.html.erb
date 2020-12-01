@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-		<div class="col-12 col-lg-8">
+		<div class="col-ms-12 col-lg-8">
 			<%# Search form %>
 			<div>
 				<%= form_tag books_path, method: :get do %>
@@ -39,7 +39,7 @@
 									</div>
 								</div>
 								<div class="card-book-user">
-									<%= image_tag book.user.photo, class:"avatar-bordered"%>							
+									<%= image_tag book.user.photo, class:"avatar-bordered"%>
 									<div class="user-info">
 										<p><strong><%= book.user.first_name %> <%= book.user.last_name %></strong></p>
 										<p><%= book.user.address %></p>
@@ -52,12 +52,24 @@
 			</div>
 	  </div>
 		<%# Map %>
-		<div class="col-12 col-lg-4">
+    <div class="col-md-12 col-lg-4 map-container">
       <div id="map"
-        style="width: 400px; height: 600px; margin-top: 135px; margin-left: 20px"
+        style="width: 380px; height: 600px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
 	</div>
 </div>
+<% unless @location %>
+<script>
+  function getGeoLocation() {
+  navigator.geolocation.getCurrentPosition(setGeoCookie);
+  }
+  function setGeoCookie(position) {
+    var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
+    document.cookie = "location=" + escape(cookie_val);
+  }
+  getGeoLocation();
+</script>
+<% end %>

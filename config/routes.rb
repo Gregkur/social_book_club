@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :bookclubs, only: [:new, :create, :show, :index] do
     resources :bookclub_threads, only: [:new, :create, :show, :edit, :update, :destroy]
   end
+  get "/profile/:id", to: "pages#profile", as: :profile
 end

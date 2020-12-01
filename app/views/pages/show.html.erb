@@ -31,14 +31,16 @@
 
     <div class="bookclubs-books-wrapper">
 
+
       <div class="bookclubs-wrapper" style="cursor: pointer;">
         
+
         <%# @user.bookclubs.each do |bookclub| %>
           <%#= link_to bookclub_path(bookclub) do %>
             <%#= cl_image_tag bookclub.photo[0].key, crop: :fill%>
           <%# end %>
         <%# end %>
-        
+
         <%= image_tag "prince.jpg" %>
         <%= image_tag "harry.jpg" %>
         <%= image_tag "testaments.jpg" %>
@@ -61,7 +63,7 @@
         <% else %>
           <p>+<%=@user.books.length - 3%> more books</p>
         <% end %>
-        
+
       </div>
 
     </div>
