@@ -7,11 +7,15 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# delete everythin
 Review.delete_all
 Booking.delete_all
 Bookclub.delete_all
 Book.delete_all
 User.delete_all
+
+
 
 anna = URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1601352433l/15823480._SY475_.jpg")
 milk = URI.open("https://images-na.ssl-images-amazon.com/images/I/71l9WWa-rXL.jpg")
