@@ -51,8 +51,8 @@
 
     .books-wrapper{
         background-color: white;
-        width: 50%;
-        height: 16vh;
+        width: 500px;
+        height: 130px;
         border-radius: 20px;
         display: flex;
         justify-content: space-evenly;
@@ -61,8 +61,8 @@
         
         img{
             background: 50% 50% no-repeat;
-            width: 6vw;
-            height: 14vh;
+            width: 93px;
+            height: 93px;
             border-radius: 4px;
             object-fit: cover;
         }
@@ -75,10 +75,9 @@
         }
     }
 }
-
-.booking-wrapper{
-    width: 85vw !important;
-    padding: 35px !important;
+.booking-wrapper-profile{
+    width: 100%;
+    padding: 35px;
     border-radius: 4px;
 
     h1{
@@ -88,6 +87,7 @@
         margin-bottom: 24px;
     }
 }
+
 
 .profile-user-info{
     display: flex;
