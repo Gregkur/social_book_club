@@ -3,7 +3,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 
 const initBookingMenu = () => {
     const bookings = document.querySelectorAll("#booking-menu")
-    if (bookings === undefined || bookings.length == 0) {
+    if (bookings){
       bookings.forEach(booking => 
         booking.addEventListener('click', () => {
             Swal.fire({
