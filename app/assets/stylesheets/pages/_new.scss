@@ -64,6 +64,17 @@ body {
   height: 130px;
 }
 
+#header-create-bookclub-form {
+  color: $green;
+  text-align: center;
+  // padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#header-create-bookclub-form h2 {
+  padding-top: 35px;
+}
 
 
 
