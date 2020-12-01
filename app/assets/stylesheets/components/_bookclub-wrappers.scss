@@ -1,10 +1,11 @@
 .bookclub-wrapper{
     position: relative;
     height: 606px;
-    margin-top: 170px;
+    margin-top: 15vh;
     border-radius: 10px;
     h1, p, a {
         color: $dark-purple;
+        margin: 0;
     }
     .bookclub-img{
         bottom: 10%;
@@ -73,8 +74,7 @@
     width: 50%;
     padding: 35px;
     border-radius: 4px;
-
-    h1{
+    h1 {
         font-weight: 600;
         color: $dark-purple;
     }
