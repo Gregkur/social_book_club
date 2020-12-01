@@ -29,16 +29,15 @@
     <div class="bookclubs-books-wrapper">
       <div class="bookclubs-wrapper" style="cursor: pointer;">
         
-        <%# @user.bookclubs.each do |bookclub| %>
-          <%#= link_to bookclub_path(bookclub) do %>
-            <%#= cl_image_tag bookclub.photo[0].key, crop: :fill%>
-          <%# end %>
-        <%# end %>
-        
-        <%= image_tag "prince.jpg" %>
-        <%= image_tag "harry.jpg" %>
-        <%= image_tag "testaments.jpg" %>
-        <p>+2 more bookclubs</p>
+        <% @user.bookclubs.each do |bookclub| %>
+          <%= link_to bookclub_path(bookclub) do %>
+            <%= cl_image_tag bookclub.photos[0].key, crop: :fill%>
+          <% end %>
+        <% end %>
+        <% if @user.bookclubs.length < 3 %>
+        <% else %>
+            <p>+<%= @user.bookclubs.length - 3 %> more bookclubs</p>
+        <% end %>
       </div>
       <div class="books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
         <% @user.books.take(3).each do |book| %>
