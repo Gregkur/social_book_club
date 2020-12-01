@@ -36,13 +36,14 @@ import { initBookingMenu } from '../components/booking-menu'
 import { initJoinMenu } from '../components/join-menu'
 
 document.addEventListener('turbolinks:load', () => {
-  // Flat picker
+// Flat picker
   flatpickr(".datepicker", {
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
     minDate: "today",
   });
+// Swal for joining
   initJoinMenu()
 //vars
   const nav = document.querySelector(".header__nav");
@@ -63,10 +64,9 @@ document.addEventListener('turbolinks:load', () => {
 
   });
 
-  // Geo Map
+// Geo Map
   initMapbox()
-  // Swal
+// Swal
   initBookingMenu()
-  // Swal for joining
 
 });
