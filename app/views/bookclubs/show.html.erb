@@ -53,7 +53,7 @@
           <%= render "bookclub_threads/new", bookclub: @bookclub, bookclub_thread: @bookclub_thread %>
         </div>
       </div>
-      <% @bookclub.bookclub_threads.each do |bookclub_thread| %>
+      <% @bookclub_threads.each do |bookclub_thread| %>
         <div class="existing-threads-box">
           <div class="nested-existing-threads">
           <!-- <div class="card-thread mt-3"> -->
@@ -73,7 +73,7 @@
               <% end %>
             <% end %>
           </div>
-          <%= render "comments/new", bookclub: @bookclub, bookclub_thread: @bookclub_thread, comment: @comment %>
+          <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
         <!-- </div> -->
         </div>
       <% end %>

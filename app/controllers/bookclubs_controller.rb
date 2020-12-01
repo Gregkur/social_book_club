@@ -32,9 +32,8 @@ class BookclubsController < ApplicationController
     @bookclub_thread.bookclub = @bookclub
     authorize @bookclub_thread
     # show comments of thread in bookclub
-    authorize @bookclub
+    @bookclub_threads = @bookclub.bookclub_threads
     @comment = Comment.new
-    @comment.bookclub_thread = @bookclub_thread
     authorize @comment
   end
 
