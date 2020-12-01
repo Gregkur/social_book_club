@@ -4,7 +4,7 @@
 </div>
 <div class="container d-flex flex-column my-5" style="align-items: center">
   <div class="row">
-    <div class="book-card">
+    <div class="book-card mt-5">
       <div class="book-pic">
         <% if @book.photos.attached? %>
           <%= cl_image_tag @book.photos[0].key, crop: :fill, class:"avatar-book" %>
@@ -18,18 +18,14 @@
         <p> <%= @book.year %> | <%= @book.pages %> pages </p>
         <h3> <i class="fas fa-map-marker-alt"></i>  <strong> <%= @book.user.address %> </strong> </h3>
         <p> <%= @book.description %></p>
-        <% if @book.availability? %>
+        <% if @book.availability? && current_user != @book.user %>
           <%= link_to new_book_booking_path(@book) do %>
             <button class="btn button-red">Booking Request</button>
           <% end %>
         <% else %>
           <button id="btn-disabled">Booking Request</button>
-          <p> <%= image_tag "warning.png", id:"warning"%> <%= "This book will be available from #{@book.bookings.last.until.next}." %> </p>
+          <p> <%= image_tag "warning.png", id:"warning"%> <%= "This book will be available from #{@book.bookings.last.until.next.to_formatted_s(:long)}." %> </p>
           <%= image_tag "figures/5.png", id:"figure-crying" %>
-        <% if current_user != @book.user %>
-          <%= link_to new_book_booking_path(@book) do %>
-            <button class="btn button-red">Booking Request</button>
-          <% end %>
         <% end %>
           <div>
           <% if policy(@book).update? %>
@@ -54,11 +50,10 @@
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "user-avatar" %>
         <% end %>
       </div>
-      
     </div>
   </div>
   <div class="row">
-    <div class="card-review">
+    <div class="card-review mt-5">
       <h2><%= "What others say about #{@book.title}" %></h2>
       <% if @book.reviews.empty? %>
         <div class= "text-center">
