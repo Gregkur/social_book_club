@@ -51,6 +51,20 @@ class BookclubsController < ApplicationController
     end
   end
 
+  def join
+    @bookclub = Bookclub.find(params[:id]) 
+    authorize @bookclub
+    @user = current_user
+    @bookclub_user = BookclubUser.new(bookclub: @bookclub, user: @user)
+    if @bookclub_user.save
+      flash[:notice] = "Joined successfully!"
+      redirect_to bookclub_path(@bookclub)
+    else
+      flash[:notice] = "Creating book club failed"
+      render :new
+    end
+
+  end
   private
 
   def set_bookclub
