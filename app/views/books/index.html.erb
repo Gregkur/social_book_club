@@ -53,10 +53,12 @@
 	  </div>
 		<%# Map %>
     <div class="col-md-12 col-lg-4 map-container">
-      <div id="map"
-        style="width: 380px; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="map-sticky">
+        <div id="map"
+          style="width: 380px; height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
 	</div>
