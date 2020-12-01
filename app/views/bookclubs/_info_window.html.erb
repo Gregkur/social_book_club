@@ -1,23 +1,14 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" style="width: 200px">
-    <div class="carousel-title">
-      <p> <%= link_to "#{user.nickname}'s books:", profile_path(user) %></p>
+    <div class="bookclub-details">
+      <div class="carousel-title">
+        <p> <%= link_to "", bookclub_path(bookclub) %> </p>
+      </div>
+        <%= image_tag photo, crop: :fill, class:"bookclub-pic"%>
+      <div class="bookclub-description">
+        <span> <%= bookclub.description %></span>
+      </div>
     </div>
-      <% user.books.each.with_index do |book, i| %>
-        <div class="carousel-item <%= 'active' if i == 0 %> ">
-          <div class="book-details">
-            <%= link_to book_path(book) do %>
-              <% book.photos.each do |photo| %>
-                <%= image_tag photo, crop: :fill, class:"book-pic"%>
-              <% end %>
-            <% end %>
-            <div class="book-title">
-              <span> <%= book.title %></span>
-            </div>
-          </div>
-        </div>
-      <% end %>
-
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" style="background-color: black" aria-hidden="true"></span>
