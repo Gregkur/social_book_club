@@ -26,10 +26,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "../plugins/flatpickr"
 import { initMapbox } from '../plugins/init_mapbox';
-import Swal from 'sweetalert2'
-import 'sweetalert2/src/sweetalert2.scss'
+//import Swal from 'sweetalert2'
+// import 'sweetalert2/src/sweetalert2.scss'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initBookingMenu } from '../components/booking-menu'
@@ -42,7 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initFlatPicker()
   // Swal for joining
   initJoinMenu()
-  
+
   // Menu slide
   initMenuSlide()
 

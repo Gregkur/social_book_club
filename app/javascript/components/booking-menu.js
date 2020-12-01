@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2'
-import 'sweetalert2/src/sweetalert2.scss'
+// import 'sweetalert2/src/sweetalert2.scss'
 
 const initBookingMenu = () => {
     const bookings = document.querySelectorAll("#booking-menu")
