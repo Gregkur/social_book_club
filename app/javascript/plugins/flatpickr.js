@@ -1,8 +1,10 @@
+// flat picker
+
 import flatpickr from "flatpickr";
 
 const initFlatPicker = () => {
-  const flatpickr = document.querySelector('.datepickr')
-    if (flatpickr) {
+  const element = document.querySelector('.datepicker')
+    if (element) {
       flatpickr(".datepicker", {
         altInput: true,
         altFormat: "F j, Y",
