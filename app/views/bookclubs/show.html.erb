@@ -1,18 +1,22 @@
-<div class="d-flex flex-column" style="align-items: center">
-  <div class="profile-wrapper purple">
+<%= render 'popup' %>
+<%= render 'members' %>
+
+<div class="container">
+  <div class="bookclub-wrapper purple">
     <% if @bookclub.photos.attached? %>
-      <%= image_tag @bookclub.photos[0], crop: :limit, class:"user-img"%>
+      <%= image_tag @bookclub.photos[0], crop: :limit, class:"bookclub-img"%>
     <% else %>
-      <%= image_tag "https://images.unsplash.com/photo-1546284663-fed719f6612e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80", crop: :limit, class:"user-img"%>
+      <%= image_tag "https://images.unsplash.com/photo-1546284663-fed719f6612e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80", crop: :limit, class:"bookclub-img"%>
     <% end %>
-    <div class="profile-user-info">
+    
+    <div class="bookclub-user-info">
       <% if @bookclub.name.present? %>
         <h1 style="width: 520px"><%= @bookclub.name %></h1>
       <% else %>
         <h1>Hello Stranger!</h1>
         <p><i class="fas fa-map-pin"></i>???</p>
       <% end %>
-      <div class="profile-description">
+      <div class="bookclub-description">
         <% if @bookclub.description.present? %>
           <p><%= @bookclub.description %></p>
         <% else %>
@@ -20,8 +24,9 @@
         <% end %>
       </div>
     </div>
-    <div class="bookclubs-books-wrapper">
-      <div class="bookclubs-wrapper">
+
+    <div class="bookclub-page-books-wrapper">
+      <div class="bookclubs-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg2">
         <% @bookclub_users.take(3).each do |user|%>
           <%= image_tag user.user.photo %>
         <% end %>
@@ -30,8 +35,9 @@
             <p>+<%= @bookclub_users.length - 3 %> more members</p>
         <% end %>
       </div>
-      <div class="books-wrapper">
-        <% @bookclub_users.each do |user| %>
+
+      <div class="bookclub-books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
+        <% @bookclub_users.take(3).each do |user| %>
           <% user.user.books.take(1).each do |book| %>
                 <%= image_tag book.photos[0] %>
           <% end %>
@@ -41,11 +47,14 @@
         </p>
       </div>
     </div>
+ 
+    <% if !current_user.in?(@bookclub.members) %>
+      <%= link_to "Join now!", join_path, :method => :post, class:"button-red-profile", id:"joinbookclub", remote: true %>
+    <% end %>
   </div>
-  <div class="container">
     <div class="background-create-wrapper-thread">
       <div class="header-create-form">
-        <h2>Bookclub Talks</h2>
+        <h2>Bookclub Talks</h2> 
         <%= image_tag "figures/2.png", id:"figure-reading-thread" %>
       </div>
       <div class="create-thread-box">

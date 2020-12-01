@@ -13,4 +13,8 @@ class PagesController < ApplicationController
     end
     @booking = current_user.bookings
   end
+
+  def profile
+    @user = User.find(params[:id])
+  end
 end

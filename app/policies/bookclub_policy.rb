@@ -20,4 +20,8 @@ class BookclubPolicy < ApplicationPolicy
   def new?
     create?
   end
+
+  def join?
+    true
+  end
 end

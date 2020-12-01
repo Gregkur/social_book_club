@@ -1,0 +1,33 @@
+.book-details {
+  padding-top: 7px;
+  text-align: center;
+
+  .book-pic {
+    height: 110px;
+    margin-bottom: 10px;
+  }
+
+  .book-title {
+    font-family: $body-font;
+    font-size: 13px;
+    margin: 0px;
+  }
+}
+
+.carousel-title {
+  margin-top: 8px;
+  text-align: center;
+  font-family: $body-font;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+
+.carousel-control-next /*, .carousel-indicators */ {
+  filter: invert(100%);
+}
+
+.carousel-control-prev /*, .carousel-indicators */ {
+  filter: invert(100%);
+}
+

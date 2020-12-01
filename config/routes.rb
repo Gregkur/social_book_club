@@ -12,5 +12,8 @@ Rails.application.routes.draw do
     resources :bookclub_threads, only: [:new, :create, :show, :edit, :update, :destroy] do
       resources :comments, only: [:new, :create, :show, :edit, :update, :destroy]
     end
+  post '/bookclubs/:id', to: 'bookclubs#join', as: 'join'
+
   end
+  get "/profile/:id", to: "pages#profile", as: :profile
 end
