@@ -26,10 +26,15 @@ class BookclubsController < ApplicationController
         @bookclub_books << book
       end
     end
+    # show threads of bookclub
     authorize @bookclub
     @bookclub_thread = BookclubThread.new
     @bookclub_thread.bookclub = @bookclub
     authorize @bookclub_thread
+    # show comments of thread in bookclub
+    @bookclub_threads = @bookclub.bookclub_threads
+    @comment = Comment.new
+    authorize @comment
   end
 
   def new

@@ -37,9 +37,8 @@ class BookclubThreadsController < ApplicationController
     @bookclub_thread = BookclubThread.find(params[:bookclub_id])
     authorize @bookclub_thread
     @bookclub = Bookclub.find(params[:id])
-    @bookclub_thread.delete
+    @bookclub_thread.destroy
     redirect_to bookclub_path(@bookclub)
-
   end
 
   private
