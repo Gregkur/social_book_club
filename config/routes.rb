@@ -17,5 +17,9 @@ Rails.application.routes.draw do
 
   end
   resources :comments, only: [:destroy]
+      resources :comments, only: [:new, :create, :show, :edit, :update, :destroy]
+    end 
+  end
+  
   get "/profile/:id", to: "pages#profile", as: :profile
 end

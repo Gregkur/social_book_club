@@ -30,21 +30,26 @@
         <% @bookclub_users.take(3).each do |user|%>
           <%= image_tag user.user.photo %>
         <% end %>
-        <% if @bookclub_users.length == 3 %>
+        <% if @bookclub_users.length < 3 %>
         <% else %>
             <p>+<%= @bookclub_users.length - 3 %> more members</p>
         <% end %>
       </div>
 
       <div class="bookclub-books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
-        <% @bookclub_users.take(3).each do |user| %>
-          <% user.user.books.take(1).each do |book| %>
+        <% @bookclub_users.take(1).each do |user| %>
+          <% user.user.books.first(3).each do |book| %>
                 <%= image_tag book.photos[0] %>
           <% end %>
         <% end %>
-        <p>
-          +<%= @bookclub_books.length - 3 %> more books
-        </p>
+
+         <% if @bookclub_books.length == 4 %>
+            <p>one more book</p>
+          <% elsif @bookclub_books.length< 3 %>
+            <p>Time to add some books!</p>
+          <% else %>
+            <p>+<%=@bookclub_books.length - 3%> more books</p>
+          <% end %>
       </div>
     </div>
 
