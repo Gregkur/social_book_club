@@ -2,7 +2,7 @@
 <%= render 'members' %>
 
 <div class="container">
-  <div class="bookclub-wrapper purple">
+  <div class="bookclub-wrapper purple mx-auto">
     <% if @bookclub.photos.attached? %>
       <%= image_tag @bookclub.photos[0], crop: :limit, class:"bookclub-img"%>
     <% else %>
@@ -20,7 +20,7 @@
         <% if @bookclub.description.present? %>
           <p><%= @bookclub.description %></p>
         <% else %>
-          <p>Tell us about yourself, beautiful stranger!<p>
+          <p>Tell us about your bookclub!<p>
         <% end %>
       </div>
     </div>
@@ -30,10 +30,11 @@
         <% @bookclub_users.take(3).each do |user|%>
           <%= image_tag user.user.photo %>
         <% end %>
-        <% if @bookclub_users.length < 3 %>
+        <% if @bookclub_users.length == 1 %>
+          <p><strong><%= @bookclub_users.length %> member</strong></p>
         <% else %>
-            <p>+<%= @bookclub_users.length - 3 %> more members</p>
-        <% end %>
+          <p><strong><%= @bookclub_users.length %> members</strong></p>
+        <% end %>      
       </div>
 
       <div class="bookclub-books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
@@ -44,11 +45,17 @@
         <% end %>
 
          <% if @bookclub_books.length == 4 %>
-            <p>one more book</p>
-          <% elsif @bookclub_books.length< 3 %>
-            <p>Time to add some books!</p>
+            <p><strong>one more book</strong></p>
+          <% elsif @bookclub_books.length == 3 %>
+            <p><strong>3 books</strong></p>
+          <% elsif @bookclub_books.length == 2 %>
+          <p><strong>2 books</strong></p>
+          <% elsif @bookclub_books.length == 1 %>
+            <p><strong>1 book</strong></p>
+          <% elsif @bookclub_books.length == 0 %>
+            <p><strong>Time to gain some members!</strong></p>
           <% else %>
-            <p>+<%=@bookclub_books.length - 3%> more books</p>
+            <p><strong>+<%=@bookclub_books.length - 3%> more books</strong></p>
           <% end %>
       </div>
     </div>
@@ -57,7 +64,7 @@
       <%= link_to "Join now!", join_path, :method => :post, class:"button-red-profile", id:"joinbookclub", remote: true %>
     <% end %>
   </div>
-    <div class="background-create-wrapper-thread">
+    <div class="background-create-wrapper-thread mx-auto">
       <div class="header-create-form">
         <h2>Bookclub Talks</h2>
         <%= image_tag "figures/2.png", id:"figure-reading-thread" %>

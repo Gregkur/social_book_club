@@ -7,8 +7,8 @@
             <h2>Create your first bookclub</h2>
           </div>
           <%= simple_form_for(@bookclub) do |f| %>
-            <%= f.input :name, placeholder: 'My first Bookclub', input_html: { class: "form-borders-bookclub" }, class: "form-control" %>
-            <%= f.input :description, placeholder: 'This is a bookclub for people interested in innovation management.', input_html: { class: "form-borders-bookclub" }, class: "form-control" %>
+            <%= f.input :name, placeholder: 'Amazing name here!', input_html: { class: "form-borders-bookclub" }, class: "form-control" %>
+            <%= f.input :description, placeholder: 'What is your bookclub about?', input_html: { class: "form-borders-bookclub" }, class: "form-control" %>
             <%#= f.input :visibility, placeholder: '500' %>
             <!-- <div class="container d-flex justify-content-center"> -->
             <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
