@@ -24,7 +24,7 @@
           <% end %>
         <% else %>
           <button id="btn-disabled">Booking Request</button>
-          <p> <%= image_tag "warning.png", id:"warning"%> <%= "This book will be available from #{@book.bookings.last.until.next}." %> </p>
+          <p> <%= image_tag "warning.png", id:"warning"%> <%= "This book will be available from #{@book.bookings.last.until.next.to_formatted_s(:long)}." %> </p>
           <%= image_tag "figures/5.png", id:"figure-crying" %>
         <% end %>
           <div>
