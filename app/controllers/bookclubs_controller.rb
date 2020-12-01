@@ -5,7 +5,11 @@ class BookclubsController < ApplicationController
   def index
     @bookclubs = policy_scope(Bookclub).all
     @bookclubs = Bookclub.search(params[:query]) if params[:query].present?
-    @users = User.near(current_user.address, 10).where.not(id: current_user.id)
+    if user_signed_in?
+      @users = User.near(current_user.address, 10).where.not(id: current_user.id)
+    else
+      @users = User.near('Berlin, Mitte', 10)
+    end
     # @markers = @users.geocoded.map do |user|
     #   {
     #     lat: user.latitude,
