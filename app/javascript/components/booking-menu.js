@@ -1,10 +1,10 @@
 import Swal from 'sweetalert2'
-import 'sweetalert2/src/sweetalert2.scss'
+// import 'sweetalert2/src/sweetalert2.scss'
 
 const initBookingMenu = () => {
     const bookings = document.querySelectorAll("#booking-menu")
     if (bookings === undefined || bookings.length == 0) {
-      bookings.forEach(booking => 
+      bookings.forEach(booking =>
         booking.addEventListener('click', () => {
             Swal.fire({
                 title: 'What do you want to do?',
