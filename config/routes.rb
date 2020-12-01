@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
   resources :bookings, only: [:show, :update, :destroy]
   resources :bookclubs, only: [:new, :create, :show]
+  get "/profile/:id", to: "pages#profile", as: :profile
 end

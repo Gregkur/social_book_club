@@ -69,48 +69,4 @@
     </div>
 
   </div>
-
-  <div class="booking-wrapper yellow my-5">
-
-    <h1>My bookings</h1>
-
-    <div class="container">
-      <div class="row">
-		    <div class="col-6 col-6">
-          <div class="bookings-grid">
-            <% @user.bookings.each do |booking| %>
-              <%= link_to book_path(booking.book) do %>
-                <div class=" booking-card">
-                  <%= image_tag booking.book.photos[0],crop: :fill %>
-                    <div class="booking-card-info">
-                      <h2><%= booking.book.title %></h2>
-
-                      <div class="booking-card-dates">
-                        <h3>Location: <%= booking.user.address %></h3>
-                        <h3>Booking dates:</h3>
-                        <p>until <%= booking.until.to_formatted_s(:long) %></p>
-                        <p>from <%= booking.from.to_formatted_s(:long) %></p>
-                        <div class="card-booking-user">
-                          <%= image_tag booking.book.user.photo, class:"avatar-bordered" %>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-
-  <div class="container text-center my-5">
-    <div class="mb-5">
-      <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile"  %>
-      <%= link_to "Create a new bookclub", new_bookclub_path, :method => :get, class:"button-red-profile"  %>
-    </div>
-  </div>
-
 </div>

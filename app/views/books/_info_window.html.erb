@@ -1,5 +1,5 @@
 <div class="card-offers">
-  <p> <%= link_to "See #{user.nickname}'s books", page_path(user.id) %> </p>
+  <p> <%= link_to "See #{user.nickname}'s books", profile_path(user) %> </p>
   <div class="display-books">
     <ul class="list-group" style="width: 220px">
       <% user.books.each do |book| %>
