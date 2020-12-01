@@ -57,7 +57,6 @@ class BookclubsController < ApplicationController
     @user = current_user
     @bookclub_user = BookclubUser.new(bookclub: @bookclub, user: @user)
     if @bookclub_user.save
-      flash[:notice] = "Joined successfully!"
       redirect_to bookclub_path(@bookclub)
     else
       flash[:notice] = "Joining failed!"

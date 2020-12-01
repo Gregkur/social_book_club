@@ -33,6 +33,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initBookingMenu } from '../components/booking-menu'
+import { initJoinMenu } from '../components/join-menu'
 
 document.addEventListener('turbolinks:load', () => {
   // Flat picker
@@ -42,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
     dateFormat: "Y-m-d",
     minDate: "today",
   });
+  initJoinMenu()
 //vars
   const nav = document.querySelector(".header__nav");
   const hamburger = document.querySelector(".hamburger");
@@ -66,12 +68,5 @@ document.addEventListener('turbolinks:load', () => {
   // Swal
   initBookingMenu()
   // Swal for joining
-  document.querySelector("#joinbookclub").addEventListener('click',() => {
-    Swal.fire(
-      'The Internet?',
-      'That thing is still around?',
-      'question'
-    )
-  })
-  
+
 });
