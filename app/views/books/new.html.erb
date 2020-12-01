@@ -18,7 +18,7 @@
             <!-- <div class="container d-flex justify-content-center"> -->
             <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
             <!-- </div> -->
-            <div class="form-link-buttons">
+            <div class="form-link-buttons d-flex justify-content-center">
               <%= f.submit class: "btn-create" %>
             </div>
           <% end %>
