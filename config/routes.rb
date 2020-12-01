@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
   resources :bookings, only: [:show, :update, :destroy]
 
-  resources :bookclubs, only: [:new, :create, :show, :index] do
+  
+  post '/bookclubs/:id', to: 'bookclubs#join', as: 'join'
+
+  resources :bookclubs, only: [:new, :create, :show, :index, :create] do
     resources :bookclub_threads, only: [:new, :create, :show, :edit, :update, :destroy]
   end
+  get "/profile/:id", to: "pages#profile", as: :profile
 end

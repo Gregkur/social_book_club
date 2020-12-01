@@ -1,14 +1,14 @@
 #map {
-  height: 100vh;
+  width: 100%;
+  height: 500px;
+  top: 0px;
   position: sticky;
-  top: 230;
-  width: 400px;
-  border-radius: 4px;
-}
-.mapboxgl-popup {
-  max-width: 200px;
 }
 
-.mapboxgl-popup-content {
-  text-align: center;
+.map-container {
+  padding-top: 20px;
+}
+
+.map-sticky {
+  height: 100%;
 }

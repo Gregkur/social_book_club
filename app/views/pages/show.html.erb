@@ -37,7 +37,6 @@
           <%= image_tag "testaments.jpg" %>
           <p>+2 more bookclubs</p>
         </div>
-
         <div class="books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
           <% @user.books.take(3).each do |book| %>
             <%= link_to book_path(book) do %>
@@ -46,7 +45,6 @@
               <% end %>
             <% end %>
           <% end %>
-
           <% if @user.books.length == 4 %>
             <p>one more book</p>
           <% elsif @user.books.length < 3 %>
@@ -54,7 +52,6 @@
           <% else %>
             <p>+<%=@user.books.length - 3%> more books</p>
           <% end %>
-          
         </div>
       </div>
     </div>
@@ -96,6 +93,5 @@
         <%= link_to "Create a new bookclub", new_bookclub_path, :method => :get, class:"button-red-profile" %>
       </div>
     </div>
-
   </div>
 </div>
