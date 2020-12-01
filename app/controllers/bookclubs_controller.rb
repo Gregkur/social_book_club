@@ -60,7 +60,7 @@ class BookclubsController < ApplicationController
       flash[:notice] = "Joined successfully!"
       redirect_to bookclub_path(@bookclub)
     else
-      flash[:notice] = "Creating book club failed"
+      flash[:notice] = "Joining failed!"
       render :new
     end
 
