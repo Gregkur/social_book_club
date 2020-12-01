@@ -17,6 +17,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    authorize @comment
+    @bookclub = @comment.bookclub_thread.bookclub
+    @comment.destroy
+    redirect_to bookclub_path(@bookclub)
+  end
 
   private
 
