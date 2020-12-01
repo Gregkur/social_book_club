@@ -61,9 +61,10 @@
       </div>
     </div>
 
-    <% if !current_user.in?(@bookclub.members) %>
+    <% if !current_user.in?(@bookclub.members) && user_signed_in? %>
       <%= link_to "Join now!", join_path, :method => :post, class:"button-red-profile", id:"joinbookclub", remote: true %>
     <% end %>
+    
   </div>
     <div class="background-create-wrapper-thread mx-auto">
       <div class="header-create-form">

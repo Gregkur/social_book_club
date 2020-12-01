@@ -12,6 +12,7 @@
     <div class="profile-user-info">
       <% if @user.first_name.present? %>
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <p class="font-weight-bold"><%= @user.nickname %></p>
         <p><i class="fas fa-map-pin"></i><%= @user.address %></p>
       <% else %>
         <h1>Hello Stranger!</h1>
@@ -34,7 +35,9 @@
             <%= cl_image_tag bookclub.photos[0].key, crop: :fill%>
           <% end %>
         <% end %>
-        <% if @user.bookclubs.length < 3 %>
+        <% if @user.bookclubs.length == 0 %>
+          <p>Time to join some bookclubs, <%= @user.first_name if @user.first_name.present?%>!</p>
+        <% elsif @user.bookclubs.length < 3 %>
         <% else %>
             <p>+<%= @user.bookclubs.length - 3 %> more bookclubs</p>
         <% end %>

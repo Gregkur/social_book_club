@@ -24,7 +24,7 @@
                 <% if current_user.present? %>
                     <%= link_to "Profile page", page_path(current_user), :method => :get, class:"dropdown-item header__link", role:"menuitem" %>
                 <% else %>
-                    <%= link_to "Create account", new_user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
+                    <%= link_to "Create account",  new_user_registration_path, class:"dropdown-item header__link", role:"menuitem"  %>
                 <% end %>
             <%= link_to "See all books", books_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
             <%= link_to "See all bookclubs", bookclubs_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>

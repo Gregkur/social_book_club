@@ -14,7 +14,7 @@
         -o-object-fit: cover;
         object-fit: cover;
         border-radius: 4px;
-        left: 5%;
+        left: 15%;
     }
     
 }
@@ -90,7 +90,6 @@
 
 
 .profile-user-info{
-    display: flex;
     padding: 50px;
     float: left;
     overflow-wrap: break-word;
@@ -107,8 +106,6 @@
 }
 
 .profile-about-me{
-    position: absolute;
-    top: 20%;
 }
 
 .profile-description{
