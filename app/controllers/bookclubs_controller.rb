@@ -56,13 +56,13 @@ class BookclubsController < ApplicationController
     authorize @bookclub
     @user = current_user
     @bookclub_user = BookclubUser.new(bookclub: @bookclub, user: @user)
-    if @bookclub_user.save
-      sleep 1
-      redirect_to bookclub_path(@bookclub)
-    else
-      flash[:notice] = "Joining failed!"
-      render :new
-    end
+      if @bookclub_user.save
+        sleep 1
+        redirect_to bookclub_path(@bookclub)
+      else
+        flash[:notice] = "Joining failed!"
+        render :new
+      end
 
   end
   private

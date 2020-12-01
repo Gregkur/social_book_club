@@ -47,13 +47,9 @@
         </p>
       </div>
     </div>
-    
-    <% if @user.in?(@bookclub.bookclub_users) %>
-
-      <% else %>
-
-    <%= link_to "Join now!", join_path, :method => :post, class:"button-red-profile", id:"joinbookclub", remote: true %>
-
+ 
+    <% if !current_user.in?(@bookclub.members) %>
+      <%= link_to "Join now!", join_path, :method => :post, class:"button-red-profile", id:"joinbookclub", remote: true %>
     <% end %>
   </div>
     <div class="background-create-wrapper-thread">
