@@ -4,7 +4,7 @@
       <div id="create-book-box m-8">
         <div class="nested-create-form m-8">
           <div id="header-create-form">
-            <h2>Add a new book to your profile</h2>
+            <h2>Add a new book to your personal library</h2>
             <%= image_tag "figures/2.png", id:"figure-reading-create" %>
           </div>
           <%= simple_form_for(@book) do |f| %>
@@ -19,7 +19,7 @@
             <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
             <!-- </div> -->
             <div class="form-link-buttons d-flex justify-content-center">
-              <%= f.submit class: "btn-create" %>
+              <%= f.submit "Add book to your library", class: "btn-create" %>
             </div>
           <% end %>
         </div>
