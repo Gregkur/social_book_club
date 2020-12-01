@@ -1,23 +1,33 @@
 .profile-wrapper{
     position: relative;
-    width: 85vw;
-    height: 75vh;
-    border-radius: 4px;
-    margin-top: 10vh;
+    height: 606px;
+    margin-top: 170px;
+    border-radius: 10px;
     h1, p, a {
         color: $dark-purple;
     }
+    .profile-img{
+        bottom: 10%;
+        position: relative;
+        height: 430px;
+        width: 320px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 4px;
+        left: 5%;
+    }
+    
 }
 
 .bookclubs-books-wrapper{
     margin-left: 50px;
-    position: relative;
-    top: 10%;
+    position: relative !important;
+    bottom: 30% !important;
 
     .bookclubs-wrapper{
         background-color: white;
-        width: 50%;
-        height: 16vh;
+        width: 500px;
+        height: 127px;
         border-radius: 20px;
         margin-bottom: 25px;
         display: flex;
@@ -67,8 +77,8 @@
 }
 
 .booking-wrapper{
-    width: 85vw;
-    padding: 35px;
+    width: 85vw !important;
+    padding: 35px !important;
     border-radius: 4px;
 
     h1{
@@ -82,7 +92,6 @@
 .profile-user-info{
     display: flex;
     padding: 50px;
-    align-items: flex-end;
     float: left;
     overflow-wrap: break-word;
     h1{

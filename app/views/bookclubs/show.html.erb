@@ -2,6 +2,7 @@
 <%= render 'members' %>
 
 <div class="container">
+
   <div class="bookclub-wrapper purple">
     <% if @bookclub.photos.attached? %>
       <%= image_tag @bookclub.photos[0], crop: :limit, class:"bookclub-img"%>

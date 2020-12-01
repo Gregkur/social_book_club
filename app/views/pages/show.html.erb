@@ -1,62 +1,64 @@
 <%= render 'popup' %>
-<div class="container d-flex flex-column my-5" style="align-items: center">
-  <div class="row">
-    <div class="profile-wrapper pink">
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, crop: :limit, class:"user-img" %>
+
+<div class="container">
+
+  <div class="profile-wrapper pink">
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, crop: :limit, class:"profile-img" %>
+    <% else %>
+      <img href="https://images.unsplash.com/photo-1576078044571-8ea98b0b0963?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+    <% end %>
+    
+    <div class="profile-user-info">
+      <% if @user.first_name.present? %>
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <p><i class="fas fa-map-pin"></i><%= @user.address %></p>
       <% else %>
-        <img href="https://images.unsplash.com/photo-1576078044571-8ea98b0b0963?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+        <h1>Hello Stranger!</h1>
+        <p><i class="fas fa-map-pin"></i>Somewhere on this planet</p>
       <% end %>
-      <div class="profile-user-info">
-        <% if @user.first_name.present? %>
-          <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-          <p><i class="fas fa-map-pin"></i><%= @user.address %></p>
+      <div class="profile-about-me mt-3">
+        <% if @user.about.present? %>
+          <p><%= @user.about %></p>
         <% else %>
-          <h1>Hello Stranger!</h1>
-          <p><i class="fas fa-map-pin"></i>Somewhere on this planet</p>
+          <p>Tell us about yourself, beautiful stranger!<p>
         <% end %>
-        <div class="profile-about-me mt-3">
-          <% if @user.about.present? %>
-            <p><%= @user.about %></p>
-          <% else %>
-            <p>Tell us about yourself, beautiful stranger!<p>
-          <% end %>
-        </div>
       </div>
-      <div class="bookclubs-books-wrapper">
-        <div class="bookclubs-wrapper" style="cursor: pointer;">
-          
-          <%# @user.bookclubs.each do |bookclub| %>
-            <%#= link_to bookclub_path(bookclub) do %>
-              <%#= cl_image_tag bookclub.photo[0].key, crop: :fill%>
-            <%# end %>
+    </div>
+
+    <div class="bookclubs-books-wrapper">
+      <div class="bookclubs-wrapper" style="cursor: pointer;">
+        
+        <%# @user.bookclubs.each do |bookclub| %>
+          <%#= link_to bookclub_path(bookclub) do %>
+            <%#= cl_image_tag bookclub.photo[0].key, crop: :fill%>
           <%# end %>
-          
-          <%= image_tag "prince.jpg" %>
-          <%= image_tag "harry.jpg" %>
-          <%= image_tag "testaments.jpg" %>
-          <p>+2 more bookclubs</p>
-        </div>
-        <div class="books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
-          <% @user.books.take(3).each do |book| %>
-            <%= link_to book_path(book) do %>
-              <% book.photos.each do |photo| %>
-                <%= image_tag photo %>
-              <% end %>
+        <%# end %>
+        
+        <%= image_tag "prince.jpg" %>
+        <%= image_tag "harry.jpg" %>
+        <%= image_tag "testaments.jpg" %>
+        <p>+2 more bookclubs</p>
+      </div>
+      <div class="books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
+        <% @user.books.take(3).each do |book| %>
+          <%= link_to book_path(book) do %>
+            <% book.photos.each do |photo| %>
+              <%= image_tag photo %>
             <% end %>
           <% end %>
-          <% if @user.books.length == 4 %>
-            <p>one more book</p>
-          <% elsif @user.books.length < 3 %>
-            <p>Time to add some books, <%= @user.first_name if @user.first_name.present?%>!</p>
-          <% else %>
-            <p>+<%=@user.books.length - 3%> more books</p>
-          <% end %>
-        </div>
+        <% end %>
+        <% if @user.books.length == 4 %>
+          <p>one more book</p>
+        <% elsif @user.books.length < 3 %>
+          <p>Time to add some books, <%= @user.first_name if @user.first_name.present?%>!</p>
+        <% else %>
+          <p>+<%=@user.books.length - 3%> more books</p>
+        <% end %>
       </div>
     </div>
   </div>
-  <div class="row">
+
     <div class="booking-wrapper yellow my-5">
       <h1>My bookings</h1>
       <div class="bookings-grid mx-auto">
@@ -86,12 +88,11 @@
         <% end %>
       </div>
     </div>
-  </div>
+
     <div class="container my-5 d-flex justify-content-around">
       <div class="mb-5">
         <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile" %>
         <%= link_to "Create a new bookclub", new_bookclub_path, :method => :get, class:"button-red-profile" %>
       </div>
     </div>
-  </div>
 </div>
