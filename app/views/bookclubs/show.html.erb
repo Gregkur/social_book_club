@@ -59,21 +59,37 @@
           <!-- <div class="card-thread mt-3"> -->
             <h3><%= bookclub_thread.title %></h3>
             <p><%= bookclub_thread.content %></p>
-          </div>
-          <div class="avatar-thread">
-            <%= image_tag bookclub_thread.user.photo, class:"avatar-bordered"%>
-          </div>
-          <div class="functional-buttons">
-            <% if current_user != @bookclub_thread.user %>
-              <%= link_to edit_bookclub_bookclub_thread_path(@bookclub, bookclub_thread) do %>
-                <i class="fas fa-edit"></i>
+            <div class="avatar-thread">
+              <%= image_tag bookclub_thread.user.photo, class:"avatar-bordered"%>
+            </div>
+            <div class="functional-buttons">
+              <% if current_user != @bookclub_thread.user %>
+                <%= link_to edit_bookclub_bookclub_thread_path(@bookclub, bookclub_thread) do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+                <%= link_to bookclub_bookclub_thread_path(bookclub_thread), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fas fa-trash mr-2"></i>
+                <% end %>
               <% end %>
-              <%= link_to bookclub_bookclub_thread_path(bookclub_thread), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <i class="fas fa-trash mr-2"></i>
-              <% end %>
-            <% end %>
+            </div>
           </div>
-          <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
+          <% if bookclub_thread.comments.present? %>
+            <div class="mt-3">
+              <p><strong>Comments</strong></p>
+            </div>
+            <div class="nested-existing-comments">
+              <% bookclub_thread.comments.each do |comment| %>
+                <p><%= comment.content %></p>
+              <% end %>
+            </div>
+            <div class="nested-create-comment-form mt-3">
+              <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
+            </div>
+          <% else %>
+            <div class="nested-create-comment-form mt-3">
+              <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
+            </div>
+          <% end %>
         <!-- </div> -->
         </div>
       <% end %>
