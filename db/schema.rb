@@ -10,9 +10,150 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_11_30_205109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "bookclub_books", force: :cascade do |t|
+    t.bigint "bookclub_id", null: false
+    t.bigint "book_id", null: false
+    t.index ["book_id"], name: "index_bookclub_books_on_book_id"
+    t.index ["bookclub_id"], name: "index_bookclub_books_on_bookclub_id"
+  end
+
+  create_table "bookclub_threads", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "bookclub_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bookclub_id"], name: "index_bookclub_threads_on_bookclub_id"
+    t.index ["user_id"], name: "index_bookclub_threads_on_user_id"
+  end
+
+  create_table "bookclub_users", force: :cascade do |t|
+    t.bigint "bookclub_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bookclub_id"], name: "index_bookclub_users_on_bookclub_id"
+    t.index ["user_id"], name: "index_bookclub_users_on_user_id"
+  end
+
+  create_table "bookclubs", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "visibility", default: true
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bookclubs_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "from"
+    t.date "until"
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_bookings_on_book_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "genre"
+    t.text "description"
+    t.string "year"
+    t.integer "pages"
+    t.boolean "availability", default: true
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_books_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "bookclub_thread_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bookclub_thread_id"], name: "index_comments_on_bookclub_thread_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.float "book_rating"
+    t.text "book_comment"
+    t.float "user_rating"
+    t.text "user_comment"
+    t.bigint "book_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_reviews_on_book_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "nickname"
+    t.string "address"
+    t.boolean "admin"
+    t.text "about"
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookclub_books", "bookclubs"
+  add_foreign_key "bookclub_books", "books"
+  add_foreign_key "bookclub_threads", "bookclubs"
+  add_foreign_key "bookclub_threads", "users"
+  add_foreign_key "bookclub_users", "bookclubs"
+  add_foreign_key "bookclub_users", "users"
+  add_foreign_key "bookclubs", "users"
+  add_foreign_key "bookings", "books"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "books", "users"
+  add_foreign_key "comments", "bookclub_threads"
+  add_foreign_key "comments", "users"
+  add_foreign_key "reviews", "books"
+  add_foreign_key "reviews", "users"
 end
