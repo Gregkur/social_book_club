@@ -57,7 +57,7 @@ class BookclubsController < ApplicationController
   end
 
   def join
-    @bookclub = Bookclub.find(params[:id]) 
+    @bookclub = Bookclub.find(params[:id])
     authorize @bookclub
     @user = current_user
     @bookclub_user = BookclubUser.new(bookclub: @bookclub, user: @user)
@@ -70,6 +70,7 @@ class BookclubsController < ApplicationController
       end
 
   end
+
   private
 
   def set_bookclub

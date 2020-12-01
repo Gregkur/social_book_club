@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   resources :bookclubs, only: [:new, :create, :show, :index] do
     resources :bookclub_threads, only: [:new, :create, :show, :edit, :update, :destroy] do
+      resources :comments, only: [:new, :create, :show]
+    end
+
+  end
+  resources :comments, only: [:destroy]
       resources :comments, only: [:new, :create, :show, :edit, :update, :destroy]
     end 
   end
