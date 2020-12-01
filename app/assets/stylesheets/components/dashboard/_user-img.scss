@@ -1,9 +1,9 @@
 .user-img{
-    position: absolute;
-    left: 62%;
-    bottom: 40%;
-    height: 430px;
-    width: 320px;
+    position: relative;
+    bottom: 13%;
+    left: 8%;
+    height: 60vh;
+    -o-object-fit: cover;
     object-fit: cover;
     border-radius: 4px;
 }

@@ -1,11 +1,13 @@
 .booking-card{
-    background: #FFFFFF;
+    overflow: hidden;
+    height: 252px;
+    width: 452px;
+    background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 20px;
-    height: 246px;
-    width: 406px;
     display: flex;
     align-items: center;
+    margin-bottom: 16px;
     &:hover {
         background-color: white;
         opacity: 0.8;
@@ -29,7 +31,7 @@
 
 .booking-card-info{
     h2{
-        margin-top: -50px;
+        margin-bottom: 8px;
         margin-left: 15px;
         font-size: 24px;
     }
@@ -43,11 +45,13 @@
     }
     p{
         display: table-footer-group;
-
         font-size: 12px;
     }
 }
 .card-booking-user{
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
     img{
         background: 50% 50% no-repeat;
         width: 50px;
@@ -55,7 +59,9 @@
         border-radius: 50%;
         object-fit: cover;
         position: relative;
-        top: 50px;
-        left: 95%;
+    }
+    p {
+        margin: 0;
+        padding-left: 8px;
     }
 }

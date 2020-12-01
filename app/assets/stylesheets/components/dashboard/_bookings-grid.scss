@@ -1,6 +1,5 @@
 .bookings-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10%;
-    margin: 10% 0 10% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
