@@ -1,11 +1,13 @@
 .booking-card{
-    background: #FFFFFF;
+    overflow: hidden;
+    height: 192px;
+    width: 352px;
+    background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 20px;
-    height: 246px;
-    width: 406px;
     display: flex;
     align-items: center;
+    margin-bottom: 16px;
     &:hover {
         background-color: white;
         opacity: 0.8;
