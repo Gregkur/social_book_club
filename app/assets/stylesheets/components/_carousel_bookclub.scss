@@ -1,0 +1,37 @@
+.carousel-control-next /*, .carousel-indicators */ {
+  filter: invert(100%);
+}
+
+.carousel-control-prev /*, .carousel-indicators */ {
+  filter: invert(100%);
+}
+
+.container-bookclub-details {
+  padding-top: 7px;
+  content-align: center;
+  height: 160px;
+
+  .bookclub-title {
+    font-family: $body-font;
+    font-size: 13px;
+    font-weight: bolder;
+    margin: 0px;
+    text-align: center;
+    }
+
+  .bookclub-pic {
+    border-radius: 50%;
+    height: 25px;
+  }
+}
+
+.bookclub-description {
+  font-family: $body-font;
+  font-size: 13px;
+  font-weight: lighter;
+  margin: 0px;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+}

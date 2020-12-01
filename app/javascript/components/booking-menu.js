@@ -3,7 +3,8 @@ import 'sweetalert2/src/sweetalert2.scss'
 
 const initBookingMenu = () => {
     const booking = document.querySelector("#booking-menu")
-    booking.addEventListener('click', () => {
+    if (booking) {
+      booking.addEventListener('click', () => {
         Swal.fire({
             title: 'What do you want to do?',
             icon: 'question',
@@ -25,5 +26,6 @@ const initBookingMenu = () => {
               }
         })
         })
+    }
 };
 export { initBookingMenu };
