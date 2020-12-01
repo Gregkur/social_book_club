@@ -1,6 +1,6 @@
 <p><strong>What's on your mind?</strong></p>
 <%= simple_form_for [bookclub, bookclub_thread] do |f| %>
-  <%= f.input :title, placeholder: "Startups of Berlin", input_html: { class: "form-borders" } %>
-  <%= f.input :content, placeholder: "This thread is about the Startup environement in Berlin.", input_html: { class: "form-borders" } %>
-  <%= f.submit class: "btn-create-booking"%>
+  <%= f.input :title, placeholder: "What do you want to discuss?", input_html: { class: "form-borders" } %>
+  <%= f.input :content, placeholder: "Go for it! Put down your thoughts.", input_html: { class: "form-borders" } %>
+  <%= f.submit class: "btn-create-booking", value: "Start your thread"%>
 <% end %>
