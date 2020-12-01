@@ -1,23 +1,33 @@
 .profile-wrapper{
     position: relative;
-    width: 85vw;
-    height: 75vh;
-    border-radius: 4px;
-    margin-top: 10vh;
+    height: 606px;
+    margin-top: 170px;
+    border-radius: 10px;
     h1, p, a {
         color: $dark-purple;
     }
+    .profile-img{
+        bottom: 10%;
+        position: relative;
+        height: 430px;
+        width: 320px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 4px;
+        left: 5%;
+    }
+    
 }
 
 .bookclubs-books-wrapper{
     margin-left: 50px;
-    position: relative;
-    top: 10%;
+    position: relative !important;
+    bottom: 30% !important;
 
     .bookclubs-wrapper{
         background-color: white;
-        width: 50%;
-        height: 16vh;
+        width: 500px;
+        height: 127px;
         border-radius: 20px;
         margin-bottom: 25px;
         display: flex;
@@ -41,8 +51,8 @@
 
     .books-wrapper{
         background-color: white;
-        width: 50%;
-        height: 16vh;
+        width: 500px;
+        height: 130px;
         border-radius: 20px;
         display: flex;
         justify-content: space-evenly;
@@ -51,8 +61,8 @@
         
         img{
             background: 50% 50% no-repeat;
-            width: 6vw;
-            height: 14vh;
+            width: 93px;
+            height: 93px;
             border-radius: 4px;
             object-fit: cover;
         }
@@ -65,11 +75,10 @@
         }
     }
 }
-
-.booking-wrapper{
-    width: 85vw;
+.booking-wrapper-profile{
+    width: 100%;
     padding: 35px;
-    border-radius: 4px;
+    border-radius: 10px;
 
     h1{
         font-weight: 600;
@@ -79,10 +88,10 @@
     }
 }
 
+
 .profile-user-info{
     display: flex;
     padding: 50px;
-    align-items: flex-end;
     float: left;
     overflow-wrap: break-word;
     h1{
