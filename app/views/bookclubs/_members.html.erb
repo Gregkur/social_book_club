@@ -3,10 +3,11 @@
     <div class="modal-content">
       <div class="row">
 		<div class="col-12 col-lg-12">
-            <div class="card-grid-bookclubs">
+            <div class="mmembers-grid-bookclubs">
+              <h1 class="text-center">Members</h2>
                 <% @bookclub_users.each do |user| %>
                     <%= link_to page_path(user) do %>
-                        <div class="card-bookclub-index">
+                        <div class="members-grid-card">
                             <% if user.user.photo.attached? %>
                                 <%= cl_image_tag user.user.photo.key, crop: :fill%>
                             <% else %>
