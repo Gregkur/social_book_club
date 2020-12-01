@@ -86,6 +86,9 @@
                       <i class="fas fa-trash mr-2 mt-2"></i>
                     <%# end %>
                   </div>
+                  <div class="commenter mt-2 ml-2">
+                    <p>created by - <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+                  </div>
                 <% end %>
               </div>
               <div class="nested-create-comment-form mt-3">
