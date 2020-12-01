@@ -1,14 +1,12 @@
 .book-card {
-  border-radius: 4px;
+  margin: 0 auto;
   position: relative;
-  bottom: 40px;
-  width: 800px;
-  height: 422;
-  margin-top: 100px;
+  width: 85%;
+  height: 450px;
   display: flex;
   align-items: center;
-  background-color: $yellow;
-  padding-left: 250px;
+  background-color: #FFDE91;
+  padding-left: 25%;
 }
 
 .book-details {
@@ -17,6 +15,7 @@
   h2 {
     font-size: 24px;
     font-weight: bolder;
+
   }
   h3 {
     font-size: 16px;
@@ -25,18 +24,21 @@
 
   p {
     font-size: 14px;
+    line-height: 1.6;
     width: 85%;
     text-align: justify;
+    margin-bottom: 24px;
   }
 }
 
 .avatar-book {
-  height: 230px;
-  width: 180px;
+  height: 55%;
+  /* width: 10%; */
   border-radius: 4px;
   position: absolute;
-  top: -70px;
-  left: 40px;
+  /* top: -14%; */
+  bottom: 60%;
+  left: 5%;
 }
 
 .btn-booking {
