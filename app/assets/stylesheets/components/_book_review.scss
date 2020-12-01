@@ -1,8 +1,10 @@
 .card-review {
   background-color: $purple;
-  width: 800px;
+  height: 100%;
+  width: 80vw;
   border-radius: 4px;
-  padding: 32px;
+  padding: 64px;
+  margin: 0 auto;
   h2 {
     font-size: 24px;
     font-weight: bolder;

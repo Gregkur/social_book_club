@@ -1,0 +1,11 @@
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-content{
+    height: 80vh;
+    overflow-y: auto;
+    background-color: #F3EDED !important;
+    padding: 30px;
+    border: none;
+    border-radius: 6px !important;
+}

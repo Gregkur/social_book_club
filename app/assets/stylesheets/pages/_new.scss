@@ -4,6 +4,7 @@ body {
 
 
 .background-create-wrapper-1 {
+  border-radius: 10px;
   margin-top: 80px;
   margin-bottom: 80px;
   // margin: -20px;
@@ -12,6 +13,7 @@ body {
 }
 
 .background-create-wrapper-2 {
+  border-radius: 10px;
   margin-top: 80px;
   margin-bottom: 80px;
   // margin: -20px;
@@ -21,6 +23,7 @@ body {
 
 
 .background-create-wrapper-3 {
+  border-radius: 10px;
   margin-top: 80px;
   margin-bottom: 80px;
   // margin: -20px;
@@ -31,16 +34,36 @@ body {
 
 
 .nested-create-form {
-  padding-top: 60px;
-  padding-left: 70px;
-  padding-right: 70px;
-  padding-bottom: 60px;
-  margin: 50px;
+  border-radius: 10px;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  // margin: 50px;
   background-color: white;
 }
 
 #header-create-form {
   color: $red;
   text-align: center;
-  padding-bottom: 40px;
+  // padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
 }
+
+
+#header-create-form h2 {
+  padding-top: 35px;
+}
+
+#figure-reading-create {
+  height: 100px;
+}
+
+#figure-reading-thread {
+  height: 130px;
+}
+
+
+
+
