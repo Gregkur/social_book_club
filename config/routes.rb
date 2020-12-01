@@ -8,12 +8,14 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
   resources :bookings, only: [:show, :update, :destroy]
 
-  resources :bookclubs, only: [:new, :create, :show, :index] do
-    resources :bookclub_threads, only: [:new, :create, :show, :edit, :update, :destroy] do
-      resources :comments, only: [:new, :create, :show, :edit, :update, :destroy]
-    end
   post '/bookclubs/:id', to: 'bookclubs#join', as: 'join'
 
+  resources :bookclubs, only: [:new, :create, :show, :index] do
+    resources :bookclub_threads, only: [:new, :create, :show, :edit, :update, :destroy] do
+      resources :comments, only: [:new, :create, :show]
+    end
+
   end
+  resources :comments, only: [:destroy]
   get "/profile/:id", to: "pages#profile", as: :profile
 end
