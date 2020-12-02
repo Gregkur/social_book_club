@@ -6,7 +6,7 @@ class Bookclub < ApplicationRecord
   has_many :bookclub_threads, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true, length: { minimum: 2, too_short: "minimum is %{count} characters" }
-  validates :description, presence: true, length: { minimum: 5, too_short: "minimum %{count} characters", , maximum: 150, too_long: "maximum %{count} characters" }
+  validates :description, presence: true, length: { minimum: 5, too_short: "minimum %{count} characters", maximum: 150, too_long: "maximum %{count} characters" }
   
   include PgSearch::Model
   pg_search_scope :search,
