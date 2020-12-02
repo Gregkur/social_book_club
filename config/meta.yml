@@ -1,5 +1,5 @@
 meta_product_name: "Social Book Club"
 meta_title: "The Social Book Club - sharing is caring, let's do it with books!"
 meta_description: "You love to read but even more so for free? Your next book is probably sitting on somebody's shelf already. Check out books around you. Further, find a company to talk about your favorite topics in our forums! Harry Potter? True crime? Origami? Programming? We got you covered! Place your books on our online bookshelves! Manage your library without moving from your chair, and show others your collection!"
-meta_image: "2.png" # should exist in `app/assets/images/`
+meta_image: "meta_pic.png" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
