@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
 		<div class="col-12 col-lg-8">
 			<%# Search form %>
@@ -14,7 +14,7 @@
 				</div>
 				<% end %>
 			</div>
-			<%# Book Card Grid %>
+		
 		  <div class="card-grid-bookclubs">
 				<% @bookclubs.each do |bookclub| %>
 					<%= link_to bookclub_path(bookclub) do %>
@@ -57,7 +57,7 @@
 		<div class="col-12 col-lg-4">
       <div class="map-sticky">
         <div id="map"
-          style="width: 380px; height: 560px; margin-top: 35px; margin-left: 20px"
+          style="width: 100%; height: calc(100vh - 130px);"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>

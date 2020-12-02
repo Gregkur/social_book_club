@@ -1,11 +1,11 @@
 .card-bookclub-index {
     overflow: hidden;
-    height: 160px;
+    height: 250px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 20px;
     display: flex;
-    align-items: center;
+    
     &:hover {
       opacity: 0.8;
       transition: ease-in 0.2s;
@@ -31,7 +31,10 @@
   }
   
   .card-bookclub-index .card-bookclub-index-infos {
-    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
   }
 
   .card-bookclub-index .card-bookclub-user {
