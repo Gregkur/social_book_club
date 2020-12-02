@@ -8,6 +8,9 @@ class BookclubsController < ApplicationController
     if user_signed_in?
       @location = current_user.address
       @users = User.near(@location, 10)
+    elsif cookies[:location] == nil
+      @location = 'Berlin, Mitte'
+      @users = User.near(@location, 10)
     else
       @location = cookies[:location].split("|")
       @users = User.near(@location, 10)

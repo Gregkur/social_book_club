@@ -25,7 +25,12 @@ class BooksController < ApplicationController
 
     @books = @users.map { |user| user.books }.flatten
     @books = Book.search(params[:query]) if params[:query].present?
-    @users = User.near(@location, 10).where(books: @books).where.not(id: current_user.id)
+    if user_signed_in?
+      @users = User.near(@location, 10).where(books: @books).where.not(id: current_user.id)
+    else
+      @users = User.near(@location, 10).where(books: @books)
+    end
+    
 
     @markers = @users.geocoded.map do |user|
       {
