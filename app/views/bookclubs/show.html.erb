@@ -89,12 +89,16 @@
               </div>
               <div class="functional-buttons">
                 <% if current_user != @bookclub_thread.user %>
-                  <%= link_to edit_bookclub_bookclub_thread_path(@bookclub, bookclub_thread) do %>
-                    <i class="fas fa-edit"></i>
-                  <% end %>
-                  <%= link_to bookclub_bookclub_thread_path(bookclub_thread), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <i class="fas fa-trash mr-2"></i>
-                  <% end %>
+                  <div id="edit-thread">
+                    <%= link_to edit_bookclub_bookclub_thread_path(@bookclub, bookclub_thread) do %>
+                      <p>edit</p>
+                    <% end %>
+                  </div>
+                  <div id="delete-thread">
+                    <%= link_to bookclub_bookclub_thread_path(bookclub_thread), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <p>delete</p>
+                    <% end %>
+                  </div>
                 <% end %>
               </div>
             </div>
@@ -105,12 +109,14 @@
                 <% bookclub_thread.comments.each do |comment| %>
                   <div class="comment">
                     <p><%= comment.content %></p>
-                    <%= link_to comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                      <i class="fas fa-trash mr-2 mt-2"></i>
-                    <% end %>
                   </div>
-                  <div class="commenter mt-2 ml-2">
-                    <p>Posted by <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+                  <div class="commenter mt-2">
+                    <p>Posted by <%= comment.user.first_name %> <%= comment.user.last_name %> </p>
+                    <div id="delete-comment">
+                      <%= link_to comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <p>| delete</p>
+                      <% end %>
+                    </div>
                   </div>
                 <% end %>
               </div>
