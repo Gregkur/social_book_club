@@ -1,4 +1,8 @@
 .bookclub-user-info{
     display: flex;
     flex-direction: column;
+    p {
+        width: 500px;
+        padding-top: 16px;
+    }
 }
