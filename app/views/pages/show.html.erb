@@ -1,4 +1,5 @@
 <%= render 'popup' %>
+<%= render 'bookclub' %>
 
 <div class="container">
 
@@ -29,7 +30,6 @@
 
     <div class="bookclubs-books-wrapper">
       <div class="bookclubs-wrapper">
-        
         <% @user.bookclub_memberships.take(3).each do |bookclub| %> 
           <%= link_to bookclub_path(bookclub) do %> 
             <% if bookclub.photos.attached? %>
@@ -97,8 +97,8 @@
 
     <div class="container my-5 d-flex justify-content-around">
       <div class="mb-5">
-        <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile" %>
-        <%= link_to "Create a new bookclub", new_bookclub_path, :method => :get, class:"button-red-profile" %>
+        <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile mx-4" %>
+        <%= link_to "Create a new bookclub", new_book_path, class:"button-red-profile", data: {toggle: "modal", target: "#bookclub-modal"}, remote: true %>
       </div>
     </div>
 </div>
