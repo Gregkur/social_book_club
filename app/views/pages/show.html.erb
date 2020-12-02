@@ -28,11 +28,11 @@
     </div>
 
     <div class="bookclubs-books-wrapper">
-      <div class="bookclubs-wrapper" style="cursor: pointer;">
+      <div class="bookclubs-wrapper">
         
         <% @user.bookclub_memberships.each do |bookclub| %>
           <%= link_to bookclub_path(bookclub) do %>
-            <%= cl_image_tag bookclub.photos[0].key, crop: :fill%>
+            <%= cl_image_tag bookclub.photos[0].key, crop: :fill, id:'photo-shadow'%>
           <% end %>
         <% end %>
 
