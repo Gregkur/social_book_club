@@ -1,44 +1,45 @@
 .book-card {
-  margin: 0 auto;
-  position: relative;
-  width: 80vw;
-  height: 70vh;
   display: flex;
   align-items: center;
-  background-color: #FFDE91;
+  position: relative;
   padding-left: 25%;
-}
+  margin: 120px auto 0;
+  width: 100%;
+  background-color: #FFDE91;
+  border-radius: 12px;
 
-.book-details {
-  width: 90%;
-  padding-left: 20px;
-  h2 {
-    font-size: 24px;
-    font-weight: bolder;
-
-  }
-  h3 {
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  p {
-    font-size: 14px;
-    line-height: 1.6;
-    width: 85%;
-    text-align: justify;
-    margin-bottom: 24px;
+  .book-card-details {
+    width: 790px;
+    padding: 60px;
+    
+    h2 {
+      font-size: 32px;
+      font-weight: bolder;
+  
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      width: 85%;
+      text-align: justify;
+      margin-bottom: 24px;
+    }
   }
 }
 
 .avatar-book {
-  height: 55%;
-  /* width: 10%; */
-  border-radius: 4px;
   position: absolute;
-  /* top: -14%; */
-  bottom: 60%;
-  left: 5%;
+  height: 350px;
+  width: auto;
+  border-radius: 6px;
+  position: absolute;
+  top: -60px;
+  left: 60px;
 }
 
 .btn-booking {
@@ -59,17 +60,24 @@
 }
 
 .book-user {
-    position: relative;
-    bottom: 128px;
-    right: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+    
     p {
-      font-weight: bolder;
+      padding-left: 12px;
       font-size: 12px;
       text-align: center;
+      margin: 0;
   }
     img {
       background: 50% 50% no-repeat;
       object-fit: cover;
+      width: 40px;
+      height: 40px;
     }
 }
 

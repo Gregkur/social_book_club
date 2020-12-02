@@ -83,44 +83,50 @@
           <div class="existing-threads-box">
             <div class="nested-existing-threads">
             <!-- <div class="card-thread mt-3"> -->
+              <p>Posted by <%= bookclub_thread.user.first_name %> <%= bookclub_thread.user.last_name %></p>
               <h3><%= bookclub_thread.title %></h3>
               <p><%= bookclub_thread.content %></p>
               <div class="avatar-thread">
-                <%= image_tag bookclub_thread.user.photo, class:"avatar-bordered"%>
+                <%= image_tag bookclub_thread.user.photo, class:"avatar-large"%>
               </div>
               <div class="functional-buttons">
                 <% if current_user != @bookclub_thread.user %>
-                  <%= link_to edit_bookclub_bookclub_thread_path(@bookclub, bookclub_thread) do %>
-                    <i class="fas fa-edit"></i>
-                  <% end %>
-                  <%= link_to bookclub_bookclub_thread_path(bookclub_thread), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <i class="fas fa-trash mr-2"></i>
-                  <% end %>
+                  <div id="edit-thread">
+                    <%= link_to edit_bookclub_bookclub_thread_path(@bookclub, bookclub_thread) do %>
+                      <p>edit</p>
+                    <% end %>
+                  </div>
+                  <div id="delete-thread">
+                    <%= link_to bookclub_bookclub_thread_path(bookclub_thread), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <p>delete</p>
+                    <% end %>
+                  </div>
                 <% end %>
               </div>
             </div>
             <% if bookclub_thread.comments.present? %>
-              <div class="mt-3">
-                <p><strong>Comments</strong> (scroll down to see all comments)</p>
-              </div>
               <div class="nested-existing-comments">
+                <div id="border-comments">
+                </div>
                 <% bookclub_thread.comments.each do |comment| %>
                   <div class="comment">
                     <p><%= comment.content %></p>
-                    <%= link_to comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                      <i class="fas fa-trash mr-2 mt-2"></i>
-                    <% end %>
                   </div>
-                  <div class="commenter mt-2 ml-2">
-                    <p>created by - <b><%= comment.user.first_name %> <%= comment.user.last_name %></b></p>
+                  <div class="commenter mt-2">
+                    <p>Posted by <%= comment.user.first_name %> <%= comment.user.last_name %> </p>
+                    <div id="delete-comment">
+                      <%= link_to comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <p>| delete</p>
+                      <% end %>
+                    </div>
                   </div>
                 <% end %>
               </div>
-              <div class="nested-create-comment-form mt-3">
+              <div class="nested-create-comment-form">
                 <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
               </div>
             <% else %>
-              <div class="nested-create-comment-form mt-3">
+              <div class="nested-create-comment-form">
                 <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
               </div>
             <% end %>
@@ -131,9 +137,9 @@
     </div>
   </div>
   <div class="container text-center my-5">
-    <div class="mb-5">
-      <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile"  %>
-      <%= link_to "Go back to your profile", page_path(current_user), :method => :get, class:"button-red-profile" if user_signed_in?  %>
+  <div class="container">
+    <div class="row">
+      <%= link_to "◄ Go back", bookclubs_path, method: :get, id: "books-link", class: "btn-back-show" %>
     </div>
   </div>
 </div>

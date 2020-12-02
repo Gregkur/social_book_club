@@ -1,16 +1,23 @@
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 32px;
+}
+
 .card-review {
   background-color: $purple;
   height: 100%;
-  width: 80vw;
-  border-radius: 4px;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
   padding: 64px;
   margin: 0 auto;
+  
   h2 {
     font-size: 24px;
     font-weight: bolder;
     color: $dark-purple;
+    margin-bottom: 36px;
     text-align: center;
-    margin-bottom: 24px;
   }
 }
 
@@ -20,36 +27,44 @@
   border-radius: 20px;
   border-radius: 4px;
   margin: 0 auto;
-  width: 80%;
+  width:100%;
   padding: 16px;
 }
 
-.card-book-review h2 {
-  font-size: 16px;
+.card-book-review span {
+  font-size: 12px;
   font-weight: bold;
+  text-transform: uppercase;
   margin: 0;
   margin: 0 0 8px 0;
   text-align: left;
 }
 
 .card-book-review p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
-  width: 90%;
-  margin-bottom: 8px;
+  padding-bottom: 21px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.card-book-review-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .fa-stars {
   color: $yellow;
 }
 
-.review-edit {
-  margin-top: 4px;
-}
-
 .write-review {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 60px;
+  background-color: white;
+  border-radius:  0 0 12px 12px;
+
   h3 {
     text-align: center;
     margin-top: 24px;
@@ -57,4 +72,13 @@
     font-weight: bolder;
     color: $dark-purple;
   }
+}
+
+#review_book_rating {
+  max-width: 220px;
+}
+
+#review_book_comment {
+  resize: none;
+  height: 220px;
 }
