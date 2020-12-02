@@ -13,12 +13,15 @@ class BooksController < ApplicationController
   def index
     @books = policy_scope(Book).all
 
-    if user_signed_in?
-      @location = current_user.address
-      @users = User.near(@location, 10).where.not(id: current_user.id)
+    if user_signed_in? && cookies[:location] == nil
+      @location = 'Berlin, Mitte'
+      @users = User.near(@location, 10)
     elsif !user_signed_in? && cookies[:location] == nil
       @location = 'Berlin, Mitte'
       @users = User.near(@location, 10)
+    elsif user_signed_in?
+      @location = current_user.address
+      @users = User.near(@location, 10).where.not(id: current_user.id)
     else
       @location = cookies[:location].split("|")
       @users = User.near(@location, 10)
@@ -31,7 +34,6 @@ class BooksController < ApplicationController
     else
       @users = User.near(@location, 10).where(books: @books)
     end
-    
 
     @markers = @users.geocoded.map do |user|
       {

@@ -4,12 +4,13 @@
 <div class="container">
 
   <div class="bookclub-wrapper purple">
+  <%# Checking if bookclub has a photo %>
     <% if @bookclub.photos.attached? %>
       <%= image_tag @bookclub.photos[0], crop: :limit, class:"bookclub-img"%>
     <% else %>
       <%= image_tag "https://images.unsplash.com/photo-1546284663-fed719f6612e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80", crop: :limit, class:"bookclub-img"%>
     <% end %>
-    
+
     <div class="bookclub-user-info">
         <h1 style="width: 520px"><%= @bookclub.name %></h1>
         <p><%= @bookclub.description %></p>
@@ -18,7 +19,13 @@
     <div class="bookclub-page-books-wrapper">
       <div class="bookclubs-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg2">
         <% @bookclub_users.take(3).each do |user|%>
-          <%= image_tag user.user.photo %>
+        <%# Checking if users of bookclubs have photos %>
+          <% if user.user.photo.attached? %>
+            <%= image_tag user.user.photo %>
+          <% else %>
+            <%= image_tag "https://images.unsplash.com/photo-1576078044571-8ea98b0b0963?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" %>
+          <% end %>
+        
         <% end %>
         <% if @bookclub_users.length == 1 %>
           <p><strong><%= @bookclub_users.length %> member</strong></p>
@@ -30,7 +37,13 @@
       <div class="bookclub-books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
         <% @bookclub_users.take(1).each do |user| %>
           <% user.user.books.first(3).each do |book| %>
-                <%= image_tag book.photos[0] %>
+          <%# Checking if user's book has photos %>
+            <% if book.photos[0].present? %>
+              <%= image_tag book.photos[0] %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" %>
+            <% end %>
+
           <% end %>
         <% end %>
 
@@ -124,9 +137,9 @@
     </div>
   </div>
   <div class="container text-center my-5">
-    <div class="mb-5">
-      <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile"  %>
-      <%= link_to "Go back to your profile", page_path(current_user), :method => :get, class:"button-red-profile" if user_signed_in?  %>
+  <div class="container">
+    <div class="row">
+      <%= link_to "◄ Go back", bookclubs_path, method: :get, id: "books-link", class: "btn-back-show" %>
     </div>
   </div>
 </div>
