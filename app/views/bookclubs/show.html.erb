@@ -81,10 +81,11 @@
           <div class="existing-threads-box">
             <div class="nested-existing-threads">
             <!-- <div class="card-thread mt-3"> -->
+              <p>posted by <%= bookclub_thread.user.first_name %> <%= bookclub_thread.user.last_name %> </p>
               <h3><%= bookclub_thread.title %></h3>
               <p><%= bookclub_thread.content %></p>
               <div class="avatar-thread">
-                <%= image_tag bookclub_thread.user.photo, class:"avatar-bordered"%>
+                <%= image_tag bookclub_thread.user.photo, class:"avatar-large"%>
               </div>
               <div class="functional-buttons">
                 <% if current_user != @bookclub_thread.user %>
@@ -98,9 +99,6 @@
               </div>
             </div>
             <% if bookclub_thread.comments.present? %>
-              <div class="mt-3">
-                <p><strong>Comments</strong> (scroll down to see all comments)</p>
-              </div>
               <div class="nested-existing-comments">
                 <% bookclub_thread.comments.each do |comment| %>
                   <div class="comment">
@@ -110,15 +108,15 @@
                     <% end %>
                   </div>
                   <div class="commenter mt-2 ml-2">
-                    <p>created by - <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+                    <p>posted by <%= comment.user.first_name %> <%= comment.user.last_name %></p>
                   </div>
                 <% end %>
               </div>
-              <div class="nested-create-comment-form mt-3">
+              <div class="nested-create-comment-form">
                 <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
               </div>
             <% else %>
-              <div class="nested-create-comment-form mt-3">
+              <div class="nested-create-comment-form">
                 <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
               </div>
             <% end %>

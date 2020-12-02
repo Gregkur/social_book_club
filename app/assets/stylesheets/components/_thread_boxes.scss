@@ -1,6 +1,6 @@
 .create-thread-box {
   border-radius: 10px;
-  width: 90%;
+  width: 70%;
   padding: 32px;
   margin: 0 auto;
   margin-bottom: 64px;
@@ -11,10 +11,9 @@
 
 
 .existing-threads-box {
-  border-radius: 10px;
-    padding: 24px;
-    width: 90%;
+    border-radius: 10px;
     padding: 32px;
+    width: 70%;
     margin-bottom: 64px;
     margin: 0 auto;
     background-color: white;
@@ -23,15 +22,15 @@
 
 .avatar-thread {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8%;
+  left: 82%;
 }
 
 .header-create-form {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   h2 {
     font-weight: bold;
@@ -53,18 +52,33 @@
 
 
 .nested-existing-threads {
-  border: solid 1px $purple;
-  padding: 24px;
+  padding: 32px 32px 0 32px;
   border-radius: 10px;
+  h3 {
+    color: $dark-purple;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    width: 85%;
+  }
+  p {
+    font-weight: 400;
+    color: $dark-purple;
+    font-size: 14px;
+    text-align: justify;
+    width: 85%;
+    margin-bottom: 2px;
+  }
 }
 
 .nested-existing-comments {
-  height: 230px;
+  height: 150px;
   overflow-y: scroll !important;
-  // border-radius: 10px;
-  // border: solid 1px rgba(100,100,100, 0.3);
-  // padding: 25px;
-  // margin-top: 25px;
+  padding: 0 32px 0 32px;
+}
+
+.nested-create-comment-form {
+  padding: 0 32px 0 32px;
 }
 
 ::-webkit-scrollbar {
@@ -79,16 +93,19 @@
 }
 
 .comment {
-  border-radius: 10px;
-  border: solid 1px $purple;
+  border-radius: 20px;
+  border: solid 1px $dark-purple;
   padding: 12px;
   margin-top: 24px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .comment p {
   margin-bottom: 0rem;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .mt-3 p {
@@ -99,14 +116,6 @@
   font-size: 10px;
 }
 
-// .all-threads {
-//   height: 1000px;
-//   overflow-y: scroll !important;
-// }
-
-
-
-
-
-
-
+.functional-buttons {
+  color: $dark-purple
+}
