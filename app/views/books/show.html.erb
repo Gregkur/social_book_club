@@ -56,39 +56,45 @@
             <p>Nothing here yet! Be the first to leave a review.</p>
           </div>
         <% else %>
+          <div class="review-grid">
             <% @book.reviews.each do |review| %>
               <div class="card-book-review mb-3">
-                <h2><%= review.user.nickname %></h2>
                 <p><%= review.book_comment %></p>
-                <% if review.book_rating %>
-                  <div class="fa-stars">
-                    <% counter = 0 %>
-                    <% 5.times do %>
-                      <i class="fa <%= review.book_rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-                      <% counter += 1 %>
-                    <% end %>
-                  </div>
-                  <% if current_user == review.user %>
-                    <div class="review-edit">
-                      <%= link_to edit_book_review_path(@book, review) do %>
-                        <i class="fas fa-edit"></i>
-                      <% end %>
-                      <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                        <i class="fas fa-trash mr-2 mt-2"></i>
+                <span><%= review.user.nickname %></span>
+                <div class="card-book-review-bottom">
+                  <% if review.book_rating %>
+                    <div class="fa-stars">
+                      <% counter = 0 %>
+                      <% 5.times do %>
+                        <i class="fa <%= review.book_rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                        <% counter += 1 %>
                       <% end %>
                     </div>
+                    <% if current_user == review.user %>
+                      <div class="review-edit">
+                        <%= link_to edit_book_review_path(@book, review) do %>
+                          <i class="fas fa-edit"></i>
+                        <% end %>
+                        <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                          <i class="fas fa-trash mr-2 mt-2"></i>
+                        <% end %>
+                      </div>
+                    <% end %>
                   <% end %>
-                <% end %>
+                </div>
               </div>
             <% end %>
+          </div>
         <% end %>
-        <div class="write-review">
-          <%= render "reviews/new", book: @book, review: @review %>
-        </div>
+      </div>
+      <div class="write-review">
+        <%= render "reviews/new", book: @book, review: @review %>
       </div>
     </div>
   </div>
-  <div class="mb-3 mr-3 pb-3">
-    <%= link_to "Go back", books_path, method: :get, id: "books-link", class: "btn-back-show" %>
+  <div class="container">
+    <div class="row">
+      <%= link_to "Go back", books_path, method: :get, id: "books-link", class: "btn-back-show" %>
+    </div>
   </div>
 </div>
