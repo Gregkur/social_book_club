@@ -41,7 +41,7 @@
                   </div>
 								</div>
 								<div class="card-bookclub-user">
-									<%= image_tag bookclub.user.photo, class:"avatar-bordered"%>							
+									<%#= image_tag bookclub.user.photo, class:"avatar-bordered"%>
 									<div class="user-info">
 										<p><strong><%= bookclub.user.first_name %> <%= bookclub.user.last_name %></strong></p>
 										<p><%= bookclub.user.address %></p>
@@ -55,11 +55,25 @@
 	  </div>
 		<%# Map %>
 		<div class="col-12 col-lg-4">
-      <div id="map"
-        style="width: 400px; height: 600px; margin-top: 135px; margin-left: 20px"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="map-sticky">
+        <div id="map"
+          style="width: 380px; height: 560px; margin-top: 35px; margin-left: 20px"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
 	</div>
 </div>
+<% unless @location %>
+<script>
+  function getGeoLocation() {
+  navigator.geolocation.getCurrentPosition(setGeoCookie);
+  }
+  function setGeoCookie(position) {
+    var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
+    document.cookie = "location=" + escape(cookie_val);
+  }
+  getGeoLocation();
+</script>
+<% end %>
