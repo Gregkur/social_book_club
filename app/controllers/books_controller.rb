@@ -34,7 +34,6 @@ class BooksController < ApplicationController
     else
       @users = User.near(@location, 10).where(books: @books)
     end
-    
 
     @markers = @users.geocoded.map do |user|
       {
