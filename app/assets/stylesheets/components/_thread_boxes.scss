@@ -14,8 +14,8 @@
     border-radius: 10px;
     padding: 32px;
     width: 70%;
-    margin-bottom: 64px;
     margin: 0 auto;
+    margin-bottom: 32px;
     background-color: white;
     position: relative;
 }
@@ -73,8 +73,12 @@
 
 .nested-existing-comments {
   height: 150px;
+  margin-top: 32px;
+  margin-bottom: 32px;
   overflow-y: scroll !important;
   padding: 0 32px 0 32px;
+  border-top: solid 2px $yellow;
+  border-bottom: solid 2px $yellow;;
 }
 
 .nested-create-comment-form {
@@ -93,8 +97,7 @@
 }
 
 .comment {
-  border-radius: 20px;
-  border: solid 1px $dark-purple;
+  border-left: solid 1px $dark-purple;
   padding: 12px;
   margin-top: 24px;
   display: flex;
