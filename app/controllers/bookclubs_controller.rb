@@ -5,12 +5,16 @@ class BookclubsController < ApplicationController
   def index
     @bookclubs = policy_scope(Bookclub).all
     @bookclubs = Bookclub.search(params[:query]) if params[:query].present?
-    if user_signed_in?
-      @location = current_user.address
-      @users = User.near(@location, 10)
-    elsif cookies[:location] == nil
+
+    if user_signed_in? && cookies[:location] == nil
       @location = 'Berlin, Mitte'
       @users = User.near(@location, 10)
+    elsif !user_signed_in? && cookies[:location] == nil
+      @location = 'Berlin, Mitte'
+      @users = User.near(@location, 10)
+    elsif user_signed_in?
+      @location = current_user.address
+      @users = User.near(@location, 10).where.not(id: current_user.id)
     else
       @location = cookies[:location].split("|")
       @users = User.near(@location, 10)
