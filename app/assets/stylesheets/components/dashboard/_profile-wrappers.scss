@@ -16,8 +16,34 @@
         border-radius: 4px;
         left: 15%;
     }
-    
-}
+    .bookclubs-books-wrapper{
+        .books-wrapper{
+            background-color: white;
+            width: 500px;
+            height: 127px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            img{
+                background: 50% 50% no-repeat;
+                width: 72px;
+                height: 96px;
+                border-radius: 4px;
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
+            &:hover{
+                opacity: 0.9;
+                box-shadow: 0 0 3pt 2pt $dark-purple;
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+    }
 
 .bookclubs-books-wrapper{
     margin-left: 50px;
