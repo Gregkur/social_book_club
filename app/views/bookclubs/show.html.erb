@@ -81,7 +81,7 @@
           <div class="existing-threads-box">
             <div class="nested-existing-threads">
             <!-- <div class="card-thread mt-3"> -->
-              <p>posted by <%= bookclub_thread.user.first_name %> <%= bookclub_thread.user.last_name %> </p>
+              <p>Posted by <%= bookclub_thread.user.first_name %> <%= bookclub_thread.user.last_name %></p>
               <h3><%= bookclub_thread.title %></h3>
               <p><%= bookclub_thread.content %></p>
               <div class="avatar-thread">
@@ -100,6 +100,8 @@
             </div>
             <% if bookclub_thread.comments.present? %>
               <div class="nested-existing-comments">
+                <div id="border-comments">
+                </div>
                 <% bookclub_thread.comments.each do |comment| %>
                   <div class="comment">
                     <p><%= comment.content %></p>
@@ -108,7 +110,7 @@
                     <% end %>
                   </div>
                   <div class="commenter mt-2 ml-2">
-                    <p>posted by <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+                    <p>Posted by <%= comment.user.first_name %> <%= comment.user.last_name %></p>
                   </div>
                 <% end %>
               </div>
