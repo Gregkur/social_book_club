@@ -5,9 +5,16 @@ class BookclubsController < ApplicationController
   def index
     @bookclubs = policy_scope(Bookclub).all
     @bookclubs = Bookclub.search(params[:query]) if params[:query].present?
-    if user_signed_in?
-      @location = current_user.address
+
+    if user_signed_in? && cookies[:location] == nil
+      @location = 'Berlin, Mitte'
       @users = User.near(@location, 10)
+    elsif !user_signed_in? && cookies[:location] == nil
+      @location = 'Berlin, Mitte'
+      @users = User.near(@location, 10)
+    elsif user_signed_in?
+      @location = current_user.address
+      @users = User.near(@location, 10).where.not(id: current_user.id)
     else
       @location = cookies[:location].split("|")
       @users = User.near(@location, 10)
@@ -58,6 +65,7 @@ class BookclubsController < ApplicationController
     @bookclub.photos.attach(params[:bookclub][:photos])
     authorize @bookclub
     @bookclub.user = current_user
+    @bookclub.members << current_user
     if @bookclub.save
       flash[:notice] = "Created successfully!"
       redirect_to bookclub_path(@bookclub)

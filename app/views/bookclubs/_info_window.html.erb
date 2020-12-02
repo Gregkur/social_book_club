@@ -3,15 +3,12 @@
       <% user.bookclubs.each_with_index do |bookclub, i| %>
         <div class="carousel-item <%= 'active' if i == 0 %> ">
           <div class="container-bookclub-details">
-            <div class="bookclub-title">
+            <span class="bookclub-title">
               <%= link_to "#{bookclub.name}", bookclub_path(bookclub) %>
-            </div>
-            <div class="bookclub-description">
-              <span> <%= bookclub.description %></span>
-            </div>
-            <div>
-              <%#= image_tag bookclub.photos.last.key, crop: :fill, class:"bookclub-pic"%>
-            </div>
+            </span>
+            <p class="bookclub-description">
+              <%= bookclub.description %>
+            </p>
           </div>
         </div>
       <% end %>

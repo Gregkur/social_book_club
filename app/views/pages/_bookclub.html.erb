@@ -1,0 +1,31 @@
+<div class="modal fade bd-example-modal-lg" id="bookclub-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" id="modal-booking" role="document">
+    <div class="modal-content">
+
+        <div class="background-create-wrapper-2">
+            <div id="form-wrapper">
+            <div id="create-book-box m-8">
+                <div class="nested-create-form m-8">
+                <div id="header-create-form">
+                    <h2>Create your own bookclub</h2>
+                    <%= image_tag "figures/2.png", id:"figure-reading-create" %>
+                </div>
+                <%= simple_form_for(@bookclub) do |f| %>
+                    <%= f.input :name, placeholder: 'Amazing name here!', input_html: { class: "form-borders-bookclub" }, class: "form-control" %>
+                    <%= f.input :description, placeholder: 'What is your bookclub about?', input_html: { class: "form-borders-bookclub" }, class: "form-control" %>
+                    <%#= f.input :visibility, placeholder: '500' %>
+                    <!-- <div class="container d-flex justify-content-center"> -->
+                    <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
+                    <!-- </div> -->
+                    <div class="form-link-buttons d-flex justify-content-center">
+                    <%= f.submit "Let's go!", class: "btn-create mt-3" %>
+                    </div>
+                <% end %>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+</div>

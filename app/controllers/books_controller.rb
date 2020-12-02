@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def show
+    @booking = Booking.new
     @book = Book.find(params[:id])
     authorize @book
     @review = Review.new
@@ -12,12 +13,15 @@ class BooksController < ApplicationController
   def index
     @books = policy_scope(Book).all
 
-    if user_signed_in?
-      @location = current_user.address
-      @users = User.near(@location, 10).where.not(id: current_user.id)
+    if user_signed_in? && cookies[:location] == nil
+      @location = 'Berlin, Mitte'
+      @users = User.near(@location, 10)
     elsif !user_signed_in? && cookies[:location] == nil
       @location = 'Berlin, Mitte'
       @users = User.near(@location, 10)
+    elsif user_signed_in?
+      @location = current_user.address
+      @users = User.near(@location, 10).where.not(id: current_user.id)
     else
       @location = cookies[:location].split("|")
       @users = User.near(@location, 10)
@@ -25,7 +29,11 @@ class BooksController < ApplicationController
 
     @books = @users.map { |user| user.books }.flatten
     @books = Book.search(params[:query]) if params[:query].present?
-    @users = User.near(@location, 10).where(books: @books)
+    if user_signed_in?
+      @users = User.near(@location, 10).where(books: @books).where.not(id: current_user.id)
+    else
+      @users = User.near(@location, 10).where(books: @books)
+    end
 
     @markers = @users.geocoded.map do |user|
       {
