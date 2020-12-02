@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def show
+    @booking = Booking.new
     @book = Book.find(params[:id])
     authorize @book
     @review = Review.new
