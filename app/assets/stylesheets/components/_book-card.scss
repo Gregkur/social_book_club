@@ -11,17 +11,17 @@
   .book-card-details {
     width: 790px;
     padding: 60px;
-    
+
     h2 {
       font-size: 32px;
       font-weight: bolder;
-  
+
     }
     h3 {
       font-size: 16px;
       font-weight: 400;
     }
-  
+
     p {
       font-size: 14px;
       line-height: 1.6;
@@ -36,6 +36,7 @@
   position: absolute;
   height: 350px;
   width: auto;
+  max-width: 235px;
   border-radius: 6px;
   position: absolute;
   top: -60px;
@@ -66,7 +67,7 @@
   position: absolute;
   top: 60px;
   right: 60px;
-    
+
     p {
       padding-left: 12px;
       font-size: 12px;
@@ -76,8 +77,8 @@
     img {
       background: 50% 50% no-repeat;
       object-fit: cover;
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
     }
 }
 
