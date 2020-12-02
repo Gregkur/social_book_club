@@ -1,7 +1,7 @@
 .create-thread-box {
   border-radius: 10px;
-  width: 90%;
-  padding: 32px;
+  width: 70%;
+  padding: 24px;
   margin: 0 auto;
   margin-bottom: 64px;
   background-color: white;
@@ -11,26 +11,25 @@
 
 
 .existing-threads-box {
-  border-radius: 10px;
-    padding: 24px;
-    width: 90%;
-    padding: 32px;
-    margin-bottom: 64px;
+    border-radius: 10px;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 32px;
     background-color: white;
     position: relative;
 }
 
 .avatar-thread {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 4%;
+  left: 82%;
 }
 
 .header-create-form {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   h2 {
     font-weight: bold;
@@ -52,66 +51,110 @@
 
 
 .nested-existing-threads {
-  border: solid 1px $purple;
-  padding: 24px;
+  padding: 40px 40px 0 40px;
   border-radius: 10px;
+  h3 {
+    color: $dark-purple;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    width: 85%;
+  }
+  p {
+    font-weight: 400;
+    color: $dark-purple;
+    font-size: 14px;
+    text-align: justify;
+    width: 85%;
+    margin-bottom: 2px;
+  }
 }
 
 .nested-existing-comments {
-  height: 230px;
-  overflow-y: scroll !important;
-  // border-radius: 10px;
-  // border: solid 1px rgba(100,100,100, 0.3);
-  // padding: 25px;
-  // margin-top: 25px;
+  height: 100%;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  // overflow-y: scroll !important;
+  padding: 0 40px 0 40px;
 }
 
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 8px;
-  margin-left: 4px;
+.nested-create-comment-form {
+  padding: 32px 40px 40px 40px;
+  background-color: #F0F0F0;
+  border-radius: 0 0 10px 10px
 }
-::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, .5);
-  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-}
+
+// ::-webkit-scrollbar {
+//   -webkit-appearance: none;
+//   width: 8px;
+//   margin-left: 4px;
+// }
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 4px;
+//   background-color: rgba(0, 0, 0, .5);
+//   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+// }
 
 .comment {
-  border-radius: 10px;
-  border: solid 1px $purple;
+  border-left: solid 1px $dark-purple;
   padding: 12px;
   margin-top: 24px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .comment p {
   margin-bottom: 0rem;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: justify;
 }
 
 .mt-3 p {
   margin-bottom: 0rem;
 }
 
-.commenter p {
-  font-size: 10px;
-}
-
-// .all-threads {
-//   height: 1000px;
-//   overflow-y: scroll !important;
-// }
+.commenter {
+  display: flex;
+  align-items: center;
+  p {
+    font-size: 10px;
+    font-weight: 700;
+  }
 
 .all-threads{
   align-items: center;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+
+#delete-comment p {
+  font-size: 10px;
+  font-weight: 400;
+  color:$purple;
+  padding-left: 4px;
+}
+
+.functional-buttons {
+    display: flex;
+    align-items: center;
+}
+
+#edit-thread p {
+  font-size: 10px;
+  font-weight: 400;
+  color: $purple;
+}
+
+#delete-thread p {
+  font-size: 10px;
+  font-weight: 400;
+  color: $purple;
+  margin-left: 8px;
 }
 
 
-
-
-
-
+#border-comments {
+  border-top: solid 2px $yellow;
+}
