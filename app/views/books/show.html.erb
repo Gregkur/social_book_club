@@ -1,16 +1,14 @@
 <div>
 <%= render 'modal' %>
-  <div class="container d-flex flex-column my-5" style="align-items: center">
+  <div class="container">
     <div class="row">
-      <div class="book-card mt-5">
-        <div class="book-pic">
-          <% if @book.photos.attached? %>
-            <%= cl_image_tag @book.photos[0].key, crop: :fill, class:"avatar-book" %>
-          <% else %>
-            <%= image_tag "https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", class: "avatar-book" %>
-          <% end %>
-        </div>
-        <div class="book-details">
+      <div class="book-card">
+        <% if @book.photos.attached? %>
+          <%= cl_image_tag @book.photos[0].key, crop: :fill, class:"avatar-book" %>
+        <% else %>
+          <%= image_tag "https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", class: "avatar-book" %>
+        <% end %>
+        <div class="book-card-details">
           <h2> <strong> <%= @book.title %> </strong> </h2>
           <h3> <strong> <%= @book.author %> </strong> </h3>
           <p> <%= @book.year %> | <%= @book.pages %> pages </p>
