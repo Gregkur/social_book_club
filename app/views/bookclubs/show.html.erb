@@ -124,9 +124,9 @@
     </div>
   </div>
   <div class="container text-center my-5">
-    <div class="mb-5">
-      <%= link_to "Offer a new book", new_book_path, :method => :get, class:"button-red-profile"  %>
-      <%= link_to "Go back to your profile", page_path(current_user), :method => :get, class:"button-red-profile" if user_signed_in?  %>
+  <div class="container">
+    <div class="row">
+      <%= link_to "◄ Go back", bookclubs_path, method: :get, id: "books-link", class: "btn-back-show" %>
     </div>
   </div>
 </div>
