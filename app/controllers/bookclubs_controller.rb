@@ -61,6 +61,7 @@ class BookclubsController < ApplicationController
     @bookclub.photos.attach(params[:bookclub][:photos])
     authorize @bookclub
     @bookclub.user = current_user
+    @bookclub.members << current_user
     if @bookclub.save
       flash[:notice] = "Created successfully!"
       redirect_to bookclub_path(@bookclub)
