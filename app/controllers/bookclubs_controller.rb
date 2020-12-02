@@ -8,6 +8,9 @@ class BookclubsController < ApplicationController
     if user_signed_in?
       @location = current_user.address
       @users = User.near(@location, 10)
+    elsif cookies[:location] == nil
+      @location = 'Berlin, Mitte'
+      @users = User.near(@location, 10)
     else
       @location = cookies[:location].split("|")
       @users = User.near(@location, 10)
@@ -58,6 +61,7 @@ class BookclubsController < ApplicationController
     @bookclub.photos.attach(params[:bookclub][:photos])
     authorize @bookclub
     @bookclub.user = current_user
+    @bookclub.members << current_user
     if @bookclub.save
       flash[:notice] = "Created successfully!"
       redirect_to bookclub_path(@bookclub)

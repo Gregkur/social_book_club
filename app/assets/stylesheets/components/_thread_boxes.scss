@@ -115,7 +115,6 @@
   margin-bottom: 0rem;
 }
 
-
 .commenter {
   display: flex;
   align-items: center;
@@ -123,7 +122,12 @@
     font-size: 10px;
     font-weight: 700;
   }
-}
+
+.all-threads{
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 
 #delete-comment p {
   font-size: 10px;

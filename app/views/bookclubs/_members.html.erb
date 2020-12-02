@@ -1,5 +1,5 @@
 <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg"id="modal-books">
     <div class="modal-content">
       <div class="row">
 		<div class="col-12 col-lg-12">
@@ -14,10 +14,16 @@
                                 <img src="https://images.unsplash.com/photo-1545239351-cefa43af60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80"/>
                             <% end %>
                             <div class="bookclub-user-info">
-                                <h1><%= user.user.first_name  %> <%= user.user.last_name %></h1>
-                                <h2>from: <%= user.user.address %></h2>
+                                <h1><%= user.user.first_name %> <%= user.user.last_name %></h1>
+                                <h2><%= user.user.address %></h2>
                                 <p><%= user.user.about %></p>
-                                <p>Has <%= user.user.books.length %> books!
+                                <% if user.user.books.length == 0 %>
+                                  <p><strong><%= user.user.first_name %> has no books yet!</strong></p>
+                                <% elsif user.user.books.length == 1 %>
+                                  <p><strong><%= user.user.first_name %> has <%= user.user.books.length %> book!</strong></p>
+                                <% else %>
+                                  <p><strong><%= user.user.first_name %> has <%= user.user.books.length %> books!</strong></p>
+                                <% end %>
                             </div>
                         </div>
                     <% end %>

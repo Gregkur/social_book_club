@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def show
+    @bookclub = Bookclub.new
     @user = current_user
     respond_to do |format|
       format.html
