@@ -11,19 +11,8 @@
     <% end %>
 
     <div class="bookclub-user-info">
-      <% if @bookclub.name.present? %>
         <h1 style="width: 520px"><%= @bookclub.name %></h1>
-      <% else %>
-        <h1>Hello Stranger!</h1>
-        <p><i class="fas fa-map-pin"></i>???</p>
-      <% end %>
-      <div class="bookclub-description">
-        <% if @bookclub.description.present? %>
-          <p><%= @bookclub.description %></p>
-        <% else %>
-          <p>Tell us about your bookclub!<p>
-        <% end %>
-      </div>
+        <p><%= @bookclub.description %></p>
     </div>
 
     <div class="bookclub-page-books-wrapper">

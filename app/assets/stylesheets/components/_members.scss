@@ -26,9 +26,9 @@
         float: left;
         overflow-wrap: break-word;
         h1{
-            font-size: 44px;
+            font-size: 24px;
             font-weight: bold;
-            margin-right: 26px;
+            margin: 0;
         }
         p{
             i{
@@ -45,14 +45,16 @@
   }
   
   .members-grid-card h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 16px 0 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
   }
   
   .members-grid-card p {
     font-size: 12px;
     line-height: 1.4;
+    width: 100%;
+    padding-top: 1px;
     margin: 1px 0 1px 0;
   }
   
