@@ -76,7 +76,7 @@
           <%= render "bookclub_threads/new", bookclub: @bookclub, bookclub_thread: @bookclub_thread %>
         </div>
       </div>
-      <div class="all-threads">
+      <div class="all-threads" style="margin 0 auto">
         <% @bookclub_threads.each do |bookclub_thread| %>
           <div class="existing-threads-box">
             <div class="nested-existing-threads">
@@ -110,7 +110,7 @@
                     <% end %>
                   </div>
                   <div class="commenter mt-2 ml-2">
-                    <p>created by - <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+                    <p>created by - <b><%= comment.user.first_name %> <%= comment.user.last_name %></b></p>
                   </div>
                 <% end %>
               </div>
