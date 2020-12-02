@@ -1,49 +1,72 @@
-<div class="d-flex flex-column" style="align-items: center">
-  <div class="profile-wrapper purple">
+<%= render 'popup' %>
+<%= render 'members' %>
+
+<div class="container">
+
+  <div class="bookclub-wrapper purple">
     <% if @bookclub.photos.attached? %>
-      <%= image_tag @bookclub.photos[0], crop: :limit, class:"user-img"%>
+      <%= image_tag @bookclub.photos[0], crop: :limit, class:"bookclub-img"%>
     <% else %>
-      <%= image_tag "https://images.unsplash.com/photo-1546284663-fed719f6612e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80", crop: :limit, class:"user-img"%>
+      <%= image_tag "https://images.unsplash.com/photo-1546284663-fed719f6612e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80", crop: :limit, class:"bookclub-img"%>
     <% end %>
-    <div class="profile-user-info">
+
+    <div class="bookclub-user-info">
       <% if @bookclub.name.present? %>
         <h1 style="width: 520px"><%= @bookclub.name %></h1>
       <% else %>
         <h1>Hello Stranger!</h1>
         <p><i class="fas fa-map-pin"></i>???</p>
       <% end %>
-      <div class="profile-description">
+      <div class="bookclub-description">
         <% if @bookclub.description.present? %>
           <p><%= @bookclub.description %></p>
         <% else %>
-          <p>Tell us about yourself, beautiful stranger!<p>
+          <p>Tell us about your bookclub!<p>
         <% end %>
       </div>
     </div>
-    <div class="bookclubs-books-wrapper">
-      <div class="bookclubs-wrapper">
+
+    <div class="bookclub-page-books-wrapper">
+      <div class="bookclubs-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg2">
         <% @bookclub_users.take(3).each do |user|%>
           <%= image_tag user.user.photo %>
         <% end %>
-        <% if @bookclub_users.length == 3 %>
+        <% if @bookclub_users.length == 1 %>
+          <p><strong><%= @bookclub_users.length %> member</strong></p>
         <% else %>
-            <p>+<%= @bookclub_users.length - 3 %> more members</p>
-        <% end %>
+          <p><strong><%= @bookclub_users.length %> members</strong></p>
+        <% end %>      
       </div>
-      <div class="books-wrapper">
-        <% @bookclub_users.each do |user| %>
-          <% user.user.books.take(1).each do |book| %>
+
+      <div class="bookclub-books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
+        <% @bookclub_users.take(1).each do |user| %>
+          <% user.user.books.first(3).each do |book| %>
                 <%= image_tag book.photos[0] %>
           <% end %>
         <% end %>
-        <p>
-          +<%= @bookclub_books.length - 3 %> more books
-        </p>
+
+         <% if @bookclub_books.length == 4 %>
+            <p><strong>one more book</strong></p>
+          <% elsif @bookclub_books.length == 3 %>
+            <p><strong>3 books</strong></p>
+          <% elsif @bookclub_books.length == 2 %>
+          <p><strong>2 books</strong></p>
+          <% elsif @bookclub_books.length == 1 %>
+            <p><strong>1 book</strong></p>
+          <% elsif @bookclub_books.length == 0 %>
+            <p><strong>Time to gain some members!</strong></p>
+          <% else %>
+            <p><strong>+<%=@bookclub_books.length - 3%> more books</strong></p>
+          <% end %>
       </div>
     </div>
+
+    <% if !current_user.in?(@bookclub.members) && user_signed_in? %>
+      <%= link_to "Join now!", join_path, :method => :post, class:"button-red-profile", id:"joinbookclub", remote: true %>
+    <% end %>
+    
   </div>
-  <div class="container">
-    <div class="background-create-wrapper-thread">
+    <div class="background-create-wrapper-thread mx-auto">
       <div class="header-create-form">
         <h2>Bookclub Talks</h2>
         <%= image_tag "figures/2.png", id:"figure-reading-thread" %>
@@ -53,29 +76,56 @@
           <%= render "bookclub_threads/new", bookclub: @bookclub, bookclub_thread: @bookclub_thread %>
         </div>
       </div>
-      <% @bookclub.bookclub_threads.each do |bookclub_thread| %>
-        <div class="existing-threads-box">
-          <div class="nested-existing-threads">
-          <!-- <div class="card-thread mt-3"> -->
-            <h3><%= bookclub_thread.title %></h3>
-            <p><%= bookclub_thread.content %></p>
-          </div>
-          <div class="avatar-thread">
-            <%= image_tag bookclub_thread.user.photo, class:"avatar-bordered"%>
-          </div>
-          <div class="functional-buttons">
-            <% if current_user != @bookclub_thread.user %>
-              <%= link_to edit_bookclub_bookclub_thread_path(@bookclub, bookclub_thread) do %>
-                <i class="fas fa-edit"></i>
-              <% end %>
-              <%= link_to bookclub_bookclub_thread_path(bookclub_thread), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <i class="fas fa-trash mr-2"></i>
-              <% end %>
+      <div class="all-threads">
+        <% @bookclub_threads.each do |bookclub_thread| %>
+          <div class="existing-threads-box">
+            <div class="nested-existing-threads">
+            <!-- <div class="card-thread mt-3"> -->
+              <h3><%= bookclub_thread.title %></h3>
+              <p><%= bookclub_thread.content %></p>
+              <div class="avatar-thread">
+                <%= image_tag bookclub_thread.user.photo, class:"avatar-bordered"%>
+              </div>
+              <div class="functional-buttons">
+                <% if current_user != @bookclub_thread.user %>
+                  <%= link_to edit_bookclub_bookclub_thread_path(@bookclub, bookclub_thread) do %>
+                    <i class="fas fa-edit"></i>
+                  <% end %>
+                  <%= link_to bookclub_bookclub_thread_path(bookclub_thread), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <i class="fas fa-trash mr-2"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+            <% if bookclub_thread.comments.present? %>
+              <div class="mt-3">
+                <p><strong>Comments</strong> (scroll down to see all comments)</p>
+              </div>
+              <div class="nested-existing-comments">
+                <% bookclub_thread.comments.each do |comment| %>
+                  <div class="comment">
+                    <p><%= comment.content %></p>
+                    <%= link_to comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <i class="fas fa-trash mr-2 mt-2"></i>
+                    <% end %>
+                  </div>
+                  <div class="commenter mt-2 ml-2">
+                    <p>created by - <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+                  </div>
+                <% end %>
+              </div>
+              <div class="nested-create-comment-form mt-3">
+                <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
+              </div>
+            <% else %>
+              <div class="nested-create-comment-form mt-3">
+                <%= render "comments/new", bookclub: @bookclub, bookclub_thread: bookclub_thread, comment: @comment %>
+              </div>
             <% end %>
+          <!-- </div> -->
           </div>
-        <!-- </div> -->
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="container text-center my-5">

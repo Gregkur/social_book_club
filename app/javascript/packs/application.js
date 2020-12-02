@@ -26,41 +26,28 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "../plugins/flatpickr"
 import { initMapbox } from '../plugins/init_mapbox';
+//import Swal from 'sweetalert2'
+// import 'sweetalert2/src/sweetalert2.scss'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initBookingMenu } from '../components/booking-menu'
+import { initJoinMenu } from '../components/join-menu'
+import { initMenuSlide } from "../components/manu_slide";
+import { initFlatPicker } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   // Flat picker
-  flatpickr(".datepicker", {
-    altInput: true,
-    altFormat: "F j, Y",
-    dateFormat: "Y-m-d",
-    minDate: "today",
-  });
-//vars
-  const nav = document.querySelector(".header__nav");
-  const hamburger = document.querySelector(".hamburger");
-  const burger = document.getElementById('hamburger2')
-  const body = document.querySelector('body')
+  initFlatPicker()
+  // Swal for joining
+  initJoinMenu()
 
-// Menu slide
-  hamburger.addEventListener("click", function() {
-    hamburger.classList.toggle("is-active");
-      if (hamburger.classList.contains("is-active")){
-        burger.checked = true
-      }else{
-        burger.checked = false
-      }
-    nav.classList.toggle("overflow");
-    body.classList.toggle("overflow-x")
-
-  });
+  // Menu slide
+  initMenuSlide()
 
   // Geo Map
   initMapbox()
   // Swal
   initBookingMenu()
+
 });

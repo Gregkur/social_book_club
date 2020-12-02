@@ -15,12 +15,15 @@ class BooksController < ApplicationController
     if user_signed_in?
       @location = current_user.address
       @users = User.near(@location, 10).where.not(id: current_user.id)
+    elsif !user_signed_in? && cookies[:location] == nil
+      @location = 'Berlin, Mitte'
+      @users = User.near(@location, 10)
     else
       @location = cookies[:location].split("|")
       @users = User.near(@location, 10)
     end
-    @books = @users.map { |user| user.books }.flatten
 
+    @books = @users.map { |user| user.books }.flatten
     @books = Book.search(params[:query]) if params[:query].present?
     @users = User.near(@location, 10).where(books: @books).where.not(id: current_user.id)
 

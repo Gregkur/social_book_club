@@ -1,0 +1,4 @@
+<%= simple_form_for [bookclub, bookclub_thread, comment] do |f| %>
+  <%= f.input :content, label: false, placeholder: "What's your thought on this?", input_html: { class: "form-borders" } %>
+  <%= f.submit "Add new comment", class: "btn-create-booking"%>
+<% end %>

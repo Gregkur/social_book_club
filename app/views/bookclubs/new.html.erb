@@ -5,22 +5,25 @@
         <div class="nested-create-form m-8">
           <div id="header-create-form">
             <h2>Create your first bookclub</h2>
+            <%= image_tag "figures/2.png", id:"figure-reading-create" %>
           </div>
           <%= simple_form_for(@bookclub) do |f| %>
-            <%= f.input :name, placeholder: 'My first Bookclub', class: "form-control" %>
-            <%= f.input :description, placeholder: 'This is a bookclub for people interested in innovation management.', class: "form-control" %>
+            <%= f.input :name, placeholder: 'Amazing name here!', input_html: { class: "form-borders-bookclub" }, class: "form-control" %>
+            <%= f.input :description, placeholder: 'What is your bookclub about?', input_html: { class: "form-borders-bookclub" }, class: "form-control" %>
             <%#= f.input :visibility, placeholder: '500' %>
             <!-- <div class="container d-flex justify-content-center"> -->
             <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: 'please upload high-resolution pictures of your book', class: "form-control" %>
             <!-- </div> -->
-            <div class="form-link-buttons">
-              <%= f.submit class: "btn-create mt-3" %>
-              <%= link_to "Back", page_path(current_user), method: :get,  class: "btn-create-booking mt-3" %>
+            <div class="form-link-buttons d-flex justify-content-center">
+              <%= f.submit "Initiate bookclub", class: "btn-create mt-3" %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
+  </div>
+  <div class="mb-3">
+    <%= link_to "Go back to your profile", page_path(current_user), method: :get,  class: "btn-back" %>
   </div>
 </div>
 

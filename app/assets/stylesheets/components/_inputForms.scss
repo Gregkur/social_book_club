@@ -13,3 +13,19 @@
   border-radius: 15px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+.form-borders {
+  border: solid 1px $purple !important;
+}
+
+.form-borders-book {
+  border: solid 1px $red;
+}
+
+.form-borders-bookclub {
+  border: solid 1px $green;
+}
+
+.form-borders-review {
+  border: solid 1px $yellow;
+}

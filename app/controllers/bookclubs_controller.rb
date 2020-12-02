@@ -5,7 +5,6 @@ class BookclubsController < ApplicationController
   def index
     @bookclubs = policy_scope(Bookclub).all
     @bookclubs = Bookclub.search(params[:query]) if params[:query].present?
-
     if user_signed_in?
       @location = current_user.address
       @users = User.near(@location, 10)
@@ -38,10 +37,15 @@ class BookclubsController < ApplicationController
         @bookclub_books << book
       end
     end
+    # show threads of bookclub
     authorize @bookclub
     @bookclub_thread = BookclubThread.new
     @bookclub_thread.bookclub = @bookclub
     authorize @bookclub_thread
+    # show comments of thread in bookclub
+    @bookclub_threads = @bookclub.bookclub_threads
+    @comment = Comment.new
+    authorize @comment
   end
 
   def new
@@ -61,6 +65,21 @@ class BookclubsController < ApplicationController
       flash[:notice] = "Creating book club failed"
       render :new
     end
+  end
+
+  def join
+    @bookclub = Bookclub.find(params[:id])
+    authorize @bookclub
+    @user = current_user
+    @bookclub_user = BookclubUser.new(bookclub: @bookclub, user: @user)
+      if @bookclub_user.save
+        sleep 1
+        redirect_to bookclub_path(@bookclub)
+      else
+        flash[:notice] = "Joining failed!"
+        render :new
+      end
+
   end
 
   private
