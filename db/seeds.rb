@@ -44,7 +44,11 @@ about9 = "I'm a yoga teacher and I love to deepen my knowledge on spirituality a
 about10 = "I am husband, a father, a grandfather and a retired journalist with loads of spare time that I love to fill with good reads."
 about11 = "I have just moved to Berlin and would love to find some like-minded people that I can discuss books with and share "
 about12 = "Due to my lifestyle as a consultant, I'm travelling a lot and I love to read on the train or the plane. Maybe you have some good recommendations. Feel free to browse through the books I'm offering."
-about13 = "I'm a politics students from Berlin and I LOOOOOVE scary books. I hope to find some inspiration on here!"
+about13 = "I just recently realized how calming and cozy it can be to get cozy with a good read and a cup of tea in a quite place. But since I'm a newbiw I would love to get some guidance in choosing my next book."
+about14 = "As a chef I have super busy evenings and the only thing that really slows me down after a long shift is a good book. So maybe I find some inspiration on here."
+about15 = "Due to my lifestyle as a consultant, I'm travelling a lot and I love to read on the train or the plane. Maybe you have some good recommendations. Feel free to browse through the books I'm offering."
+about16 = "I'm a scientist from Berlin who loves to read thrillers and crime stories."
+about17 = "I'm a yoga teacher and I love to deepen my knowledge on spirituality and mindfulness and all things regarding health and the inner beauty."
 
 puts "Creating users..."
 
@@ -52,48 +56,48 @@ user1 = User.create(email: "marie@gmail.com", password: "123456", first_name: "M
 
 user1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "marie.jpg", content_type:"image/png" )
 
-user2 = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "Annnie2", address: "Berlin, Charlottenburg", about: about1)
+user2 = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "Annnie2", address: "Maaßenstraße 14,Berlin", about: about2)
 
 user2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1542596594-b47fea509622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "anna.jpg", content_type:"image/png" )
 
-user3 = User.create(email: "george@gmail.com", password: "123456", first_name: "George", last_name: "Lukas", nickname: "lukkie55", address: "Berlin, Prenzlauer Berg", about: about1)
+user3 = User.create(email: "george@gmail.com", password: "123456", first_name: "George", last_name: "Lukas", nickname: "lukkie55", address: "Berlin, Prenzlauer Berg", about: about3)
 
 user3.photo.attach(io: URI.open("https://images.unsplash.com/photo-1562124638-724e13052daf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"), filename: "george.jpg", content_type:"image/png" )
 
-user4 = User.create(email: "cory@gmail.com", password: "123456", first_name: "Cory", last_name: "Thomson", nickname: "coryS", address: "Berlin, Kreuzberg", about: about1)
+user4 = User.create(email: "cory@gmail.com", password: "123456", first_name: "Cory", last_name: "Thomson", nickname: "coryS", address: "Berlin, Kreuzberg", about: about4)
 
 user4.photo.attach(io: URI.open("https://images.unsplash.com/flagged/photo-1597694042000-f0150210da38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"), filename: "cory.jpg", content_type:"image/png" )
 
-user5 = User.create(email: "thomas@gmail.com", password: "123456", first_name: "Thomas", last_name: "Maddock", nickname: "Tommyboi", address: "Berlin, Mitte", about: about1)
+user5 = User.create(email: "thomas@gmail.com", password: "123456", first_name: "Thomas", last_name: "Maddock", nickname: "Tommyboi", address: "Berlin, Mitte", about: about5)
 
 user5.photo.attach(io: URI.open("https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "thomas.jpg", content_type:"image/png" )
 
-user6 = User.create(email: "claudia@gmail.com", password: "123456", first_name: "Claudia", last_name: "Hoffmann", nickname: "ClaUdii", address: "Berlin, Friedrichshain", about: about1)
+user6 = User.create(email: "claudia@gmail.com", password: "123456", first_name: "Claudia", last_name: "Hoffmann", nickname: "ClaUdii", address: "Berlin, Friedrichshain", about: about6)
 
 user6.photo.attach(io: URI.open("https://images.unsplash.com/photo-1477420226391-9ff4fb9085fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "claudia.jpg", content_type:"image/png" )
 
 #new
-user7 = User.create(email: "lara@gmail.com", password: "123456", first_name: "Lara", last_name: "König", nickname: "Lari", address: "Eckertstraße 6, Berlin", about: about1)
+user7 = User.create(email: "lara@gmail.com", password: "123456", first_name: "Lara", last_name: "König", nickname: "Lari", address: "Eckertstraße 6, Berlin", about: about7)
 
 user7.photo.attach(io: URI.open("https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2500&q=80"), filename: "lara.jpg", content_type:"image/png" )
 
-user8 = User.create!(email: "lea@gmail.com", password: "123456", first_name: "Lea", last_name: "Merz", nickname: "Lee", address: "Boxhagener Str.74, Berlin", about: about1)
+user8 = User.create!(email: "lea@gmail.com", password: "123456", first_name: "Lea", last_name: "Merz", nickname: "Lee", address: "Boxhagener Str.74, Berlin", about: about8)
 
 user8.photo.attach(io: URI.open("https://images.unsplash.com/photo-1504933350103-e840ede978d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80"), filename: "lea.jpg", content_type:"image/png" )
 
-user9 = User.create(email: "alex@gmail.com", password: "123456", first_name: "Alex", last_name: "Müller", nickname: "alex89", address: "Warschauer Str. 69, Berlin", about: about1)
+user9 = User.create(email: "alex@gmail.com", password: "123456", first_name: "Alex", last_name: "Müller", nickname: "alex89", address: "Warschauer Str. 69, Berlin", about: about9)
 
 user9.photo.attach(io: URI.open("https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: "alex.jpg", content_type:"image/png" )
 
-user10 = User.create(email: "max@gmail.com", password: "123456", first_name: "Max", last_name: "Ernst", nickname: "Maxe", address: "Friedrichstraße 215, Berlin", about: about1)
+user10 = User.create(email: "max@gmail.com", password: "123456", first_name: "Max", last_name: "Ernst", nickname: "Maxe", address: "Friedrichstraße 215, Berlin", about: about10)
 
 user10.photo.attach(io: URI.open("https://images.unsplash.com/photo-1492447273231-0f8fecec1e3a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: "max.jpg", content_type:"image/png" )
 
-user11 = User.create(email: "greta@gmail.com", password: "123456", first_name: "Greta", last_name: "Schulz", nickname: "Gretchen", address: "Adalbertstraße 9, Berlin", about: about1)
+user11 = User.create(email: "greta@gmail.com", password: "123456", first_name: "Greta", last_name: "Schulz", nickname: "Gretchen", address: "Adalbertstraße 9, Berlin", about: about11)
 
 user11.photo.attach(io: URI.open("https://images.unsplash.com/photo-1476817343404-01ccd61218d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: "greta.jpg", content_type:"image/png" )
 
-user12 = User.create(email: "juliana@gmail.com", password: "123456", first_name: "Juliana", last_name: "Werner", nickname: "Juli", address: "Wrangelstraße 95, Berlin", about: about1)
+user12 = User.create(email: "juliana@gmail.com", password: "123456", first_name: "Juliana", last_name: "Werner", nickname: "Juli", address: "Wrangelstraße 95, Berlin", about: about12)
 
 user12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1502767882403-636aee14f873?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: "juliana.jpg", content_type:"image/png" )
 
@@ -101,8 +105,22 @@ user13 = User.create(email: "pia@gmail.com", password: "123456", first_name: "Pi
 
 user13.photo.attach(io: URI.open("https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/11825717_944761278918652_7671842961036378865_n.jpg?_nc_cat=102&ccb=2&_nc_sid=174925&_nc_ohc=U2-F3DTkDLwAX_7-cKZ&_nc_ht=scontent-frt3-1.xx&oh=85545210b05aaeb5cc10532f28514527&oe=5FEED1BB"), filename: "greg.jpg", content_type:"image/png" )
 
+user14 = User.create(email: "maxi@gmail.com", password: "123456", first_name: "Max", last_name: "Weber", nickname: "Webbi", address: "Gipsstrasse 10, Berlin", about:about14 )
 
-users = [user1,user2,user3,user4,user5,user6,user7,user8,user9,user10,user11,user12, user13]
+user14.photo.attach(io: URI.open("https://images.unsplash.com/photo-1584316712724-f5d4b188fee2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"), filename: "juliana.jpg", content_type:"image/png" )
+
+user15 = User.create(email: "anne@gmail.com", password: "123456", first_name: "Anne", last_name: "Echt", nickname: "EchtMan", address: "Auguststraße 11, Berlin", about:about15 )
+
+user15.photo.attach(io: URI.open("https://images.unsplash.com/photo-1480914362564-9f2c2634e266?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"), filename: "juliana.jpg", content_type:"image/png" )
+
+user16 = User.create(email: "luk@gmail.com", password: "123456", first_name: "Lukas", last_name: "Fabbo", nickname: "Farri", address: "Chausseestraße 26", about:about16 )
+
+user16.photo.attach(io: URI.open("https://images.unsplash.com/photo-1543060829-a0029874b174?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"), filename: "juliana.jpg", content_type:"image/png" )
+
+user17 = User.create(email: "helena@gmail.com", password: "123456", first_name: "Helena", last_name: "Wish", nickname: "WishXo", address: "Hasenheide 10, Berlin", about:about17 )
+
+user17.photo.attach(io: URI.open("https://images.unsplash.com/photo-1506880135364-e28660dc35fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"), filename: "juliana.jpg", content_type:"image/png" )
+users = [user1,user2,user3,user4,user5,user6,user7,user8,user9,user10,user11,user12, user13, user14, user15, user16, user17]
 
 puts "Users created!"
 
@@ -123,7 +141,7 @@ book4.photos.attach(io: prince, filename: 'prince.jpg', content_type: 'image/jpg
 book5 = Book.create(title: "The Lord of the Rings", author:"J.R.R. Tolkien", pages: 1216, year: 2005, genre: "Fiction", description:"In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell by chance into the hands of the hobbit Bilbo Baggins.", availability: true, user: user5)
 book5.photos.attach(io: lord, filename: 'lord.jpg', content_type: 'image/jpg')
 
-book6 = Book.create(title: "To Kill a Mockingbird", author:"Harper Lee", pages: 324, year: 2006, genre: "Fiction", description:"The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it, To Kill A Mockingbird became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.", availability: true, user: user5)
+book6 = Book.create(title: "To Kill a Mockingbird", author:"Harper Lee", pages: 324, year: 2006, genre: "Fiction", description:"The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it, To Kill A Mockingbird became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.", availability: true, user: user10)
 book6.photos.attach(io: bird, filename: 'bird.jpg', content_type: 'image/jpg')
 
 book7 = Book.create(title: "Just Kids", author:"Patti Smith", pages: 304, year: 2010, genre: "Autobiography", description:"In Just Kids, Patti Smith's first book of prose, the legendary American artist offers a never-before-seen glimpse of her remarkable relationship with photographer Robert Mapplethorpe in the epochal days of New York City and the Chelsea Hotel in the late sixties and seventies. An honest and moving story of youth and friendship.", availability: true, user: user2)
@@ -166,7 +184,7 @@ book18.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.p
 book19 = Book.create(title: "1984", author:"George Orwell", pages: 329, year: 1950, genre: "Science Fiction", description:"The year 1984 has come and gone, but George Orwell's prophetic, nightmarish vision in 1949 of the world we were becoming is timelier than ever. 1984 is still the great modern classic of negative utopia—a startlingly original and haunting novel that creates an imaginary world that is completely convincing, from the first sentence to the last four words. No one can deny the novel's hold on the imaginations of whole generations, or the power of its admonitions—a power that seems to grow, not lessen, with the passage of time.", availability: true, user: user12)
 book19.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348990566l/5470.jpg"), filename: '1984.jpg', content_type: 'image/jpg')
 
-book20 = Book.create(title: "Perfume: The Story of a Murderer", author:"Patrick Süskind", pages: 263, year: 1987, genre: "Novel", description:"In the slums of eighteenth-century France, the infant Jean-Baptiste Grenouille is born with one sublime gift—an absolute sense of smell. As a boy, he lives to decipher the odors of Paris, and apprentices himself to a prominent perfumer who teaches him the ancient art of mixing precious oils and herbs. But Grenouille's genius is such that he is not satisfied to stop there, and he becomes obsessed with capturing the smells of objects such as brass doorknobs and fresh-cut wood. Then one day he catches a hint of a scent that will drive him on an ever-more-terrifying quest to create the ultimate perfume—the scent of a beautiful young virgin.", availability: true, user: user12)
+book20 = Book.create(title: "Perfume: The Story of a Murderer", author:"Patrick Süskind", pages: 263, year: 1987, genre: "Novel", description:"In the slums of eighteenth-century France, the infant Jean-Baptiste Grenouille is born with one sublime gift—an absolute sense of smell. As a boy, he lives to decipher the odors of Paris, and apprentices himself to a prominent perfumer who teaches him the ancient art of mixing precious oils and herbs. But Grenouille's genius is such that he is not satisfied to stop there, and he becomes obsessed with capturing the smells of objects such as brass doorknobs and fresh-cut wood. Then one day he catches a hint of a scent that will drive him on an ever-more-terrifying quest to create the ultimate perfume—the scent of a beautiful young virgin.", availability: true, user: user14)
 book20.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409112276l/343.jpg"), filename: 'parfum.jpg', content_type: 'image/jpg')
 
 book21 = Book.create(title: "The Plague", author:"Albert Camus", pages: 381, year: 1991, genre: "Novel", description:"A gripping tale of human unrelieved horror, of survival and resilience, and of the ways in which humankind confronts death, The Plague is at once a masterfully crafted novel, eloquently understated and epic in scope, and a parable of ageless moral resonance, profoundly relevant to our times. In Oran, a coastal town in North Africa, the plague begins as a series of portents, unheeded by the people. It gradually becomes an omnipresent reality, obliterating all traces of the past and driving its victims to almost unearthly extremes of suffering, madness, and compassion.", availability: true, user: user9)
@@ -175,16 +193,16 @@ book21.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.p
 book22 = Book.create(title: "The Secret", author:"Rhonda Byrne", pages: 199, year: 2006, genre: "Novel", description:"The Secret contains wisdom from modern-day teachers—men and women who have used it to achieve health, wealth, and happiness. By applying the knowledge of The Secret, they bring to light compelling stories of eradicating disease, acquiring massive wealth, overcoming obstacles, and achieving what many would regard as impossible.", availability: true, user: user12)
 book22.photos.attach(io: URI.open("https://images-na.ssl-images-amazon.com/images/I/51cLaECLmOL._SX344_BO1,204,203,200_.jpg"), filename: 'secret.jpg', content_type: 'image/jpg')
 
-book23 = Book.create(title: "The Couple Next Door", author:"Shari Lapena", pages: 400, year: 2018, genre: "Thriller", description:"A domestic suspense debut about a young couple and their apparently friendly neighbors--a twisty, rollercoaster ride of lies, betrayal, and the secrets between husbands and wives.", availability: true, user: user9)
+book23 = Book.create(title: "The Couple Next Door", author:"Shari Lapena", pages: 400, year: 2018, genre: "Thriller", description:"A domestic suspense debut about a young couple and their apparently friendly neighbors--a twisty, rollercoaster ride of lies, betrayal, and the secrets between husbands and wives.", availability: true, user: user17)
 book23.photos.attach(io: URI.open("https://media1.popsugar-assets.com/files/thumbor/0xr3qafQApWmHM7J43QnW6e5p_c/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2019/02/08/965/n/44701584/8e20afe55c5dfe2b107257.85617651_/i/Best-Thriller-Books-All-Time.jpg"), filename: 'exorcist.jpg', content_type: 'image/jpg')
 
-book24 = Book.create(title: "Presumed Innocent", author:"Scott Turrow", pages: 877, year: 1984, genre: "Thriller", description:"Hailed as the most suspenseful and compelling novel in decades. Presumed Innocent brings to life our worst nightmare: that of an ordinary citizen facing conviction for the most terrible of all crimes. It's the stunning portrayal of one man's all-too-human, all-consuming fatal attraction for a passionate woman who is not his wife.", availability: true, user: user3)
+book24 = Book.create(title: "Presumed Innocent", author:"Scott Turrow", pages: 877, year: 1984, genre: "Thriller", description:"Hailed as the most suspenseful and compelling novel in decades. Presumed Innocent brings to life our worst nightmare: that of an ordinary citizen facing conviction for the most terrible of all crimes. It's the stunning portrayal of one man's all-too-human, all-consuming fatal attraction for a passionate woman who is not his wife.", availability: true, user: user16)
 book24.photos.attach(io: URI.open("https://i.unisquare.com/img/main/1/1/10/154618987676e9a0da666db1n.jpg"), content_type: 'image/jpg', filename: 'exorcist.jpg')
 
-book25 = Book.create(title: "Impostor", author:"L.J.Ross", pages: 308, year: 2019, genre: "Thriller", description:"After an elite criminal profiling unit is shut down amidst a storm of scandal and mismanagement, only one person emerges unscathed. Forensic psychologist Doctor Alexander Gregory has a reputation for being able to step inside the darkest minds to uncover whatever secrets lie hidden there and, soon enough, he finds himself drawn into the murky world of murder investigation.", availability: true, user: user4)
+book25 = Book.create(title: "Impostor", author:"L.J.Ross", pages: 308, year: 2019, genre: "Thriller", description:"After an elite criminal profiling unit is shut down amidst a storm of scandal and mismanagement, only one person emerges unscathed. Forensic psychologist Doctor Alexander Gregory has a reputation for being able to step inside the darkest minds to uncover whatever secrets lie hidden there and, soon enough, he finds himself drawn into the murky world of murder investigation.", availability: true, user: user15)
 book25.photos.attach(io: URI.open("https://www.ljrossauthor.com/wp-content/uploads/2019/03/Ross_Impostor_Ebook-538x800.jpg"), filename: 'exorcist.jpg', content_type: 'image/jpg')
 
-book26 = Book.create(title: "Angels and Demons", author:"Dan Brown", pages: 308, year: 2000, genre: "Thriller", description:"Robert Langdon pairs with Italian scientist Vittoria Vetra to assist the Vatican in locating a time bomb that the Illuminati has planted right at the heart of the Vatican City. This is announced by the Illuminati on the eve of a holy conclave to select a new Pope in place of the earlier Pope who has recently passed away.", availability: true, user: user9)
+book26 = Book.create(title: "Angels and Demons", author:"Dan Brown", pages: 308, year: 2000, genre: "Thriller", description:"Robert Langdon pairs with Italian scientist Vittoria Vetra to assist the Vatican in locating a time bomb that the Illuminati has planted right at the heart of the Vatican City. This is announced by the Illuminati on the eve of a holy conclave to select a new Pope in place of the earlier Pope who has recently passed away.", availability: true, user: user14)
 book26.photos.attach(io: URI.open("https://images-na.ssl-images-amazon.com/images/I/81S+VsvKTlL.jpg"), filename: 'exorcist.jpg', content_type: 'image/jpg')
 puts "Loaded books!"
 
@@ -198,7 +216,16 @@ puts "Creating reviews..."
 # end
 
 obama_review1 = Review.create(book_rating: 5, book_comment: "Barack Obama is as fine a writer as they come. A Promised Land is nearly always pleasurable to read, sentence by sentence, the prose gorgeous in places, the detail granular and vivid. . . . The story will continue in the second volume, but Barack Obama has already illuminated a pivotal moment in American history, and how America changed while also remaining unchanged.", book: book12, user: user8)
+
 conaughey_review1 = Review.create(book_rating: 4, book_comment: "A delightful surprise, full of stories that [haven’t] been shared on late night talk shows or made headlines over the years. It’s a wild ride to be sure, but if you enjoy McConaughey and all of the eccentricities and contradictions that come with him, it’s one you won’t want to miss.", book: book13, user: user9)
+
+Review.create(book_rating: 3, book_comment: "This is the perfect weekend read. I settled into the story and spent most of Sunday (a dark and stormy afternoon) reading away.", book: book18, user: user10)
+
+Review.create(book_rating: 4, book_comment: "In all honesty, i only read this because i felt like i could not stop seeing this everywhere. so. many. people. were reading this. on the tube, in the park, at the bookshop. i couldnt escape seeing this book. But at the end it was worth it! ", book: book18, user: user12)
+
+Review.create(book_rating: 5, book_comment: "Woah. This is one unsettling little thriller and the best bit about it is that no one can be trusted, including the three female narrators who share the storytelling of this book. I literally read this entire novel in one sitting and I now need to find the words to convince you to go get your hands on it. RIGHT NOW.", book: book11, user: user11)
+
+Review.create(book_rating: 4, book_comment: "Everyone in this book is absolutely terrible, and as a result, this book is a masterpiece in character study and development. It's also a well-written, precisely plotted psychological thriller, and deftly sketches one unreliable narrator after another.", book: book11, user: user7)
  #Review.create(book_rating: 5, book_comment: "", book: book12, user: user8)
 
 
@@ -225,7 +252,7 @@ bookclub1 = Bookclub.create!(name: "Startups Berlin", description: "This bookclu
 bookclub2 = Bookclub.create!(name: "Harry Potter Stories", description: "This bookclub is made of big Harry Potter fans.", user: user4)
 bookclub3 = Bookclub.create!(name: "Web Development and Ruby on Rails", description: "This bookclub summarizes all available documentations useful for Ruby on Rails based applications.", user: user5)
 #new
-bookclub4 = Bookclub.create!(name: "Commics fans", description: "Bookclub for comics fans! Nerds unite!", user: user10)
+bookclub4 = Bookclub.create!(name: "Comics fans", description: "Bookclub for comics fans! Nerds unite!", user: user10)
 bookclub5 = Bookclub.create!(name: "It's Thriller Time", description: "Let's exchange experiences about good thrillers", user: user13)
 bookclub6 = Bookclub.create!(name: "Best Reading Spots in Berlin", description: "What are your favourite reading spots in this lovely city?", user: user9)
 bookclub7 = Bookclub.create!(name: "All Time Favourites", description: "Which classics are your favourites?", user: user12)
@@ -304,7 +331,6 @@ BookclubUser.create!(bookclub: bookclub5, user: user13)
 BookclubUser.create!(bookclub: bookclub6, user: user2)
 BookclubUser.create!(bookclub: bookclub6, user: user3)
 BookclubUser.create!(bookclub: bookclub6, user: user4)
-BookclubUser.create!(bookclub: bookclub6, user: user13)
 BookclubUser.create!(bookclub: bookclub6, user: user10)
 # Bookclub 7 with different members
 # BookclubUser.create!(bookclub: bookclub7, user: user12)
@@ -329,7 +355,6 @@ BookclubUser.create!(bookclub: bookclub8, user: user10)
 BookclubUser.create!(bookclub: bookclub8, user: user11)
 BookclubUser.create!(bookclub: bookclub8, user: user12)
 BookclubUser.create!(bookclub: bookclub8, user: user6)
-BookclubUser.create!(bookclub: bookclub8, user: user13)
 
 # Bookclub 8 with different members
 # BookclubUser.create!(bookclub: bookclub9, user: user6)
@@ -342,7 +367,6 @@ BookclubUser.create!(bookclub: bookclub9, user: user10)
 BookclubUser.create!(bookclub: bookclub9, user: user11)
 BookclubUser.create!(bookclub: bookclub9, user: user12)
 BookclubUser.create!(bookclub: bookclub9, user: user5)
-
 
 
 # Bookclub 10 with different members
@@ -430,7 +454,7 @@ Comment.create!(content: "The Talented Mr. Ripley has 252, I hope that counts. I
 #perfume
 Comment.create!(content: "I would rather say this one is Horror Fiction or Mystery, especially when looking at the ending of it", user: user8, bookclub_thread: thread4)
 Comment.create!(content: "I agree with Lea. Hope you win this fight against your boyfriend ;)", user: user9, bookclub_thread: thread4)
-
+Comment.create!(content: "Plus one to Lea!", user: user17, bookclub_thread: thread4)
 puts "Comments created!"
 
 ## rails db:drop db:create db:migrate db:seed
