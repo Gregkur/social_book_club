@@ -14,7 +14,7 @@
 				</div>
 				<% end %>
 			</div>
-
+		
 		  <div class="card-grid-bookclubs">
 				<% @bookclubs.each do |bookclub| %>
 					<%= link_to bookclub_path(bookclub) do %>
@@ -55,7 +55,7 @@
 	  </div>
 		<%# Map %>
 		<div class="col-12 col-lg-4">
-      <div class="map-sticky-bookclub">
+      <div class="map-sticky">
         <div id="map"
           style="width: 100%; height: calc(100vh - 130px);"
           data-markers="<%= @markers.to_json %>"
