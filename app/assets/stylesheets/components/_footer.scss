@@ -1,12 +1,11 @@
 .footer {
-    position: static;
-    bottom: 0px;
+    position: absolute;
     width: 100%;
     background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 200px;
+    height: 144px;
     padding: 0px 50px;
     color: rgba(0,0,0,0.3);
   }
@@ -28,5 +27,5 @@
     color: #D23333;
   }
   #logo-footer{
-    height: 20%;
+    height: 38%;
   }

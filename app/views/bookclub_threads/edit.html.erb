@@ -1,7 +1,22 @@
-<p><strong>Please update your thread</strong></p>
-<%= simple_form_for [@bookclub, @bookclub_thread] do |f| %>
-  <%= f.input :title, placeholder: "Startups of Berlin" %>
-  <%= f.input :content, placeholder: "This thread is about the Startup environement in Berlin." %>
-  <%= f.submit class: "btn-create-booking"%>
-<% end %>
+<div class="container">
+  <div class="background-create-wrapper">
+    <div id="form-wrapper">
+      <div id="create-book-box m-8">
+        <div class="nested-create-form m-5">
+          <div id="header-create-form">
+            <h2>Update your thread</h2>
+            <%= image_tag "figures/2.png", id:"figure-reading-create" %>
+          </div>
+          <%= simple_form_for [@bookclub, @bookclub_thread] do |f| %>
+            <%= f.input :title, placeholder: "Startups of Berlin" %>
+            <%= f.input :content, placeholder: "This thread is about the Startup environement in Berlin." %>
+            <%= f.submit class: "btn-create-booking"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Go back", bookclub_path(@bookclub), method: :get, class: "btn-back-review" %>
+</div>
+
 

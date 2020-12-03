@@ -3,26 +3,26 @@
     <div class="modal-content">
       <div class="row">
 		<div class="col-12 col-lg-12">
-            <div class="mmembers-grid-bookclubs">
+            <div class="members-grid-bookclubs">
               <h1 class="text-center">Members</h2>
-                <% @bookclub_users.each do |user| %>
+                <% @bookclub.members.each do |user| %>
                     <%= link_to profile_path(user) do %>
                         <div class="members-grid-card">
-                            <% if user.user.photo.attached? %>
-                                <%= cl_image_tag user.user.photo.key, crop: :fill%>
+                            <% if user.photo.attached? %>
+                                <%= cl_image_tag user.photo.key, crop: :fill%>
                             <% else %>
                                 <img src="https://images.unsplash.com/photo-1545239351-cefa43af60f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1875&q=80"/>
                             <% end %>
                             <div class="bookclub-user-info">
-                                <h1><%= user.user.first_name %> <%= user.user.last_name %></h1>
-                                <h2><%= user.user.address %></h2>
-                                <p><%= user.user.about %></p>
-                                <% if user.user.books.length == 0 %>
-                                  <p><strong><%= user.user.first_name %> has no books yet!</strong></p>
-                                <% elsif user.user.books.length == 1 %>
-                                  <p><strong><%= user.user.first_name %> has <%= user.user.books.length %> book!</strong></p>
+                                <h1><%= user.first_name %> <%= user.last_name %></h1>
+                                <h2><%= user.address %></h2>
+                                <p><%= user.about %></p>
+                                <% if user.books.length == 0 %>
+                                  <p><strong><%= user.first_name %> has no books yet!</strong></p>
+                                <% elsif user.books.length == 1 %>
+                                  <p><strong><%= user.first_name %> has <%= user.books.length %> book!</strong></p>
                                 <% else %>
-                                  <p><strong><%= user.user.first_name %> has <%= user.user.books.length %> books!</strong></p>
+                                  <p><strong><%= user.first_name %> has <%= user.books.length %> books!</strong></p>
                                 <% end %>
                             </div>
                         </div>
