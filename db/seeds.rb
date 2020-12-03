@@ -175,7 +175,17 @@ book21.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.p
 book22 = Book.create(title: "The Secret", author:"Rhonda Byrne", pages: 199, year: 2006, genre: "Novel", description:"The Secret contains wisdom from modern-day teachers—men and women who have used it to achieve health, wealth, and happiness. By applying the knowledge of The Secret, they bring to light compelling stories of eradicating disease, acquiring massive wealth, overcoming obstacles, and achieving what many would regard as impossible.", availability: true, user: user12)
 book22.photos.attach(io: URI.open("https://images-na.ssl-images-amazon.com/images/I/51cLaECLmOL._SX344_BO1,204,203,200_.jpg"), filename: 'secret.jpg', content_type: 'image/jpg')
 
+book23 = Book.create(title: "The Couple Next Door", author:"Shari Lapena", pages: 400, year: 2018, genre: "Thriller", description:"A domestic suspense debut about a young couple and their apparently friendly neighbors--a twisty, rollercoaster ride of lies, betrayal, and the secrets between husbands and wives.", availability: true, user: user9)
+book23.photos.attach(io: URI.open("https://media1.popsugar-assets.com/files/thumbor/0xr3qafQApWmHM7J43QnW6e5p_c/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2019/02/08/965/n/44701584/8e20afe55c5dfe2b107257.85617651_/i/Best-Thriller-Books-All-Time.jpg"), filename: 'exorcist.jpg', content_type: 'image/jpg')
 
+book24 = Book.create(title: "Presumed Innocent", author:"Scott Turrow", pages: 877, year: 1984, genre: "Thriller", description:"Hailed as the most suspenseful and compelling novel in decades. Presumed Innocent brings to life our worst nightmare: that of an ordinary citizen facing conviction for the most terrible of all crimes. It's the stunning portrayal of one man's all-too-human, all-consuming fatal attraction for a passionate woman who is not his wife.", availability: true, user: user3)
+book24.photos.attach(io: URI.open("https://i.unisquare.com/img/main/1/1/10/154618987676e9a0da666db1n.jpg"), content_type: 'image/jpg', filename: 'exorcist.jpg')
+
+book25 = Book.create(title: "Impostor", author:"L.J.Ross", pages: 308, year: 2019, genre: "Thriller", description:"After an elite criminal profiling unit is shut down amidst a storm of scandal and mismanagement, only one person emerges unscathed. Forensic psychologist Doctor Alexander Gregory has a reputation for being able to step inside the darkest minds to uncover whatever secrets lie hidden there and, soon enough, he finds himself drawn into the murky world of murder investigation.", availability: true, user: user4)
+book25.photos.attach(io: URI.open("https://www.ljrossauthor.com/wp-content/uploads/2019/03/Ross_Impostor_Ebook-538x800.jpg"), filename: 'exorcist.jpg', content_type: 'image/jpg')
+
+book26 = Book.create(title: "Angels and Demons", author:"Dan Brown", pages: 308, year: 2000, genre: "Thriller", description:"Robert Langdon pairs with Italian scientist Vittoria Vetra to assist the Vatican in locating a time bomb that the Illuminati has planted right at the heart of the Vatican City. This is announced by the Illuminati on the eve of a holy conclave to select a new Pope in place of the earlier Pope who has recently passed away.", availability: true, user: user9)
+book26.photos.attach(io: URI.open("https://images-na.ssl-images-amazon.com/images/I/81S+VsvKTlL.jpg"), filename: 'exorcist.jpg', content_type: 'image/jpg')
 puts "Loaded books!"
 
 books = []

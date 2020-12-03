@@ -124,9 +124,6 @@
     opacity: 0.8;
     border-radius: 3em;
     .dropdown-item{
-      &:active{
-        background-color: transparent !important;
-      }
       &:hover{
         background-color: $dark-purple !important;
       }
