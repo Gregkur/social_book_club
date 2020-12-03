@@ -2,9 +2,16 @@
     position: relative;
     height: 606px;
     margin-top: 170px;
+    margin-bottom: 170px;
     border-radius: 10px;
     h1, p, a {
+        max-width: 400px;
         color: $dark-purple;
+    }
+    .profile-user-info{
+        padding: 50px;
+        float: left;
+        overflow-wrap: break-word;
     }
     .profile-img{
         bottom: 10%;
@@ -17,6 +24,7 @@
         left: 15%;
     }
     .bookclubs-books-wrapper{
+        margin-top: 3rem;
         .books-wrapper{
             background-color: white;
             width: 500px;
