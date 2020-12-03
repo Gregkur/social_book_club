@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     authorize @comment
     @comment.bookclub_thread = @bookclub_thread
     if @comment.save
-      redirect_to bookclub_path(@bookclub)
+      redirect_to bookclub_path(@bookclub, anchor: "form-input")
       flash[:notice] = "Your comment was successfully posted!"
     else
       flash[:notice] = "Creating comment failed"

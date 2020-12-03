@@ -1,6 +1,6 @@
 <h3>Write a review</h3>
-<%= simple_form_for [book, review] do |f| %>
-  <%= f.input :book_rating, collection: 0..5, input_html: { class: "form-borders-book" } %>
+<%= simple_form_for [book, review], remote: true do |f| %>
+  <%= f.input :book_rating, collection: 0..5, input_html: { class: "form-borders-book", id: "input-review" } %>
   <%= f.input :book_comment, input_html: { class: "form-borders-book" } %>
   <%= f.submit class: "btn button-red", value: "Submit Review"%>
 <% end %>
