@@ -1,8 +1,8 @@
 .background-about-us {
   border-radius: 10px;
   margin-top: 30px;
-  padding: 60px 80px;
-  background-color: #FFDE91;
+  padding: 8px 60px 60px 60px;
+  background-color: $dark-purple;
 }
 
 #about-us-header {
@@ -26,10 +26,11 @@
 }
 
 .text-member {
-  text-align: justify;
-  width: 75%;
-  font-size: 16px;
-  color: $dark-purple;
+  width: 90%;
+  font-size: 14px;
+  color: white;
+  padding: 0;
+  margin: 0;
 }
 
 .about-us-member {
@@ -38,7 +39,7 @@
     padding-top: 16px;
     font-weight: 600;
     font-size: 24px;
-    color: $purple;
+    color: white;
   }
 }
 
