@@ -1,6 +1,7 @@
 #map {
   width: 100%;
-  height: calc(100vh - 130px);
+  height: 100vh;
+  // height: calc(100vh - 130px);
   top: 0px;
   position: sticky;
 }
@@ -10,7 +11,11 @@
 }
 
 .map-sticky {
+  // margin-top: 16px;
+  height: 99.5%;
+}
 
+.map-sticky-bookclub {
   margin-top: 16px;
   height: 98%;
 }
