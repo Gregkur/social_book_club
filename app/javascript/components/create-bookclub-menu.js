@@ -2,17 +2,15 @@ import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 
 const initCreateBookclubMenu = () => {
-  const createButton = document.getElementById('createButton')
-  if (createButton) {
-    createButton.addEventListener('click',() => {
+    if (document.querySelector(".pia")) {
       Swal.fire({
-          icon: 'success',
-          title: 'You created a bookclub!',
-          showConfirmButton: false,
-          timer: 1500
-        })
-    })
-  }
+        title: "Nice one!",
+        text: 'You created a bookclub!',
+        icon: 'success',
+        confirmButtonText: `Cool`,
+        confirmButtonColor: '#88CE8F',
+      })
+    };
 }
 
 export { initCreateBookclubMenu };
