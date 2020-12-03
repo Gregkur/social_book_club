@@ -44,7 +44,7 @@ about9 = "I'm a yoga teacher and I love to deepen my knowledge on spirituality a
 about10 = "I am husband, a father, a grandfather and a retired journalist with loads of spare time that I love to fill with good reads."
 about11 = "I have just moved to Berlin and would love to find some like-minded people that I can discuss books with and share "
 about12 = "Due to my lifestyle as a consultant, I'm travelling a lot and I love to read on the train or the plane. Maybe you have some good recommendations. Feel free to browse through the books I'm offering."
-about13 = "I'm a book lover, an art collector and a friend of Britney Spears."
+about13 = "I'm a politics students from Berlin and I LOOOOOVE scary books. I hope to find some inspiration on here!"
 
 puts "Creating users..."
 
@@ -56,7 +56,7 @@ user2 = User.create!(email: "anna@gmail.com", password: "123456", first_name: "A
 
 user2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1542596594-b47fea509622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "anna.jpg", content_type:"image/png" )
 
-user3 = User.create(email: "george@gmail.com", password: "123456", first_name: "George", last_name: "Lukas", nickname: "lukkie55", address: "Berlin, Steglitz", about: about1)
+user3 = User.create(email: "george@gmail.com", password: "123456", first_name: "George", last_name: "Lukas", nickname: "lukkie55", address: "Berlin, Prenzlauer Berg", about: about1)
 
 user3.photo.attach(io: URI.open("https://images.unsplash.com/photo-1562124638-724e13052daf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"), filename: "george.jpg", content_type:"image/png" )
 
@@ -97,7 +97,7 @@ user12 = User.create(email: "juliana@gmail.com", password: "123456", first_name:
 
 user12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1502767882403-636aee14f873?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: "juliana.jpg", content_type:"image/png" )
 
-user13 = User.create(email: "pia@gmail.com", password: "123456", first_name: "Pia", last_name: "Von Heyer", nickname: "Pia93", address: "Auguststraße 58, Berlin", about: about13)
+user13 = User.create(email: "pia@gmail.com", password: "123456", first_name: "Pia", last_name: "von Heyer", nickname: "Pipi", address: "Auguststraße 58, Berlin", about: about13)
 
 user13.photo.attach(io: URI.open("https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/11825717_944761278918652_7671842961036378865_n.jpg?_nc_cat=102&ccb=2&_nc_sid=174925&_nc_ohc=U2-F3DTkDLwAX_7-cKZ&_nc_ht=scontent-frt3-1.xx&oh=85545210b05aaeb5cc10532f28514527&oe=5FEED1BB"), filename: "greg.jpg", content_type:"image/png" )
 
@@ -223,7 +223,7 @@ bookclub8 = Bookclub.create!(name: "Books about Mindfulness", description: "Let'
 bookclub9 = Bookclub.create!(name: "Children's Books", description: "Which books are you reading to your kids? What are your favourite children's books authors?", user: user6)
 bookclub10 = Bookclub.create!(name: "Good reads on planes", description: "Which books would you recommend for a long plane flight?", user: user12)
 bookclub11 = Bookclub.create!(name: "Books for summer holiday", description: "Let's talk about books you love reading on the beach!", user: user10)
-bookclub12 = Bookclub.create!(name: "Scariest books ever", description: "Which thrillers/crime stories have scared you the most?", user: user3)
+bookclub12 = Bookclub.create!(name: "Scariest books ever", description: "Let's talk about thrillers and crime stories. Which ones have caused you goose bumps?", user: user3)
 bookclub13 = Bookclub.create!(name: "Berlin Poetry", description: "Which Berlin poets can you recommend?", user: user5)
 bookclub14 = Bookclub.create!(name: "Captivating Biographies", description: "Good biographies can be hard to find, what are your recommendations?", user: user8)
 bookclub15 = Bookclub.create!(name: "Love Stories", description: "Who doesn't enjoy a good love story from time to time. What are your favourites?", user: user9)
@@ -360,6 +360,11 @@ BookclubUser.create!(bookclub: bookclub12, user: user8)
 BookclubUser.create!(bookclub: bookclub12, user: user9)
 BookclubUser.create!(bookclub: bookclub12, user: user10)
 BookclubUser.create!(bookclub: bookclub12, user: user4)
+BookclubUser.create!(bookclub: bookclub12, user: user5)
+BookclubUser.create!(bookclub: bookclub12, user: user12)
+BookclubUser.create!(bookclub: bookclub12, user: user13)
+BookclubUser.create!(bookclub: bookclub12, user: user3)
+BookclubUser.create!(bookclub: bookclub12, user: user7)
 
 # Bookclub 13 with different members
 # BookclubUser.create!(bookclub: bookclub13, user: user5)
@@ -368,6 +373,9 @@ BookclubUser.create!(bookclub: bookclub13, user: user3)
 BookclubUser.create!(bookclub: bookclub13, user: user4)
 BookclubUser.create!(bookclub: bookclub13, user: user6)
 BookclubUser.create!(bookclub: bookclub13, user: user8)
+BookclubUser.create!(bookclub: bookclub13, user: user12)
+BookclubUser.create!(bookclub: bookclub13, user: user11)
+BookclubUser.create!(bookclub: bookclub13, user: user10)
 
 # Bookclub 14 with different members
 # BookclubUser.create!(bookclub: bookclub14, user: user8)
@@ -391,11 +399,29 @@ puts "Created Bookclubs with different members!"
 puts "Creating Threads..."
 
 thread1 = BookclubThread.create!(title: "Stephen Kings's best book", content: "I really love all of King's books, but what would you say is his masterpiece?", bookclub: bookclub12 , user: user3)
-thread2 = BookclubThread.create!(title: "Any good thrillers?", content: "What was the last captivating thriller you have read? I need some inspiration please :)", bookclub: bookclub5 , user: user13)
-thread3 = BookclubThread.create!(title: "Quick reads", content: "Do you know and good books with 250 pages max? ", bookclub: bookclub10 , user: user12)
-thread4 = BookclubThread.create!(title: "What do you think about the end of 'Parfume' by Patrick Süskind?", content: "This ending really shocked me, I expected something else. Am I the only one or did you feel the same?", bookclub: bookclub7 , user: user12)
+thread2 = BookclubThread.create!(title: "Any good thrillers?", content: "What was the last captivating thriller you have read? I need some inspiration please :)", bookclub: bookclub12 , user: user13)
+thread3 = BookclubThread.create!(title: "Quick reads", content: "Hey guys, do you know good thrillers with 250 pages max? ", bookclub: bookclub12 , user: user12)
+thread4 = BookclubThread.create!(title: "Would you consider the'Perfume' by Patrick Süskind a thriller?", content: "I really love this book, but I was in a bad fight with my boyfriend whether this book can be called a thriller. What do you think?", bookclub: bookclub12 , user: user5)
 puts "Created Threads!"
 
+puts "Creating Comments..."
+
+#stephen king
+Comment.create!(content: "For me this would definitely be 'The Shining'. I have read it multiple times.", user: user2, bookclub_thread: thread1)
+Comment.create!(content: "No way Anna, his masterpiece is 'If it bleeds'!!! Maybe not as popular though...", user: user4, bookclub_thread: thread1)
+Comment.create!(content: "Needful Things is also a really, really good one. My grandfather gave it to me as a present, maybe I'm biased here.", user: user6, bookclub_thread: thread1)
+
+#good thrillers thread
+Comment.create!(content: "I recommend 'The Exorcist', I could hardly put the book aside!", user: user8, bookclub_thread: thread2)
+
+#quick reads
+Comment.create!(content: "The Talented Mr. Ripley has 252, I hope that counts. It's an amazing book, I read it on the plane a few months ago.", user: user7, bookclub_thread: thread3)
+
+#perfume
+Comment.create!(content: "I would rather say this one is Horror Fiction or Mystery, especially when looking at the ending of it", user: user8, bookclub_thread: thread4)
+Comment.create!(content: "I agree with Lea. Hope you win this fight against your boyfriend ;)", user: user9, bookclub_thread: thread4)
+
+puts "Comments created!"
 
 ## rails db:drop db:create db:migrate db:seed
 ## bundle && yarn install && rails db:drop db:create db:schema:dump db:migrate db:seed
