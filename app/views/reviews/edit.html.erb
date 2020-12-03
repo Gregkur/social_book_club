@@ -1,10 +1,18 @@
 <div class="container">
-
-  <h2>Update your review</h2>
-  <%= simple_form_for [@review], url: book_review_path(@review) do |f| %>
-    <%= f.input :book_rating %>
-    <%= f.input :book_comment %>
-    <%= f.submit class: "btn btn-create mt-3" %>
-  <% end %>
-
+  <div class="background-create-wrapper">
+    <div id="form-wrapper">
+      <div id="create-book-box m-8">
+        <div class="nested-create-form m-5">
+          <div id="header-create-form">
+            <h2>Update your review</h2>
+          </div>
+          <%= simple_form_for [@review], url: book_review_path(@review) do |f| %>
+            <%= f.input :book_rating %>
+            <%= f.input :book_comment %>
+            <%= f.submit class: "btn btn-create mt-3" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
