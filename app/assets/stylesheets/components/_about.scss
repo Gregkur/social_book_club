@@ -46,3 +46,11 @@
 #about-us-border {
   border-bottom: solid 2px white;
 }
+
+#about-us-link {
+  font-weight: 600;
+  &:hover {
+    color: $dark-purple;
+    transition: ease-in 0.2s;
+  }
+}
