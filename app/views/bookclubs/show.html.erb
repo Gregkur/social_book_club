@@ -18,7 +18,7 @@
 
     <div class="bookclub-page-books-wrapper">
       <div class="bookclubs-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg2">
-        <% @bookclub.members.take(3).each do |user|%>
+        <% @bookclub.members.sample(3).each do |user|%>
         <%# Checking if users of bookclubs have photos %>
           <% if user.photo.attached? %>
             <%= image_tag user.photo %>
@@ -35,16 +35,22 @@
       </div>
 
       <div class="bookclub-books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
-        <% @bookclub_users.take(3).each do |user| %>
-          <% user.user.books.each do |book| %>
+        <% @bookclub.members.sample(3).each do |user| %>
+      
           <%# Checking if user's book has photos %>
-            <% if book.photos[0].present? %>
-              <%= image_tag book.photos[0] %>
+          
+          <% if user.books.first.present? %>
+
+            <% if user.books[0].photos[0].present? %>
+              <%= image_tag user.books.last.photos[0] %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" %>
             <% end %>
-
+            
           <% end %>
+          
+
+
         <% end %>
 
          <% if @bookclub_books.length == 4 %>
