@@ -1,14 +1,14 @@
 <div class="container">
-  <div class="background-create-wrapper-1">
+  <div class="background-about-us">
+    <div id="about-us-border">
+      <%= image_tag "figures/6.png", id:"figure-about-us" %>
+    </div>
     <div class="row justify-content">
-      <div class="header" style="background-color: none">This is us</div>
       <div class="col-3">
-        <div id="create-member1-box m-8" style="background-color: none">
-            <div class="img-member">
-              <%= image_tag "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/29793381_1498444213618058_3430633972680359936_o.jpg?_nc_cat=110&ccb=2&_nc_sid=174925&_nc_ohc=KAxyVY-BaUYAX-oZ7_p&_nc_ht=scontent-frx5-1.xx&oh=659e483320ca6746ee9de897398b74a6&oe=5FEE9088", class: "img-member" %>
-            </div>
-            <div class="name-member">
-              <h3>Greg</h3>
+        <div id="create-member1-box m-8">
+            <div class="about-us-member">
+              <%= image_tag "about_us/Greg.jpg", class: "avatar-about-us" %>
+              <h3>GREG</h3>
             </div>
             <div class="text-member">
               <p>Member 1 is a web development student at Le Wagon and a friend of britney spears</p>
@@ -16,39 +16,33 @@
         </div>
       </div>
       <div class="col-3">
-        <div id="create-member2-box m-8" style="background-color: none">
-          <div class="img-member">
-            <%= image_tag "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/29793381_1498444213618058_3430633972680359936_o.jpg?_nc_cat=110&ccb=2&_nc_sid=174925&_nc_ohc=KAxyVY-BaUYAX-oZ7_p&_nc_ht=scontent-frx5-1.xx&oh=659e483320ca6746ee9de897398b74a6&oe=5FEE9088", class: "img-member" %>
-          </div>
-          <div class="name-member">
-            <h3>Marike</h3>
-          </div>
+        <div id="create-member2-box m-8">
+          <div class="about-us-member">
+              <%= image_tag "about_us/Pia.jpg", class: "avatar-about-us" %>
+              <h3>PIA</h3>
+            </div>
           <div class="text-member">
             <p>Member 2</p>
           </div>
         </div>
       </div>
       <div class="col-3">
-        <div id="create-member3-box m-8" style="background-color: none">
-          <div class="img-member">
-            <%= image_tag "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/29793381_1498444213618058_3430633972680359936_o.jpg?_nc_cat=110&ccb=2&_nc_sid=174925&_nc_ohc=KAxyVY-BaUYAX-oZ7_p&_nc_ht=scontent-frx5-1.xx&oh=659e483320ca6746ee9de897398b74a6&oe=5FEE9088", class: "img-member" %>
-          </div>
-          <div class="name-member">
-            <h3>Lorenz</h3>
-          </div>
+        <div id="create-member3-box m-8">
+          <div class="about-us-member">
+              <%= image_tag "about_us/Lorenz.jpg", class: "avatar-about-us" %>
+              <h3>LORENZ</h3>
+            </div>
           <div class="text-member">
             <p>Member 3</p>
           </div>
         </div>
       </div>
       <div class="col-3">
-        <div id="create-member4-box m-8" style="background-color: none">
-          <div class="img-member">
-            <%= image_tag "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/29793381_1498444213618058_3430633972680359936_o.jpg?_nc_cat=110&ccb=2&_nc_sid=174925&_nc_ohc=KAxyVY-BaUYAX-oZ7_p&_nc_ht=scontent-frx5-1.xx&oh=659e483320ca6746ee9de897398b74a6&oe=5FEE9088", class: "img-member" %>
-          </div>
-          <div class="name-member">
-            <h3>Pia</h3>
-          </div>
+        <div id="create-member4-box m-8">
+          <div class="about-us-member">
+              <%= image_tag "about_us/Marike.jpg", class: "avatar-about-us" %>
+              <h3>MARIKE</h3>
+            </div>
           <div class="text-member">
             <p>Member 4</p>
           </div>
@@ -57,9 +51,8 @@
     </div>
   </div>
 </div>
-
 <div class="container">
-  <div class="row">
-    <%= link_to "Go back", root_path, method: :get,  class: "btn-back-show" %>
+  <div class="row mt-3">
+    <%= link_to "◄ Go back", root_path, method: :get,  class: "btn-back-show" %>
   </div>
 </div>

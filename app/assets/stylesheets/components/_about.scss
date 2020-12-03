@@ -1,0 +1,47 @@
+.background-about-us {
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 60px 80px;
+  background-color: #FFDE91;
+}
+
+#about-us-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-weight: bold;
+    font-size: 46px;
+    text-align: center;
+    margin-bottom: 32px;
+    color: $dark-purple;
+  }
+}
+
+.img-member {
+  position: relative;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.text-member {
+  text-align: justify;
+  width: 75%;
+  font-size: 16px;
+  color: $dark-purple;
+}
+
+.about-us-member {
+  align-items: center;
+  h3 {
+    padding-top: 16px;
+    font-weight: 600;
+    font-size: 24px;
+    color: $purple;
+  }
+}
+
+#about-us-border {
+  border-bottom: solid 2px white;
+}
