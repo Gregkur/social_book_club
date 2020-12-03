@@ -241,8 +241,8 @@ Booking.create(book: book4, from: "2020-11-30", until: "2021-01-20", user: user2
 Booking.create(book: book5, from: "2020-11-30", until: "2021-01-02", user: user2 )
 
 #new
-Booking.create(book: book19, from: "2020-11-30", until: "2020-11-30", user: user13 )
-Booking.create(book: book20, from: "2020-12-01", until: "2021-01-15", user: user13 )
+Booking.create(book: book14, from: "2020-11-30", until: "2020-12-30", user: user10 )
+Booking.create(book: book10, from: "2020-11-20", until: "2021-12-04", user: user13 )
 puts "Bookings created!"
 
 puts "Creating Bookclubs..."
