@@ -36,12 +36,15 @@ import { initJoinMenu } from '../components/join-menu'
 import { initMenuSlide } from "../components/manu_slide";
 import { initFlatPicker } from "../plugins/flatpickr";
 import { initBookingConfirmation } from '../components/booking-confirmation';
+import { initCreateBookclubMenu } from "../components/create-bookclub-menu";
 
 document.addEventListener('turbolinks:load', () => {
   // Flat picker
   initFlatPicker()
   // Swal for joining
   initJoinMenu()
+  // Swal for creating bookclub
+  initCreateBookclubMenu()
 
   // Menu slide
   initMenuSlide()
