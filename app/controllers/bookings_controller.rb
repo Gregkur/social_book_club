@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+
   end
 
   def destroy
@@ -14,6 +15,8 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @booking_created = false
+    @booking_created = true if params[:booking_create]
     if current_user == @book.user
       flash[:alert] = "You cannot create a booking for your own book."
       @review = Review.new
@@ -29,10 +32,10 @@ class BookingsController < ApplicationController
       # @booking.total = @days
       @booking.user = current_user
       if @booking.save
-        flash[:notice] = "Booked successfully!"
+        #flash[:notice] = "Booked successfully!"
         @book.availability = false
         @book.save
-        redirect_to page_path(current_user)
+        redirect_to page_path(current_user, booking_created: true)
       else
         flash[:notice] = "Booking failed."
         @review = Review.new

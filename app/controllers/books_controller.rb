@@ -8,6 +8,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     authorize @book
     @review = Review.new
+
   end
 
   def index
