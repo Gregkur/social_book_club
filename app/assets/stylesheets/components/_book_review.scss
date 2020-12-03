@@ -43,7 +43,9 @@
 .card-book-review p {
   font-size: 14px;
   line-height: 1.4;
-  padding-bottom: 21px;
+}
+
+#review-grey-border {
   border-bottom: 1px solid #dddddd;
 }
 
@@ -81,4 +83,17 @@
 #review_book_comment {
   resize: none;
   height: 120px;
+}
+
+#edit-review p {
+  font-size: 10px;
+  font-weight: 400;
+  color: $purple;
+}
+
+#delete-review p {
+  font-size: 10px;
+  font-weight: 400;
+  color: $purple;
+  padding-left: 3px;
 }

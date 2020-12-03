@@ -71,7 +71,9 @@
           <div class="review-grid">
             <% @book.reviews.each do |review| %>
               <div class="card-book-review mb-3">
-                <p><%= review.book_comment %></p>
+                <div id="review-grey-border">
+                  <p><%= review.book_comment %></p>
+                </div>
                 <span><%= review.user.nickname %></span>
                 <div class="card-book-review-bottom">
                   <% if review.book_rating %>
@@ -83,13 +85,17 @@
                       <% end %>
                     </div>
                     <% if current_user == review.user %>
-                      <div class="review-edit">
-                        <%= link_to edit_book_review_path(@book, review) do %>
-                          <i class="fas fa-edit"></i>
-                        <% end %>
-                        <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                          <i class="fas fa-trash mr-2 mt-2"></i>
-                        <% end %>
+                      <div class="functional-buttons">
+                        <div id="edit-review">
+                          <%= link_to edit_book_review_path(@book, review) do %>
+                            <p>edit |</p>
+                          <% end %>
+                        </div>
+                        <div id="delete-review">
+                          <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                            <p>delete</p>
+                          <% end %>
+                        </div>
                       </div>
                     <% end %>
                   <% end %>
