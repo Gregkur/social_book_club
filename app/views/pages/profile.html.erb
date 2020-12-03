@@ -44,7 +44,7 @@
         <% end %>
 
         <% if @user.bookclub_memberships.length == 0 %>
-          <p>Time to join some bookclubs!</p>
+          <p class="text-weight-bold">Time to join some bookclubs!</p>
         <% else @user.bookclub_memberships.length == 3 %>
         <% end %>
 
@@ -63,12 +63,18 @@
           <% end %>
         <% end %>
         
-        <% if @user.books.length == 4 %>
-          <p>one more book</p>
-        <% elsif @user.books.length < 3 %>
-          <p>Time to add some books!</p>
+        <% if @user.books.length == 0 %>
+          <p class="font-weight-bold">No books here yet!</p>
+        <% elsif @user.books.length == 1 %>
+          <p class="font-weight-bold">1 book</p>
+        <% elsif @user.books.length == 2 %>
+          <p class="font-weight-bold">2 books</p>
+        <% elsif @user.books.length == 3 %>
+          <p class="font-weight-bold">3 books!</p>
+        <% elsif @user.books.length == 4 %>
+          <p class="font-weight-bold">One more book</p>
         <% else %>
-          <p>+<%=@user.books.length - 3%> more books</p>
+          <p class="font-weight-bold">+<%=@user.books.length - 3%> more books</p>
         <% end %>
       </div>
     </div>
