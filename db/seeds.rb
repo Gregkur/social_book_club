@@ -33,7 +33,7 @@ girl = URI.open("https://images-na.ssl-images-amazon.com/images/I/8183Y1myPvL.jp
 
 #about-sections
 about1 = "I'm an absolute art lover and always on the hunt for good reads."
-about2 = "I'm a scientist from Berlin who loves to read thrillers and crime stories."
+about2 = "I'm a politics student from Berlin who loves to read thrillers and crime stories. Looking for some inspiration."
 about3 = "I looooove to read since I'm a little child and I cannot imagine many better things that discovering new books. I'm alsways open for recommendations and discussions."
 about4 = "I just recently realized how calming and cozy it can be to get cozy with a good read and a cup of tea in a quite place. But since I'm a newbiw I would love to get some guidance in choosing my next book."
 about5 = "As a politics student from Berlin, I enjoy deeper conversation, long walks outside of the city and books on philosophy."
@@ -101,7 +101,7 @@ user12 = User.create(email: "juliana@gmail.com", password: "123456", first_name:
 
 user12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1502767882403-636aee14f873?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: "juliana.jpg", content_type:"image/png" )
 
-user13 = User.create(email: "pia@gmail.com", password: "123456", first_name: "Pia", last_name: "von Heyer", nickname: "Pipi", address: "Auguststraße 58, Berlin", about: about13)
+user13 = User.create(email: "pia@gmail.com", password: "123456", first_name: "Pia", last_name: "von Heyer", nickname: "Pipi", address: "Auguststraße 58, Berlin", about: about2)
 
 user13.photo.attach(io: URI.open("https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/11825717_944761278918652_7671842961036378865_n.jpg?_nc_cat=102&ccb=2&_nc_sid=174925&_nc_ohc=U2-F3DTkDLwAX_7-cKZ&_nc_ht=scontent-frt3-1.xx&oh=85545210b05aaeb5cc10532f28514527&oe=5FEED1BB"), filename: "greg.jpg", content_type:"image/png" )
 
