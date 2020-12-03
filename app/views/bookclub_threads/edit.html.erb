@@ -5,6 +5,7 @@
         <div class="nested-create-form m-5">
           <div id="header-create-form">
             <h2>Update your thread</h2>
+            <%= image_tag "figures/2.png", id:"figure-reading-create" %>
           </div>
           <%= simple_form_for [@bookclub, @bookclub_thread] do |f| %>
             <%= f.input :title, placeholder: "Startups of Berlin" %>
