@@ -8,7 +8,7 @@ class BookclubThreadsController < ApplicationController
     authorize @bookclub_thread
     @bookclub_thread.bookclub = @bookclub
     if @bookclub_thread.save
-      redirect_to bookclub_path(@bookclub)
+      redirect_to bookclub_path(@bookclub, anchor: "input-thread")
       flash[:notice] = "Your thread was successfully posted!"
     else
       flash[:notice] = "Creating thread failed"
