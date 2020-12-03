@@ -53,6 +53,7 @@ class BookclubsController < ApplicationController
     @bookclub_threads = @bookclub.bookclub_threads
     @comment = Comment.new
     authorize @comment
+    @pia = params[:bookclub_created] if params[:bookclub_created].present?
   end
 
   def new
@@ -61,14 +62,15 @@ class BookclubsController < ApplicationController
   end
 
   def create
+    @bookclub_created = false
+    @bookclub_created = true if params[:bookclub_created]
     @bookclub = Bookclub.new(bookclub_params)
     @bookclub.photos.attach(params[:bookclub][:photos])
     authorize @bookclub
     @bookclub.user = current_user
     @bookclub.members << current_user
     if @bookclub.save
-      flash[:notice] = "Created successfully!"
-      redirect_to bookclub_path(@bookclub)
+      redirect_to bookclub_path(@bookclub, bookclub_created: true)
     else
       flash[:notice] = "Creating book club failed"
       render :new
