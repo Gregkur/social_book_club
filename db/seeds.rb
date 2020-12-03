@@ -215,7 +215,7 @@ bookclub1 = Bookclub.create!(name: "Startups Berlin", description: "This bookclu
 bookclub2 = Bookclub.create!(name: "Harry Potter Stories", description: "This bookclub is made of big Harry Potter fans.", user: user4)
 bookclub3 = Bookclub.create!(name: "Web Development and Ruby on Rails", description: "This bookclub summarizes all available documentations useful for Ruby on Rails based applications.", user: user5)
 #new
-bookclub4 = Bookclub.create!(name: "Paper vs. Ebooks", description: "What do you think - should we jump on the bandwagon?", user: user10)
+bookclub4 = Bookclub.create!(name: "Commics fans", description: "Bookclub for comics fans! Nerds unite!", user: user10)
 bookclub5 = Bookclub.create!(name: "It's Thriller Time", description: "Let's exchange experiences about good thrillers", user: user13)
 bookclub6 = Bookclub.create!(name: "Best Reading Spots in Berlin", description: "What are your favourite reading spots in this lovely city?", user: user9)
 bookclub7 = Bookclub.create!(name: "All Time Favourites", description: "Which classics are your favourites?", user: user12)
@@ -235,7 +235,7 @@ bookclub1.photos.attach(io: URI.open("https://images.unsplash.com/photo-15220718
 bookclub2.photos.attach(io: URI.open("https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), filename: 'potter.jpg', content_type: 'image/jpg')
 bookclub3.photos.attach(io: URI.open("https://images.unsplash.com/photo-1601229749354-b817e9929e65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), filename: 'ruby.jpg', content_type: 'image/jpg')
 #new
-bookclub4.photos.attach(io: URI.open("https://images.unsplash.com/photo-1598016376552-749d93370198?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: 'ebook.jpg', content_type: 'image/jpg')
+bookclub4.photos.attach(io: URI.open("https://images.unsplash.com/photo-1588497859490-85d1c17db96d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"), filename: 'ebook.jpg', content_type: 'image/jpg')
 bookclub5.photos.attach(io: URI.open("https://images.unsplash.com/photo-1553465528-5a213ccc0c7b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=686&q=80"), filename: 'thriller.jpg', content_type: 'image/jpg')
 bookclub6.photos.attach(io: URI.open("https://images.unsplash.com/photo-1515541965486-309946b5572b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80"), filename: 'spot.jpg', content_type: 'image/jpg')
 bookclub7.photos.attach(io: URI.open("https://images.unsplash.com/photo-1585521551422-497df464aa43?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: 'classics.jpg', content_type: 'image/jpg')
