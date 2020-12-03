@@ -6,7 +6,7 @@
             <div class="mmembers-grid-bookclubs">
               <h1 class="text-center">Members</h2>
                 <% @bookclub_users.each do |user| %>
-                    <%= link_to page_path(user) do %>
+                    <%= link_to profile_path(user) do %>
                         <div class="members-grid-card">
                             <% if user.user.photo.attached? %>
                                 <%= cl_image_tag user.user.photo.key, crop: :fill%>
