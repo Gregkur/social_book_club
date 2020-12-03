@@ -7,7 +7,7 @@ const initBookingConfirmation = () => {
       text: 'The owner has been notified and will contact you shortly.',
       icon: 'success',
       confirmButtonText: `Cool`,
-      confirmButtonColor: '#252525',
+      confirmButtonColor: '#88CE8F',
     })
   };
 }
