@@ -2,6 +2,7 @@ class BookclubThreadsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_bookclub, only: [:create, :edit, :update, :destroy]
 
+
   def create
     @bookclub_thread = BookclubThread.new(thread_params)
     @bookclub_thread.user = current_user
