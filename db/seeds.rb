@@ -32,7 +32,7 @@ girl = URI.open("https://images-na.ssl-images-amazon.com/images/I/8183Y1myPvL.jp
 
 
 #about-sections
-about1 = "I'm an absolute art lover and always on the hunt for good reads. Most interested in Philosophy and Novels :)"
+about1 = "I'm an absolute art lover and always on the hunt for good reads."
 about2 = "I'm a scientist from Berlin who loves to read thrillers and crime stories."
 about3 = "I looooove to read since I'm a little child and I cannot imagine many better things that discovering new books. I'm alsways open for recommendations and discussions."
 about4 = "I just recently realized how calming and cozy it can be to get cozy with a good read and a cup of tea in a quite place. But since I'm a newbiw I would love to get some guidance in choosing my next book."
@@ -151,7 +151,7 @@ book14 = Book.create(title: "And Then There Were None", author:"Agatha Christie"
 book14.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391120695l/16299.jpg"), filename: 'none.jpg', content_type: 'image/jpg')
 
 book15 = Book.create(title: "The Da Vinci Code", author:"Dan Brown", pages: 412, year: 2003, genre: "Fiction", description:"While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover a trail of clues hidden in the works of Leonardo da Vinci—clues visible for all to see and yet ingeniously disguised by the painter.", availability: true, user: user13)
-book15.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579621267l/968.jpg"), filename: 'davinci.jpg', content_type: 'image/jpg')
+book15.photos.attach(io: URI.open("https://www.babcockbooks.com/pictures/26675.jpg?v=1545291244"), filename: 'davinci.jpg', content_type: 'image/jpg')
 
 book16 = Book.create(title: "The Alchemist", author:"Paulo Coelho", pages: 276, year: 1988, genre: "Classics", description:"Paulo Coelho's masterpiece tells the mystical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His quest will lead him to riches far different, and far more satisfying, listening to our hearts, of recognizing opportunity and learning to read the omens strewn along life's path, and, most importantly, to follow our dreams.", availability: true, user: user11)
 book16.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1483412266l/865.jpg"), filename: 'alchemist.jpg', content_type: 'image/jpg')
