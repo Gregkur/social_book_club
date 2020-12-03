@@ -35,6 +35,7 @@ import { initBookingMenu } from '../components/booking-menu'
 import { initJoinMenu } from '../components/join-menu'
 import { initMenuSlide } from "../components/manu_slide";
 import { initFlatPicker } from "../plugins/flatpickr";
+import { initBookingConfirmation } from '../components/booking-confirmation';
 import { initCreateBookclubMenu } from "../components/create-bookclub-menu";
 
 document.addEventListener('turbolinks:load', () => {
@@ -52,5 +53,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox()
   // Swal
   initBookingMenu()
+  // Swal
+  initBookingConfirmation()
 
 });

@@ -8,6 +8,8 @@ class PagesController < ApplicationController
   def show
     @bookclub = Bookclub.new
     @user = current_user
+    @santi = params[:booking_created] if params[:booking_created].present?
+
     respond_to do |format|
       format.html
       format.js
