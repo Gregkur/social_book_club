@@ -67,7 +67,7 @@ class BookclubsController < ApplicationController
     @bookclub.user = current_user
     @bookclub.members << current_user
     if @bookclub.save
-      flash[:notice] = "Created successfully!"
+      sleep 1
       redirect_to bookclub_path(@bookclub)
     else
       flash[:notice] = "Creating book club failed"
