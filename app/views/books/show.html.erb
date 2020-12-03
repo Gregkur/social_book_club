@@ -48,8 +48,10 @@
       <%# Checking for user photos %>
           <% if @book.user.photo.attached? %>
               <div class="book-user">
-                <%= cl_image_tag @book.user.photo.key, class: "avatar-large", crop: :fill %>
-                <p> <%= link_to "#{@book.user.first_name}", profile_path(@book.user) %> </p>
+              	<%= link_to profile_path(@book.user) do %>
+                  <%= cl_image_tag @book.user.photo.key, class: "avatar-large", crop: :fill %>
+                  <p><%= @book.user.first_name %></p>
+                <% end %>
               </div>
             <% else %>
             <div class="book-user">
