@@ -97,9 +97,10 @@ user12 = User.create(email: "juliana@gmail.com", password: "123456", first_name:
 
 user12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1502767882403-636aee14f873?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: "juliana.jpg", content_type:"image/png" )
 
-user13 = User.create(email: "greg@gmail.com", password: "123456", first_name: "Greg", last_name: "Kurzajczyk", nickname: "Gregs", address: "Auguststraße 58, Berlin", about: about13)
+user13 = User.create(email: "pia@gmail.com", password: "123456", first_name: "Pia", last_name: "Von Heyer", nickname: "Pia93", address: "Auguststraße 58, Berlin", about: about13)
 
-user13.photo.attach(io: URI.open("https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/29793381_1498444213618058_3430633972680359936_o.jpg?_nc_cat=110&ccb=2&_nc_sid=174925&_nc_ohc=KAxyVY-BaUYAX-oZ7_p&_nc_ht=scontent-frx5-1.xx&oh=659e483320ca6746ee9de897398b74a6&oe=5FEE9088"), filename: "greg.jpg", content_type:"image/png" )
+user13.photo.attach(io: URI.open("https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/11825717_944761278918652_7671842961036378865_n.jpg?_nc_cat=102&ccb=2&_nc_sid=174925&_nc_ohc=U2-F3DTkDLwAX_7-cKZ&_nc_ht=scontent-frt3-1.xx&oh=85545210b05aaeb5cc10532f28514527&oe=5FEED1BB"), filename: "greg.jpg", content_type:"image/png" )
+
 
 users = [user1,user2,user3,user4,user5,user6,user7,user8,user9,user10,user11,user12, user13]
 
