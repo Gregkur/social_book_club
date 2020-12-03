@@ -6,7 +6,6 @@ const initJoinMenu = () => {
   if (joinButton) {
     joinButton.addEventListener('click',() => {
       Swal.fire({
-          position: 'top-end',
           icon: 'success',
           title: 'You joined a bookclub!',
           showConfirmButton: false,
