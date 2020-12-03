@@ -3,6 +3,7 @@ class BookclubsController < ApplicationController
   before_action :set_bookclub, only: [:edit, :update, :destroy]
 
   def index
+    @bookclub = Bookclub.new
     @bookclubs = policy_scope(Bookclub).all
     @bookclubs = Bookclub.search(params[:query]) if params[:query].present?
 

@@ -56,4 +56,16 @@ document.addEventListener('turbolinks:load', () => {
   // Swal
   initBookingConfirmation()
 
+  const activate = document.querySelector(".activate-modal")
+  activate.addEventListener('click', () => {
+    const hamburger = document.querySelector(".hamburger");
+    const burger = document.getElementById('hamburger2')
+      $('#bookclub-modal').modal('show')
+      hamburger.classList.toggle("is-active");
+      if (hamburger.classList.contains("is-active")){
+        burger.checked = true
+      }else{
+        burger.checked = false
+      }
+    })
 });
