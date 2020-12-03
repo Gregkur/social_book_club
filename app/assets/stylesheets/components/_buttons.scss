@@ -102,6 +102,21 @@
 }
 
 .btn-back-show:hover {
-  color: white;
+  color: $red;
   opacity: 0.9;
 }
+
+.btn-back-review {
+  color: $dark-purple;
+  margin-bottom: 40px;
+  margin-left: 3rem;
+}
+
+.btn-back-review:hover {
+  color: $red;
+  opacity: 0.9;
+}
+
+
+
+

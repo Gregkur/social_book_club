@@ -48,8 +48,10 @@
       <%# Checking for user photos %>
           <% if @book.user.photo.attached? %>
               <div class="book-user">
-                <%= cl_image_tag @book.user.photo.key, class: "avatar-large", crop: :fill %>
-                <p> <%= link_to "#{@book.user.first_name}", profile_path(@book.user) %> </p>
+              	<%= link_to profile_path(@book.user) do %>
+                  <%= cl_image_tag @book.user.photo.key, class: "avatar-large", crop: :fill %>
+                  <p><%= @book.user.first_name %></p>
+                <% end %>
               </div>
             <% else %>
             <div class="book-user">
@@ -71,7 +73,9 @@
           <div class="review-grid">
             <% @book.reviews.each do |review| %>
               <div class="card-book-review mb-3">
-                <p><%= review.book_comment %></p>
+                <div id="review-grey-border">
+                  <p><%= review.book_comment %></p>
+                </div>
                 <span><%= review.user.nickname %></span>
                 <div class="card-book-review-bottom">
                   <% if review.book_rating %>
@@ -83,13 +87,17 @@
                       <% end %>
                     </div>
                     <% if current_user == review.user %>
-                      <div class="review-edit">
-                        <%= link_to edit_book_review_path(@book, review) do %>
-                          <i class="fas fa-edit"></i>
-                        <% end %>
-                        <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                          <i class="fas fa-trash mr-2 mt-2"></i>
-                        <% end %>
+                      <div class="functional-buttons">
+                        <div id="edit-review">
+                          <%= link_to edit_book_review_path(@book, review) do %>
+                            <p>edit |</p>
+                          <% end %>
+                        </div>
+                        <div id="delete-review">
+                          <%= link_to book_review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                            <p>delete</p>
+                          <% end %>
+                        </div>
                       </div>
                     <% end %>
                   <% end %>
@@ -100,6 +108,7 @@
         <% end %>
       </div>
       <div class="write-review">
+          <%= image_tag "figures/4.png", id:"figure-review" %>
         <%= render "reviews/new", book: @book, review: @review %>
       </div>
     </div>

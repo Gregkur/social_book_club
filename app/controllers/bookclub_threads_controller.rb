@@ -2,13 +2,14 @@ class BookclubThreadsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_bookclub, only: [:create, :edit, :update, :destroy]
 
+
   def create
     @bookclub_thread = BookclubThread.new(thread_params)
     @bookclub_thread.user = current_user
     authorize @bookclub_thread
     @bookclub_thread.bookclub = @bookclub
     if @bookclub_thread.save
-      redirect_to bookclub_path(@bookclub)
+      redirect_to bookclub_path(@bookclub, anchor: "input-thread")
       flash[:notice] = "Your thread was successfully posted!"
     else
       flash[:notice] = "Creating thread failed"

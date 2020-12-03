@@ -1,72 +1,82 @@
-<div class="d-flex flex-column" style="align-items: center">
+<%= render 'popup' %>
+
+<div class="container">
 
   <div class="profile-wrapper pink">
-
-
+  <%# Checking if user has photo attached %>
     <% if @user.photo.attached? %>
-      <%= cl_image_tag @user.photo.key, crop: :limit, class:"user-img" %>
+      <%= cl_image_tag @user.photo.key, crop: :limit, class:"profile-img" %>
     <% else %>
-      <img href="https://images.unsplash.com/photo-1576078044571-8ea98b0b0963?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+      <%= image_tag "https://images.unsplash.com/photo-1576078044571-8ea98b0b0963?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", crop: :limit, class:"profile-img" %>
     <% end %>
 
     <div class="profile-user-info">
-
-      <% if @user.first_name.present? %>
+    <%# Checking for user info%>
+      <% if @user.first_name.present? && @user.last_name.present? && @user.nickname.present? && @user.address.present?  %>
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <p class="font-weight-bold"><%= @user.nickname %></p>
         <p><i class="fas fa-map-pin"></i><%= @user.address %></p>
       <% else %>
         <h1>Hello Stranger!</h1>
-        <p><i class="fas fa-map-pin"></i>???</p>
+        <p><i class="fas fa-map-pin"></i>Somewhere on this planet</p>
       <% end %>
-
-      <div class="profile-about-me">
+      <div class="profile-about-me mt-3">
         <% if @user.about.present? %>
           <p><%= @user.about %></p>
         <% else %>
           <p>Tell us about yourself, beautiful stranger!<p>
         <% end %>
-      </div>
 
+      </div>
     </div>
 
     <div class="bookclubs-books-wrapper">
-
       <div class="bookclubs-wrapper">
+        <% @user.bookclub_memberships.take(3).each do |bookclub| %> 
+          <%= link_to bookclub_path(bookclub) do %> 
+          <%# Checking if bookclub has photo %>
+            <% if bookclub.photos.attached? %>
+              <% cl_image_tag bookclub.photos[0].key, crop: :fill, id:'photo-shadow'%> 
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1546284663-fed719f6612e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=657&q=80", crop: :limit, id:'photo-shadow'%>
+            <% end %>
+          <% end %> 
+        <% end %>
 
-        <%# @user.bookclubs.each do |bookclub| %>
-          <%#= link_to bookclub_path(bookclub) do %>
-            <%#= cl_image_tag bookclub.photo[0].key, crop: :fill%>
-          <%# end %>
-        <%# end %>
+        <% if @user.bookclub_memberships.length == 0 %>
+          <p class="text-weight-bold">Time to join some bookclubs!</p>
+        <% else @user.bookclub_memberships.length == 3 %>
+        <% end %>
 
-        <%= image_tag "prince.jpg" %>
-        <%= image_tag "harry.jpg" %>
-        <%= image_tag "testaments.jpg" %>
-        <p>+2 more bookclubs</p>
       </div>
-
-      <div class="books-wrapper">
+      <div class="books-wrapper" style="cursor: pointer" data-toggle="modal" data-target=".bd-example-modal-lg">
         <% @user.books.take(3).each do |book| %>
           <%= link_to book_path(book) do %>
-            <% book.photos.each do |photo| %>
-              <%= image_tag photo %>
-            <% end %>
+            <%# Checking if the books has photos %>
+              <% book.photos.each do |photo| %>
+                <% if book.photos.attached? %>
+                  <%= image_tag photo %>
+                <% else %>
+                 <%= image_tag "https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" %>
+                <% end %>
+              <% end %>
           <% end %>
         <% end %>
-
-        <% if @user.books.length == 3 %>
-          <p>no more books</p>
+        
+        <% if @user.books.length == 0 %>
+          <p class="font-weight-bold">No books here yet!</p>
+        <% elsif @user.books.length == 1 %>
+          <p class="font-weight-bold">1 book</p>
+        <% elsif @user.books.length == 2 %>
+          <p class="font-weight-bold">2 books</p>
+        <% elsif @user.books.length == 3 %>
+          <p class="font-weight-bold">3 books!</p>
         <% elsif @user.books.length == 4 %>
-          <p>one more book</p>
-        <% elsif @user.books.length < 3 %>
-          <p>time to add some books, <%= @user.first_name if @user.first_name.present?%>!</p>
+          <p class="font-weight-bold">One more book</p>
         <% else %>
-          <p>+<%=@user.books.length - 3%> more books</p>
+          <p class="font-weight-bold">+<%=@user.books.length - 3%> more books</p>
         <% end %>
-
       </div>
-
     </div>
-
   </div>
-</div>
+

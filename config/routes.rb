@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   resources :comments, only: [:destroy]
 
   get "/profile/:id", to: "pages#profile", as: :profile
+  get "/about", to: "pages#about", as: :about
 end
 

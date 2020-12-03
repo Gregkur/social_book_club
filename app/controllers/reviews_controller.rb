@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     authorize @review
     @review.book = @book
     if @review.save
-      redirect_to book_path(@book)
+      redirect_to book_path(@book, anchor: "input-review")
     else
       puts "error"
     end
