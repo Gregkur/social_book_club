@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :show ]
+  skip_before_action :authenticate_user!, only: [ :home, :show, :about ]
 
   def home
     @books = Book.search(params[:query]) if params[:query].present?
