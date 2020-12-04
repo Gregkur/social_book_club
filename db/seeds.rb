@@ -33,7 +33,7 @@ girl = URI.open("https://images-na.ssl-images-amazon.com/images/I/8183Y1myPvL.jp
 
 #about-sections
 about1 = "I'm an absolute art lover and always on the hunt for good reads."
-about2 = "I'm a scientist from Berlin who loves to read thrillers and crime stories."
+about2 = "I'm an economics student from Berlin who loves to read thrillers and crime stories. Looking for some inspiration."
 about3 = "I looooove to read since I'm a little child and I cannot imagine many better things that discovering new books. I'm alsways open for recommendations and discussions."
 about4 = "I just recently realized how calming and cozy it can be to get cozy with a good read and a cup of tea in a quite place. But since I'm a newbiw I would love to get some guidance in choosing my next book."
 about5 = "As a politics student from Berlin, I enjoy deeper conversation, long walks outside of the city and books on philosophy."
@@ -101,7 +101,7 @@ user12 = User.create(email: "juliana@gmail.com", password: "123456", first_name:
 
 user12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1502767882403-636aee14f873?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"), filename: "juliana.jpg", content_type:"image/png" )
 
-user13 = User.create(email: "pia@gmail.com", password: "123456", first_name: "Pia", last_name: "von Heyer", nickname: "Pipi", address: "Auguststraße 58, Berlin", about: about13)
+user13 = User.create(email: "pia@gmail.com", password: "123456", first_name: "Pia", last_name: "von Heyer", nickname: "Pipi", address: "Auguststraße 58, Berlin", about: about2)
 
 user13.photo.attach(io: URI.open("https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/11825717_944761278918652_7671842961036378865_n.jpg?_nc_cat=102&ccb=2&_nc_sid=174925&_nc_ohc=U2-F3DTkDLwAX_7-cKZ&_nc_ht=scontent-frt3-1.xx&oh=85545210b05aaeb5cc10532f28514527&oe=5FEED1BB"), filename: "greg.jpg", content_type:"image/png" )
 
@@ -156,7 +156,7 @@ book8.photos.attach(io: harry, filename: 'harry.jpg', content_type: 'image/jpg')
 book10 = Book.create(title: "The Lean Startup", author:"Eric Ries", pages: 309, year: 2011, genre: "Guide", description:"Most startups fail. But many of those failures are preventable. The Lean Startup is a new approach being adopted across the globe, changing the way companies are built and new products are launched.", availability: true, user: user6)
 book10.photos.attach(io: start, filename: 'start.jpg', content_type: 'image/jpg')
 
-book11 = Book.create(title: "The Girl on the Train", author:"Paula Hawkins", pages: 222, year: 2015, genre: "Thriller", description:"YOU DON'T KNOW HER. BUT SHE KNOWS YOU. Rear Window meets Gone Girl, in this exceptional and startling psychological thriller", availability: true, user: user6)
+book11 = Book.create(title: "The Girl on the Train", author:"Paula Hawkins", pages: 222, year: 2015, genre: "Thriller", description:"Rachel takes the same commuter train every morning and night. Every day she rattles down the track, flashes past a stretch of cozy suburban homes, and stops at the signal that allows her to daily watch the same couple breakfasting on their deck. She s even started to feel like she knows them. Jess and Jason, she calls them. Their life as she sees it is perfect. Not unlike the life she recently lost. UNTIL TODAY. And then she sees something shocking. It s only a minute until the train moves on, but it s enough. Now everything s changed.", availability: true, user: user6)
 book11.photos.attach(io: girl, filename: 'girl.jpg', content_type: 'image/jpg')
 
 #new
@@ -178,7 +178,7 @@ book16.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.p
 book17 = Book.create(title: "The Girl with the Dragon Tattoo", author:"Stieg Larsson", pages: 465, year: 2008, genre: "Crime", description:"Harriet Vanger, a scion of one of Sweden’s wealthiest families disappeared over forty years ago. All these years later, her aged uncle continues to seek the truth. He hires Mikael Blomkvist, a crusading journalist recently trapped by a libel conviction, to investigate. He is aided by the pierced and tattooed punk prodigy Lisbeth Salander. Together they tap into a vein of unfathomable iniquity and astonishing corruption.", availability: true, user: user13)
 book17.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327868566l/2429135.jpg"), filename: 'tattoo.jpg', content_type: 'image/jpg')
 
-book18 = Book.create(title: "The Exorcist", author:"William Peter Blatty", pages: 308, year: 1994, genre: "Thriller", description:"Four decades after it first terrified the world, William Peter Blatty’s The Exorcist is back! An extraordinary classic work of horror and dark paranormal suspense. In this stunning 40th Anniversary Edition, a desperate mother and two priests fight to free the soul of a little girl from a supernatural entity of pure malevolence.", availability: true, user: user9)
+book18 = Book.create(title: "The Exorcist", author:"William Peter Blatty", pages: 308, year: 1994, genre: "Thriller", description:"Chris MacNeil is an actress who recently moved to Washington with her 12 year old daughter Regan to shoot a film with her friend Burke Dennings as the director. All goes well and she even gets an offer to direct a film herself, till something strange is happening to Regan. She acts out of character, Chris hears knocking on the walls, furniture is moved seemingly by itself so she takes Regan to a doctor. It’s her only hope to perform an exorcism to drive out the real or metaphorical demons out of Regan, but Karras is losing his faith and doubts if Regan is really possessed.", availability: true, user: user9)
 book18.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1375168676l/179780.jpg"), filename: 'exorcist.jpg', content_type: 'image/jpg')
 
 book19 = Book.create(title: "1984", author:"George Orwell", pages: 329, year: 1950, genre: "Science Fiction", description:"The year 1984 has come and gone, but George Orwell's prophetic, nightmarish vision in 1949 of the world we were becoming is timelier than ever. 1984 is still the great modern classic of negative utopia—a startlingly original and haunting novel that creates an imaginary world that is completely convincing, from the first sentence to the last four words. No one can deny the novel's hold on the imaginations of whole generations, or the power of its admonitions—a power that seems to grow, not lessen, with the passage of time.", availability: true, user: user12)
@@ -241,8 +241,8 @@ Booking.create(book: book4, from: "2020-11-30", until: "2021-01-20", user: user2
 Booking.create(book: book5, from: "2020-11-30", until: "2021-01-02", user: user2 )
 
 #new
-Booking.create(book: book19, from: "2020-11-30", until: "2020-11-30", user: user13 )
-Booking.create(book: book20, from: "2020-12-01", until: "2021-01-15", user: user13 )
+Booking.create(book: book14, from: "2020-11-30", until: "2020-12-30", user: user10 )
+Booking.create(book: book10, from: "2020-11-20", until: "2021-12-04", user: user13 )
 puts "Bookings created!"
 
 puts "Creating Bookclubs..."
