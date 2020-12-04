@@ -33,7 +33,7 @@ girl = URI.open("https://images-na.ssl-images-amazon.com/images/I/8183Y1myPvL.jp
 
 #about-sections
 about1 = "I'm an absolute art lover and always on the hunt for good reads."
-about2 = "I'm a politics student from Berlin who loves to read thrillers and crime stories. Looking for some inspiration."
+about2 = "I'm an economics student from Berlin who loves to read thrillers and crime stories. Looking for some inspiration."
 about3 = "I looooove to read since I'm a little child and I cannot imagine many better things that discovering new books. I'm alsways open for recommendations and discussions."
 about4 = "I just recently realized how calming and cozy it can be to get cozy with a good read and a cup of tea in a quite place. But since I'm a newbiw I would love to get some guidance in choosing my next book."
 about5 = "As a politics student from Berlin, I enjoy deeper conversation, long walks outside of the city and books on philosophy."
