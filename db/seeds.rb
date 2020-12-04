@@ -56,7 +56,7 @@ user1 = User.create(email: "marie@gmail.com", password: "123456", first_name: "M
 
 user1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "marie.jpg", content_type:"image/png" )
 
-user2 = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "Annnie2", address: "Maaßenstraße 14,Berlin", about: about2)
+user2 = User.create!(email: "anna@gmail.com", password: "123456", first_name: "Anna", last_name: "Maddisson", nickname: "Annnie2", address: "Samariterstrasse 10, Berlin", about: about2)
 
 user2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1542596594-b47fea509622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"), filename: "anna.jpg", content_type:"image/png" )
 
@@ -126,19 +126,19 @@ puts "Users created!"
 
 puts "Loading books..."
 
-book1 = Book.create(title: "Anna Karenina", author:"Leo Tolstoy", pages: 864, year: 1878, genre: "Novel", description:"A complex novel in eight parts, with more than a dozen major characters, it is spread over more than 800 pages (depending on the translation and publisher), typically contained in two volumes. It deals with themes of betrayal, faith, family, marriage, Imperial Russian society, desire, and rural vs. city life. The plot centers on an extramarital affair between Anna and dashing cavalry officer Count Alexei Kirillovich Vronsky.", availability: true, user: user2)
+book1 = Book.create(title: "Anna Karenina", author:"Leo Tolstoy", pages: 864, year: 1878, genre: "Novel", description:"A complex novel in eight parts, with more than a dozen major characters, it is spread over more than 800 pages (depending on the translation and publisher), typically contained in two volumes. It deals with themes of betrayal, faith, family, marriage, Imperial Russian society, desire, and rural vs. city life. The plot centers on an extramarital affair between Anna and dashing cavalry officer Count Alexei Kirillovich Vronsky.", availability: false, user: user2)
 book1.photos.attach(io: anna, filename: 'anna.jpg', content_type: 'image/jpg')
 
-book2 = Book.create(title: "Milk and Honey", author:"Rupi Kaur", pages: 226, year: 2015, genre: "Poetry", description:"Milk and Honey is a collection of poetry and prose by Rupi Kaur. The collection is about survival. It is divided into sections, with each section serving a different purpose and relevance to Kaur’s experience. The sections explore the themes of violence, abuse, love, loss, and femininity.", availability: true, user: user2)
+book2 = Book.create(title: "Milk and Honey", author:"Rupi Kaur", pages: 226, year: 2015, genre: "Poetry", description:"Milk and Honey is a collection of poetry and prose by Rupi Kaur. The collection is about survival. It is divided into sections, with each section serving a different purpose and relevance to Kaur’s experience. The sections explore the themes of violence, abuse, love, loss, and femininity.", availability: false, user: user2)
 book2.photos.attach(io: milk, filename: 'milk.jpg', content_type: 'image/jpg')
 
-book3 = Book.create(title: "The Testaments", author:"Margaret Atwood", pages: 442, year: 2019, genre: "Fiction", description:"When the van door slammed on Offred's future at the end of The Handmaid's Tale, readers had no way of telling what lay ahead for her--freedom, prison or death. With The Testaments, the wait is over.", availability: true, user: user4)
+book3 = Book.create(title: "The Testaments", author:"Margaret Atwood", pages: 442, year: 2019, genre: "Fiction", description:"When the van door slammed on Offred's future at the end of The Handmaid's Tale, readers had no way of telling what lay ahead for her--freedom, prison or death. With The Testaments, the wait is over.", availability: false, user: user4)
 book3.photos.attach(io: testaments, filename: 'testaments.jpg', content_type: 'image/jpg')
 
-book4 = Book.create(title: "The Little Prince", author:"Antoine de Saint-Exupéry", pages: 93, year: 2000, genre: "Novel", description:"The artwork in this edition has been restored to match in detail and in color Saint-Exupéry's original artwork. Combining Richard Howard's translation with restored original art, this definitive English-language edition of The Little Prince will capture the hearts of readers of all ages.", availability: true, user: user2)
+book4 = Book.create(title: "The Little Prince", author:"Antoine de Saint-Exupéry", pages: 93, year: 2000, genre: "Novel", description:"The artwork in this edition has been restored to match in detail and in color Saint-Exupéry's original artwork. Combining Richard Howard's translation with restored original art, this definitive English-language edition of The Little Prince will capture the hearts of readers of all ages.", availability: false, user: user2)
 book4.photos.attach(io: prince, filename: 'prince.jpg', content_type: 'image/jpg')
 
-book5 = Book.create(title: "The Lord of the Rings", author:"J.R.R. Tolkien", pages: 1216, year: 2005, genre: "Fiction", description:"In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell by chance into the hands of the hobbit Bilbo Baggins.", availability: true, user: user5)
+book5 = Book.create(title: "The Lord of the Rings", author:"J.R.R. Tolkien", pages: 1216, year: 2005, genre: "Fiction", description:"In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell by chance into the hands of the hobbit Bilbo Baggins.", availability: false, user: user5)
 book5.photos.attach(io: lord, filename: 'lord.jpg', content_type: 'image/jpg')
 
 book6 = Book.create(title: "To Kill a Mockingbird", author:"Harper Lee", pages: 324, year: 2006, genre: "Fiction", description:"The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it, To Kill A Mockingbird became both an instant bestseller and a critical success when it was first published in 1960. It went on to win the Pulitzer Prize in 1961 and was later made into an Academy Award-winning film, also a classic.", availability: true, user: user10)
@@ -153,7 +153,7 @@ book8.photos.attach(io: harry, filename: 'harry.jpg', content_type: 'image/jpg')
 # book9 = Book.create(title: "Leaves of Grass", author:"Walt Whitman", pages: 230, year: 1855, genre: "Poetry", description:"Leaves of Grass (1855) is a poetry collection by the American poet Walt Whitman. Among the poems in the collection are 'Song of Myself', 'I Sing the Body Electric'.", availability: true, user: user6)
 # book9.photos.attach(io: harry, filename: 'harry.jpg', content_type: 'image/jpg')
 
-book10 = Book.create(title: "The Lean Startup", author:"Eric Ries", pages: 309, year: 2011, genre: "Guide", description:"Most startups fail. But many of those failures are preventable. The Lean Startup is a new approach being adopted across the globe, changing the way companies are built and new products are launched.", availability: true, user: user6)
+book10 = Book.create(title: "The Lean Startup", author:"Eric Ries", pages: 309, year: 2011, genre: "Guide", description:"Most startups fail. But many of those failures are preventable. The Lean Startup is a new approach being adopted across the globe, changing the way companies are built and new products are launched.", availability: false, user: user6)
 book10.photos.attach(io: start, filename: 'start.jpg', content_type: 'image/jpg')
 
 book11 = Book.create(title: "The Girl on the Train", author:"Paula Hawkins", pages: 222, year: 2015, genre: "Thriller", description:"Rachel takes the same commuter train every morning and night. Every day she rattles down the track, flashes past a stretch of cozy suburban homes, and stops at the signal that allows her to daily watch the same couple breakfasting on their deck. She s even started to feel like she knows them. Jess and Jason, she calls them. Their life as she sees it is perfect. Not unlike the life she recently lost. UNTIL TODAY. And then she sees something shocking. It s only a minute until the train moves on, but it s enough. Now everything s changed.", availability: true, user: user6)
@@ -166,7 +166,7 @@ book12.photos.attach(io: URI.open("https://d188rgcu4zozwl.cloudfront.net/content
 book13 = Book.create(title: "Greenlights", author:"Matthew McConaughey", pages: 304, year: 2020, genre: "Autobiography", description:"From the Academy Award–winning actor, an unconventional memoir filled with raucous stories, outlaw wisdom, and lessons learned the hard way about living with greater satisfaction", availability: true, user: user8)
 book13.photos.attach(io: URI.open("https://assets.thalia.media/img/artikel/3ac5749ba15f9568cac1054a612b333e821fc9f1-00-00.jpeg"), filename: 'conaughey.jpg', content_type: 'image/jpg')
 
-book14 = Book.create(title: "And Then There Were None", author:"Agatha Christie", pages: 342, year: 2019, genre: "Thriller", description:"irst, there were ten—a curious assortment of strangers summoned as weekend guests to a little private island off the coast of Devon. Their host, an eccentric millionaire unknown to all of them, is nowhere to be found. All that the guests have in common is a wicked past they're unwilling to reveal—and a secret that will seal their fate.", availability: true, user: user13)
+book14 = Book.create(title: "And Then There Were None", author:"Agatha Christie", pages: 342, year: 2019, genre: "Thriller", description:"irst, there were ten—a curious assortment of strangers summoned as weekend guests to a little private island off the coast of Devon. Their host, an eccentric millionaire unknown to all of them, is nowhere to be found. All that the guests have in common is a wicked past they're unwilling to reveal—and a secret that will seal their fate.", availability: false, user: user13)
 book14.photos.attach(io: URI.open("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391120695l/16299.jpg"), filename: 'none.jpg', content_type: 'image/jpg')
 
 book15 = Book.create(title: "The Da Vinci Code", author:"Dan Brown", pages: 412, year: 2003, genre: "Fiction", description:"While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover a trail of clues hidden in the works of Leonardo da Vinci—clues visible for all to see and yet ingeniously disguised by the painter.", availability: true, user: user13)
@@ -196,7 +196,7 @@ book22.photos.attach(io: URI.open("https://images-na.ssl-images-amazon.com/image
 book23 = Book.create(title: "The Couple Next Door", author:"Shari Lapena", pages: 400, year: 2018, genre: "Thriller", description:"A domestic suspense debut about a young couple and their apparently friendly neighbors--a twisty, rollercoaster ride of lies, betrayal, and the secrets between husbands and wives.", availability: true, user: user17)
 book23.photos.attach(io: URI.open("https://media1.popsugar-assets.com/files/thumbor/0xr3qafQApWmHM7J43QnW6e5p_c/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2019/02/08/965/n/44701584/8e20afe55c5dfe2b107257.85617651_/i/Best-Thriller-Books-All-Time.jpg"), filename: 'exorcist.jpg', content_type: 'image/jpg')
 
-book24 = Book.create(title: "Presumed Innocent", author:"Scott Turrow", pages: 877, year: 1984, genre: "Thriller", description:"Hailed as the most suspenseful and compelling novel in decades. Presumed Innocent brings to life our worst nightmare: that of an ordinary citizen facing conviction for the most terrible of all crimes. It's the stunning portrayal of one man's all-too-human, all-consuming fatal attraction for a passionate woman who is not his wife.", availability: true, user: user16)
+book24 = Book.create(title: "Presumed Innocent", author:"Scott Turrow", pages: 877, year: 1984, genre: "Thriller", description:"Hailed as the most suspenseful and compelling novel in decades. Presumed Innocent brings to life our worst nightmare: that of an ordinary citizen facing conviction for the most terrible of all crimes. It's the stunning portrayal of one man's all-too-human, all-consuming fatal attraction for a passionate woman who is not his wife.", availability: false, user: user16)
 book24.photos.attach(io: URI.open("https://i.unisquare.com/img/main/1/1/10/154618987676e9a0da666db1n.jpg"), content_type: 'image/jpg', filename: 'exorcist.jpg')
 
 book25 = Book.create(title: "Impostor", author:"L.J.Ross", pages: 308, year: 2019, genre: "Thriller", description:"After an elite criminal profiling unit is shut down amidst a storm of scandal and mismanagement, only one person emerges unscathed. Forensic psychologist Doctor Alexander Gregory has a reputation for being able to step inside the darkest minds to uncover whatever secrets lie hidden there and, soon enough, he finds himself drawn into the murky world of murder investigation.", availability: true, user: user15)
@@ -219,7 +219,7 @@ obama_review1 = Review.create(book_rating: 5, book_comment: "Barack Obama is as 
 
 conaughey_review1 = Review.create(book_rating: 4, book_comment: "A delightful surprise, full of stories that [haven’t] been shared on late night talk shows or made headlines over the years. It’s a wild ride to be sure, but if you enjoy McConaughey and all of the eccentricities and contradictions that come with him, it’s one you won’t want to miss.", book: book13, user: user9)
 
-Review.create(book_rating: 3, book_comment: "This is the perfect weekend read. I settled into the story and spent most of Sunday (a dark and stormy afternoon) reading away.", book: book18, user: user10)
+Review.create(book_rating: 5, book_comment: "This is the perfect weekend read. I settled into the story and spent most of Sunday (a dark and stormy afternoon) reading away.", book: book18, user: user10)
 
 Review.create(book_rating: 4, book_comment: "In all honesty, i only read this because i felt like i could not stop seeing this everywhere. so. many. people. were reading this. on the tube, in the park, at the bookshop. i couldnt escape seeing this book. But at the end it was worth it! ", book: book18, user: user12)
 
@@ -238,11 +238,14 @@ Booking.create(book: book1, from: "2020-11-30", until: "2020-12-30", user: user3
 Booking.create(book: book2, from: "2020-11-30", until: "2020-12-06", user: user7 )
 Booking.create(book: book3, from: "2020-11-30", until: "2020-12-24", user: user5 )
 Booking.create(book: book4, from: "2020-11-30", until: "2021-01-20", user: user2 )
-Booking.create(book: book5, from: "2020-11-30", until: "2021-01-02", user: user2 )
+
 
 #new
-Booking.create(book: book14, from: "2020-11-30", until: "2020-12-30", user: user10 )
 Booking.create(book: book10, from: "2020-11-20", until: "2021-12-04", user: user13 )
+
+Booking.create(book: book24, from: "2020-11-30", until: "2021-02-30", user: user10 )
+Booking.create(book: book5, from: "2020-11-20", until: "2021-02-04", user: user10 )
+Booking.create(book: book14, from: "2020-11-30", until: "2021-02-30", user: user10 )
 puts "Bookings created!"
 
 puts "Creating Bookclubs..."
