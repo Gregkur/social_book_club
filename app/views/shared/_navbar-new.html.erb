@@ -27,8 +27,13 @@
                     <%= link_to "Create account",  new_user_registration_path, class:"dropdown-item header__link", role:"menuitem"  %>
                 <% end %>
             <%= link_to "See all books", books_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
-            <%= link_to "See all bookclubs", bookclubs_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
             <%= link_to "Add a book", new_book_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
+            <%= link_to "See all bookclubs", bookclubs_path, :method => :get, class:"dropdown-item header__link", role:"menuitem"  %>
+            
+            <% if controller_name == 'bookclubs' %>
+                <%= link_to "Create a new bookclub", new_book_path, class:"dropdown-item header__link activate-modal", remote: true %>   
+            <% end %>
+            
                 <% if !user_signed_in? %>
                     <%= link_to "Log In", user_session_path, class:"dropdown-item header__link", role:"menuitem"  %>
                 <% end %>
