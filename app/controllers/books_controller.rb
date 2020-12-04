@@ -15,10 +15,10 @@ class BooksController < ApplicationController
     @books = policy_scope(Book).all
 
     if user_signed_in? && cookies[:location] == nil
-      @location = 'Berlin, Mitte'
+      @location = 'Auguststraße 58, Berlin'
       @users = User.near(@location, 10)
     elsif !user_signed_in? && cookies[:location] == nil
-      @location = 'Berlin, Mitte'
+      @location = 'Auguststraße 58, Berlin'
       @users = User.near(@location, 10)
     elsif user_signed_in?
       @location = current_user.address
